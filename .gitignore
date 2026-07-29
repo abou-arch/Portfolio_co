@@ -1,0 +1,24 @@
+# Source files for the certificates — the web-ready copies live in certs/
+Certificats/
+
+# Backup of the original portrait, not served by the site
+images/abou-original.png
+images/abou.png
+
+# Python — never commit a virtual environment
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Data files are usually too large for git — keep them local
+*.csv
+*.parquet
+data/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

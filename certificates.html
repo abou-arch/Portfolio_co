@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificates — Abou Camara</title>
+<meta name="description" content="Verified certifications in Python, data analysis, software design and leadership — OpenClassrooms and AIESEC.">
+<meta name="theme-color" content="#FBF9F6">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="aura"><i></i><i></i><i></i></div>
+<div class="grain"></div>
+
+<!-- ═════════ NAV ═════════ -->
+<header id="hdr">
+  <nav>
+    <a href="index.html" class="brand">Abou Camara</a>
+    <div class="menu" id="menu">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="certificates.html" class="here">Certificates</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact" class="cta">Book a call</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- ═════════ HEADER ═════════ -->
+<section style="padding-top:clamp(130px,16vw,180px);padding-bottom:0">
+  <div class="wrap">
+    <div class="eyebrow rv">Credentials</div>
+    <h2 class="title rv">Certificates &amp; training</h2>
+    <p class="lead rv" style="margin-bottom:0">Seven completed programmes in programming, data analysis, software architecture and leadership. Every certificate below opens as the original document — issued to <strong>Cherif Aboubacar Camara</strong>, with its reference number.</p>
+  </div>
+</section>
+
+<!-- ═════════ CERTIFICATES ═════════ -->
+<section style="padding-top:clamp(40px,6vw,64px)">
+  <div class="wrap">
+
+    <!--
+      ┌─ ADDING A NEW CERTIFICATE ─────────────────────────────────────────┐
+      │ 1. Duplicate one <article class="cert"> block below.               │
+      │ 2. data-cat → one of: dev · data · leadership                      │
+      │    (must match a data-filter value in .cert-bar exactly)           │
+      │ 3. Preview image  → images/certs/<name>.png  (or .jpg)             │
+      │    Original file  → certs/<name>.pdf         (or .jpg)             │
+      │ 4. Point the "View certificate" link at the original file.         │
+      └────────────────────────────────────────────────────────────────────┘
+    -->
+
+    <div class="cert-bar rv">
+      <button class="on" data-filter="all">All <span class="count">7</span></button>
+      <button data-filter="dev">Development <span class="count">4</span></button>
+      <button data-filter="data">Data &amp; Analysis <span class="count">1</span></button>
+      <button data-filter="leadership">Leadership <span class="count">2</span></button>
+    </div>
+
+    <div class="cert-grid" id="grid">
+
+      <!-- ── Python for data analysis ── -->
+      <article class="cert rv" data-cat="data" style="--cb:linear-gradient(140deg,#F7F1E4,#EFE6D4);--cg:rgba(203,170,91,.28)">
+        <div class="cert-img">
+          <span>images/certs/python-data.png</span>
+          <img src="images/certs/python-data.png" alt="OpenClassrooms certificate — Python for data analysis" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">OpenClassrooms</span>
+          <h3>Python for Data Analysis</h3>
+          <p>Loading, cleaning and exploring datasets with Python — the foundation behind the e-commerce dashboard in my portfolio.</p>
+          <div class="cert-meta">
+            <span class="cert-date">March 2026 · No. 6259441872</span>
+            <a class="verify" href="certs/python-data.pdf" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Domain-Driven Design ── -->
+      <article class="cert rv" data-cat="dev" style="--cb:linear-gradient(140deg,#F1EEF8,#E7E1F3);--cg:rgba(142,125,201,.26)">
+        <div class="cert-img">
+          <span>images/certs/ddd.png</span>
+          <img src="images/certs/ddd.png" alt="OpenClassrooms certificate — Domain-Driven Design" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">OpenClassrooms</span>
+          <h3>Domain-Driven Design</h3>
+          <p>Structuring an application around the business domain rather than the technology — how I keep client projects maintainable as they grow.</p>
+          <div class="cert-meta">
+            <span class="cert-date">March 2026 · No. 8906886594</span>
+            <a class="verify" href="certs/ddd.pdf" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── OOP with Python ── -->
+      <article class="cert rv" data-cat="dev" style="--cb:linear-gradient(140deg,#F5F2EA,#EAE3D5);--cg:rgba(176,141,51,.24)">
+        <div class="cert-img">
+          <span>images/certs/python-oop.png</span>
+          <img src="images/certs/python-oop.png" alt="OpenClassrooms certificate — Object-oriented programming with Python" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">OpenClassrooms</span>
+          <h3>Object-Oriented Programming with Python</h3>
+          <p>Classes, inheritance and design patterns — what makes an automation script survive its first six months in production.</p>
+          <div class="cert-meta">
+            <span class="cert-date">March 2026 · No. 8880552487</span>
+            <a class="verify" href="certs/python-oop.pdf" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Python fundamentals ── -->
+      <article class="cert rv" data-cat="dev" style="--cb:linear-gradient(140deg,#F6F2E8,#ECE5D6);--cg:rgba(203,170,91,.22)">
+        <div class="cert-img">
+          <span>images/certs/python-basics.png</span>
+          <img src="images/certs/python-basics.png" alt="OpenClassrooms certificate — Python fundamentals" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">OpenClassrooms</span>
+          <h3>Python Fundamentals</h3>
+          <p>Core language mastery — the everyday tool behind every automation and data project I ship.</p>
+          <div class="cert-meta">
+            <span class="cert-date">December 2025 · No. 5183028978</span>
+            <a class="verify" href="certs/python-basics.pdf" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── C++ ── -->
+      <article class="cert rv" data-cat="dev" style="--cb:linear-gradient(140deg,#F2F0F7,#E8E4F0);--cg:rgba(142,125,201,.22)">
+        <div class="cert-img">
+          <span>images/certs/cpp.png</span>
+          <img src="images/certs/cpp.png" alt="OpenClassrooms certificate — C++ programming" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">OpenClassrooms</span>
+          <h3>C++ Programming</h3>
+          <p>Low-level programming, memory management and performance — the discipline that makes higher-level code faster.</p>
+          <div class="cert-meta">
+            <span class="cert-date">December 2025 · No. 3159415241</span>
+            <a class="verify" href="certs/cpp.pdf" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AIESEC Leadership ── -->
+      <article class="cert rv" data-cat="leadership" style="--cb:linear-gradient(140deg,#F3EFF8,#E9E3F2);--cg:rgba(108,92,168,.22)">
+        <div class="cert-img">
+          <span>images/certs/aiesec-leadership.jpg</span>
+          <img src="images/certs/aiesec-leadership.jpg" alt="AIESEC Leadership Development Experience certificate" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">AIESEC · Global Volunteer</span>
+          <h3>Leadership Development Experience</h3>
+          <p>A full AIESEC leadership programme completed through a Global Volunteer placement — working across cultures, on deadlines, with people I'd never met.</p>
+          <div class="cert-meta">
+            <span class="cert-date">September 2025 · ID 6873863</span>
+            <a class="verify" href="certs/aiesec-leadership.jpg" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── AIESEC Global Volunteering ── -->
+      <article class="cert rv" data-cat="leadership" style="--cb:linear-gradient(140deg,#EFF1F8,#E4E8F3);--cg:rgba(108,92,168,.20)">
+        <div class="cert-img">
+          <span>images/certs/aiesec-volunteer.jpg</span>
+          <img src="images/certs/aiesec-volunteer.jpg" alt="AIESEC Global Volunteering Program certificate" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">AIESEC in Fez</span>
+          <h3>Global Volunteering Program</h3>
+          <p>Recognised for participation in the Global Volunteering Program — cross-cultural teamwork and sustained commitment to a shared objective.</p>
+          <div class="cert-meta">
+            <span class="cert-date">AIESEC in Fez, Morocco</span>
+            <a class="verify" href="certs/aiesec-volunteer.jpg" target="_blank" rel="noopener">View
+              <svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="empty-note" id="empty">No certificate in this category yet.</p>
+
+    <div style="margin-top:clamp(48px,7vw,72px);text-align:center">
+      <p class="lead rv" style="margin:0 auto 26px;max-width:46ch">Want to know how any of this translates into your project?</p>
+      <a href="index.html#contact" class="btn btn-gold rv">
+        Book a discovery call
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">Abou Camara</div>
+      <small>© <span id="yr">2026</span> — Growth, sales, development &amp; design. All rights reserved.</small>
+    </div>
+    <div class="socials">
+      <a class="soc" href="#" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5.001A2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z"/></svg></a>
+      <a class="soc" href="#" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"/></svg></a>
+      <a class="soc" href="mailto:aboucamara1107@gmail.com" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 6L2 7"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* sticky nav */
+const hdr = document.getElementById('hdr');
+const stick = () => hdr.classList.toggle('stuck', window.scrollY > 16);
+stick(); window.addEventListener('scroll', stick, {passive:true});
+
+/* mobile menu */
+const burger = document.getElementById('burger');
+const menu   = document.getElementById('menu');
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded','false');
+}));
+
+/* scroll reveal */
+const io = new IntersectionObserver((ents) => {
+  ents.forEach((en, i) => {
+    if (en.isIntersecting) {
+      en.target.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+      en.target.classList.add('on');
+      io.unobserve(en.target);
+    }
+  });
+}, {threshold:.1, rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* category filter */
+const buttons = document.querySelectorAll('.cert-bar button');
+const cards   = document.querySelectorAll('.cert');
+const empty   = document.getElementById('empty');
+buttons.forEach(btn => btn.addEventListener('click', () => {
+  buttons.forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  const f = btn.dataset.filter;
+  let shown = 0;
+  cards.forEach(c => {
+    const show = (f === 'all' || c.dataset.cat === f);
+    c.classList.toggle('hide', !show);
+    if (show) shown++;
+  });
+  empty.style.display = shown ? 'none' : 'block';
+}));
+</script>
+</body>
+</html>
