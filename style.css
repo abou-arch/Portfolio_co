@@ -113,14 +113,24 @@ nav{
 }
 header.stuck nav{height:68px}
 .brand{
+  display:inline-flex;align-items:center;gap:11px;
   font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:-.02em;
   position:relative;padding:4px 0;
 }
-.brand::after{
-  content:'';position:absolute;left:0;bottom:0;width:0;height:1px;
-  background:var(--ink);transition:width .5s var(--ease);
+.brand > span{position:relative}
+.brand > span::after{
+  content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;
+  background:currentColor;transition:width .5s var(--ease);
 }
-.brand:hover::after{width:100%}
+.brand:hover > span::after{width:100%}
+.mark{
+  width:30px;height:30px;flex-shrink:0;color:var(--ink);
+  transition:transform .6s var(--spring);
+}
+.mark-dot{fill:var(--gold);transition:fill .5s var(--ease),r .5s var(--spring)}
+.brand:hover .mark{transform:translateY(-2px)}
+.brand:hover .mark-dot{fill:var(--mauve);r:3.4}
+footer .mark{width:26px;height:26px}
 .menu{display:flex;gap:2px;align-items:center}
 .menu a{
   position:relative;font-size:.885rem;color:var(--grey-1);
