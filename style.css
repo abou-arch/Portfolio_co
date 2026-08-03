@@ -113,9 +113,9 @@ nav{
 }
 header.stuck nav{height:68px}
 .brand{
-  display:inline-flex;align-items:center;gap:11px;
-  font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:-.02em;
-  position:relative;padding:4px 0;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--display);font-weight:500;font-size:1.18rem;letter-spacing:-.02em;
+  position:relative;padding:4px 0;line-height:1;
 }
 .brand > span{position:relative}
 .brand > span::after{
@@ -123,14 +123,17 @@ header.stuck nav{height:68px}
   background:currentColor;transition:width .5s var(--ease);
 }
 .brand:hover > span::after{width:100%}
+/* Les dimensions sont aussi en attributs sur le <svg> : si la feuille de style
+   tarde ou echoue, le logo garde sa taille au lieu d'exploser a 300px. */
 .mark{
-  width:30px;height:30px;flex-shrink:0;color:var(--ink);
+  width:26px;height:26px;flex-shrink:0;display:block;color:var(--ink);
   transition:transform .6s var(--spring);
 }
 .mark-dot{fill:var(--gold);transition:fill .5s var(--ease),r .5s var(--spring)}
 .brand:hover .mark{transform:translateY(-2px)}
-.brand:hover .mark-dot{fill:var(--mauve);r:3.4}
-footer .mark{width:26px;height:26px}
+.brand:hover .mark-dot{fill:var(--mauve);r:3.7}
+footer .mark{width:22px;height:22px}
+footer .brand{font-size:1.06rem;gap:9px}
 .menu{display:flex;gap:2px;align-items:center}
 .menu a{
   position:relative;font-size:.885rem;color:var(--grey-1);
