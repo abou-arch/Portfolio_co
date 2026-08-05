@@ -1,0 +1,18 @@
+# Fichiers presents dans le depot mais qui ne doivent PAS etre servis publiquement.
+# Cloudflare Workers ignore tout ce qui est liste ici.
+
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+node_modules
+
+# Documents de travail internes
+*.md
+Certificats
+send_tests.py
+lead-test-payloads.json
+
+# Sauvegardes d'images
+images/abou-original.png
+images/abou.png

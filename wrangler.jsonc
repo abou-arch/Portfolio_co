@@ -1,0 +1,14 @@
+{
+  // Configuration Cloudflare Workers pour un site 100 % statique.
+  // Aucun code serveur : Workers sert directement les fichiers du dépôt.
+  "name": "portfolio-co",
+  "compatibility_date": "2026-08-01",
+
+  "assets": {
+    // La racine du dépôt contient index.html — c'est ce qui est servi.
+    "directory": "./",
+
+    // Sert 404.html quand une URL ne correspond à aucun fichier.
+    "not_found_handling": "404-page"
+  }
+}
