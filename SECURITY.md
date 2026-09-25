@@ -1,21 +1,29 @@
-# Security Policy
+# Security
 
-## Supported Versions
+This is a static site: plain HTML, CSS and one small script, no server code,
+no database, no cookies and no account system.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Reporting a vulnerability
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+Email **aboucamara1107@gmail.com** with a short description and the steps to
+reproduce it. You will get a reply within 48 hours. Please do not open a public
+issue for a security problem.
 
-## Reporting a Vulnerability
+The same contact is published at `/.well-known/security.txt`.
 
-Use this section to tell people how to report a vulnerability.
+## What is in place
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- `_headers`: Content-Security-Policy (scripts from this site only, no inline
+  script), HSTS, X-Frame-Options DENY and frame-ancestors 'none' against
+  clickjacking, nosniff, strict Referrer-Policy, Permissions-Policy.
+- The same CSP is repeated in a `<meta>` tag on each page, as a fallback if the
+  site is ever served without `_headers`.
+- The contact form never sends data anywhere: it opens the visitor's mail app.
+  Inputs are length-limited and line breaks are stripped from the subject.
+- `.assetsignore` keeps repo files (`.git`, config, Markdown notes) from being served.
+
+## Keep in mind
+
+- Never commit API keys or webhook URLs (Make, Zapier...). Keep them in local
+  files listed in `.gitignore`.
+- Update the `Expires` date in `.well-known/security.txt` before September 2027.

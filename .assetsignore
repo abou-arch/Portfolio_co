@@ -16,3 +16,7 @@ lead-test-payloads.json
 # Sauvegardes d'images
 images/abou-original.png
 images/abou.png
+
+# Fichiers de config du depot
+.gitattributes
+.nojekyll

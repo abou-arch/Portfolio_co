@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case study — Lead Scoring Engine | Abou Camara</title>
+<title>Case study: Lead Scoring Engine | Abou Camara</title>
 <meta name="description" content="How I designed an automated lead qualification system, found a logic flaw in my own scoring model, and fixed it before it ever cost a client a deal.">
 
 <link rel="canonical" href="https://aboucamara.org/case-lead-scoring.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aboucamara.org/case-lead-scoring.html">
-<meta property="og:title" content="The lead you never called — Abou Camara">
+<meta property="og:title" content="The lead you never called | Abou Camara">
 <meta property="og:description" content="How I designed a lead scoring system, found a flaw in my own logic, and fixed it.">
 <meta property="og:image" content="https://aboucamara.org/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -17,7 +19,7 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="Abou Camara">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The lead you never called — Abou Camara">
+<meta name="twitter:title" content="The lead you never called | Abou Camara">
 <meta name="twitter:description" content="How I designed a lead scoring system, found a flaw in my own logic, and fixed it.">
 <meta name="twitter:image" content="https://aboucamara.org/og-image.png">
 <meta name="theme-color" content="#FBF9F5">
@@ -38,7 +40,7 @@
 <!-- ═════════ NAV ═════════ -->
 <header id="hdr">
   <nav>
-    <a href="index.html" class="brand"><svg class="mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.8 26.4 L16 6 L26.2 26.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 17.6 H21.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><circle class="mark-dot" cx="16" cy="6" r="3.2"/></svg><span class="brand-txt"><span>Abou Camara</span><small>Student · Consultant · Impact maker</small></span></a>
+    <a href="index.html" class="brand"><svg class="mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.8 26.4 L16 6 L26.2 26.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 17.6 H21.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><circle class="mark-dot" cx="16" cy="6" r="3.2"/></svg><span class="brand-txt"><span>Abou Camara</span><small>Student, consultant, impact maker</small></span></a>
     <div class="menu" id="menu">
       <a href="index.html#services"><span>Services</span></a>
       <a href="index.html#work" class="here"><span>Work</span></a>
@@ -57,9 +59,9 @@
 <section style="padding-top:clamp(130px,16vw,180px);padding-bottom:0">
   <div class="wrap">
     <div class="case-head">
-      <div class="eyebrow rv">Case study · Automation &amp; Sales</div>
+      <div class="eyebrow rv">Case study: Automation &amp; Sales</div>
       <h1 class="rv">The lead you never called</h1>
-      <p class="standfirst rv">I built an automated qualification system to find out whether there was a business in it. Then I found a flaw in my own scoring logic that would have quietly buried the best leads — the exact ones I was building it to catch.</p>
+      <p class="standfirst rv">I built an automated qualification system to find out whether there was a business in it. Then I found a flaw in my own scoring logic that would have quietly buried the best leads, the exact ones I was building it to catch.</p>
 
       <dl class="case-meta rv">
         <div><dt>Role</dt><dd>Design, build, testing</dd></div>
@@ -77,12 +79,12 @@
     <article class="prose">
 
       <h3 class="rv">Why I built it</h3>
-      <p class="rv">This started as market research, not as a technical exercise. I was looking for automation problems small businesses would actually pay to solve, and lead qualification kept surfacing — founders collecting form submissions they had no time to sort through.</p>
+      <p class="rv">This started as market research, not as a technical exercise. I was looking for automation problems small businesses would actually pay to solve, and lead qualification kept coming up: founders collecting form submissions they had no time to sort through.</p>
       <p class="rv">So rather than write another proposal about it, I built the thing. Two reasons: to find out whether the problem was as real as it looked, and to have something concrete to show instead of a promise.</p>
 
       <h3 class="rv">The problem</h3>
       <p class="rv">An inbound form produces a flat list. In an inbox, a founder with a €5,000 budget and an urgent deadline looks exactly like someone who clicked out of curiosity. Same subject line, same weight.</p>
-      <p class="rv">That leaves a business owner two bad options: call everyone, which does not scale, or call nobody, which loses deals. <strong>The real cost isn't the sorting time — it's the serious buyer sitting at position 40 who goes cold while you work through the list in the order it arrived.</strong></p>
+      <p class="rv">That leaves a business owner two bad options: call everyone, which does not scale, or call nobody, which loses deals. <strong>The real cost isn't the sorting time. It's the serious buyer sitting at position 40 who goes cold while you work through the list in the order it arrived.</strong></p>
       <p class="rv">The system had to answer one question, automatically, the moment a form was submitted: <em>is this person worth calling today?</em></p>
 
       <h3 class="rv">Constraints</h3>
@@ -90,7 +92,7 @@
         <li>A non-technical owner had to be able to maintain it after handover</li>
         <li>No infrastructure budget, and nothing to host or monitor</li>
         <li>It had to plug into tools a small business already uses</li>
-        <li>Build time measured in days, not weeks — this was validation, not a product launch</li>
+        <li>Build time measured in days, not weeks. This was validation, not a product launch</li>
       </ul>
 
       <h3 class="rv">Approach</h3>
@@ -111,36 +113,36 @@
           </tbody>
         </table>
       </div>
-      <p class="rv">Budget carries the most weight because it is the hardest constraint to change. Enthusiasm can be created in a sales call; a budget that doesn't exist cannot. Intent comes second — someone who describes the problem in their own words has already done part of the qualifying.</p>
+      <p class="rv">Budget carries the most weight because it is the hardest constraint to change. Enthusiasm can be created in a sales call; a budget that doesn't exist cannot. Intent comes second: someone who describes the problem in their own words has already done part of the qualifying.</p>
       <p class="rv">The email domain is intentionally the weakest of the three, and getting that weighting wrong is what caused the flaw described below.</p>
 
       <h4 class="rv">Where the output goes</h4>
       <p class="rv">Straight into a Google Sheet, not a CRM. A small business owner already has the Sheet open; a CRM is one more login and one more subscription for a problem that doesn't need one yet.</p>
-      <p class="rv">Two columns get written: <code>score</code> and <code>tier</code>. The tier tells you what to do, the score tells you why. Without the raw number you cannot debug a classification you disagree with — and you will disagree with some of them.</p>
+      <p class="rv">Two columns get written: <code>score</code> and <code>tier</code>. The tier tells you what to do, the score tells you why. Without the raw number you cannot debug a classification you disagree with, and you will disagree with some of them.</p>
 
       <h3 class="rv">The flaw</h3>
       <p class="rv">The first version used weights of 40, 30 and 20, with anything at or above 80 marked <code>hot</code>. That looked reasonable. It wasn't.</p>
       <p class="rv">With three independent signals there are only eight possible outcomes, so I enumerated every score the model could actually produce:</p>
-      <p class="rv"><code>0 · 20 · 30 · 40 · 50 · 60 · 70 · 90</code></p>
-      <p class="rv">There is nothing between 71 and 89. So a threshold of "80 or above" did not mean what it appeared to mean — it meant <strong>exactly 90</strong>, which required all three signals at once.</p>
+      <p class="rv"><code>0, 20, 30, 40, 50, 60, 70, 90</code></p>
+      <p class="rv">There is nothing between 71 and 89. So a threshold of "80 or above" did not mean what it appeared to mean. It meant <strong>exactly 90</strong>, which required all three signals at once.</p>
 
       <div class="callout rv">
         <span class="k">The consequence</span>
-        <p>The weakest signal had silently become mandatory. A founder with the budget <em>and</em> a clearly stated need scored 70 and was filed as <code>warm</code> — for no reason other than writing from a Gmail address.</p>
+        <p>The weakest signal had silently become mandatory. A founder with the budget <em>and</em> a clearly stated need scored 70 and was filed as <code>warm</code>, for no reason other than writing from a Gmail address.</p>
       </div>
 
       <p class="rv">That is not a rounding error, it is an inverted priority. The criterion I had weighted lowest ended up with more blocking power than budget itself.</p>
-      <p class="rv">And it targets precisely the wrong people. Independent founders, freelancers and small teams overwhelmingly use Gmail as their working address — in Morocco and West Africa especially, where I work. The model was systematically demoting my actual target market for not owning a domain name.</p>
+      <p class="rv">And it targets precisely the wrong people. Independent founders, freelancers and small teams overwhelmingly use Gmail as their working address, especially in Morocco and West Africa, where I work. The model was systematically demoting my actual target market for not owning a domain name.</p>
 
       <h3 class="rv">The fix</h3>
       <p class="rv">Rebalanced onto a clean 100-point scale, with the email signal cut to a genuine bonus:</p>
-      <pre class="rv"><code>budget ≥ threshold     50
+      <pre class="rv"><code>budget >= threshold    50
 keyword match          35
 professional domain    15
-                      ───
+                      ---
                       100
 
-hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
+hot >= 80, warm 40-79, low &lt; 40</code></pre>
       <p class="rv">Budget plus intent now reaches 85 on its own. The email domain can lift a lead to 100, but it can no longer keep one out.</p>
       <div class="table-wrap rv">
         <table class="datatable">
@@ -161,17 +163,17 @@ hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
       <p class="rv">Rows four and five both land on 50, which is a deliberate collision rather than an oversight. "Money but no stated need" and "clear need but no money" are different profiles that warrant the same action: worth a call, not worth calling first. Separating them would require a fourth signal, and three signals were doing enough work.</p>
 
       <h3 class="rv">Testing</h3>
-      <p class="rv">Three binary signals produce eight states, which is few enough to test exhaustively rather than sample. I wrote ten payloads: eight covering every reachable state, plus two for the input formats that break this kind of formula in practice — a budget landing exactly on the threshold, and a budget arriving as the string <code>"3 000"</code> instead of a number.</p>
+      <p class="rv">Three binary signals produce eight states, which is few enough to test exhaustively rather than sample. I wrote ten payloads: eight covering every reachable state, plus two for the input formats that break this kind of formula in practice: a budget landing exactly on the threshold, and a budget arriving as the string <code>"3 000"</code> instead of a number.</p>
       <p class="rv">Then I wrote a small script that recalculates all ten expected scores independently of the scenario.</p>
 
       <div class="callout violet rv">
         <span class="k">Worth admitting</span>
-        <p>That verification script immediately caught an error — in my own expected values, not in the system. I had written 75 for a case that should have scored 85, having forgotten the email bonus while typing the file by hand. The same class of mistake as the original flaw: reasoning about a model in my head instead of enumerating it.</p>
+        <p>That verification script immediately caught an error. It was in my own expected values, not in the system. I had written 75 for a case that should have scored 85, having forgotten the email bonus while typing the file by hand. The same class of mistake as the original flaw: reasoning about a model in my head instead of enumerating it.</p>
       </div>
 
       <h3 class="rv">Result</h3>
       <p class="rv">A working system that scores and files an inbound lead in seconds, with all eight classification states verified against expected output.</p>
-      <p class="rv">To be precise about what this does and does not prove: <strong>it is a validated prototype, not a deployed product.</strong> It has not yet run on live traffic, so there is no "40% more conversions" to report here, and I am not going to invent one. What it demonstrates is the reasoning — how the signals were chosen and weighted, how the failure was found, and how the correction was verified.</p>
+      <p class="rv">To be precise about what this does and does not prove: <strong>it is a validated prototype, not a deployed product.</strong> It has not yet run on live traffic, so there is no "40% more conversions" to report here, and I am not going to invent one. What it shows is the reasoning: how the signals were chosen and weighted, how the failure was found, and how the correction was verified.</p>
       <p class="rv">For a client, that is the transferable part. The scoring model of any business will differ. The method for building and stress-testing one will not.</p>
 
       <h3 class="rv">What I'd do differently</h3>
@@ -184,7 +186,7 @@ hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
 
       <h3 class="rv">When Make stops being the right answer</h3>
       <p class="rv">No-code was correct for this build. It will not stay correct forever, and knowing where the line sits matters more than preferring one side of it.</p>
-      <p class="rv">It breaks down on per-operation cost at volume, on branching logic that becomes unreadable on a canvas, on the absence of version control and automated tests, and on data passing through a third party. Any one of those turning up in a client's requirements is the signal to port it — a webhook endpoint, an isolated scoring module, a Sheets write. That version is the next step for this project, and the tests written here transfer to it directly.</p>
+      <p class="rv">It breaks down on per-operation cost at volume, on branching logic that becomes unreadable on a canvas, on the absence of version control and automated tests, and on data passing through a third party. Any one of those turning up in a client's requirements is the signal to port it to a webhook endpoint, an isolated scoring module, a Sheets write. That version is the next step for this project, and the tests written here transfer to it directly.</p>
 
       <div class="case-nav rv">
         <a href="index.html#work" class="btn btn-line">
@@ -206,7 +208,7 @@ hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
   <div class="wrap foot">
     <div>
       <div class="brand"><svg class="mark" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.8 26.4 L16 6 L26.2 26.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 17.6 H21.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><circle class="mark-dot" cx="16" cy="6" r="3.2"/></svg><span>Abou Camara</span></div>
-      <small>© <span id="yr">2026</span> — Growth, sales, development &amp; design. All rights reserved.</small>
+      <small>© <span id="yr">2026</span> Abou Camara. Growth, sales, development and design.</small>
     </div>
     <div class="socials">
       <a class="soc" href="#" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5.001A2.5 2.5 0 014.98 3.5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z"/></svg></a>

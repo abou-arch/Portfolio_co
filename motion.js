@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════════
-   Abou Camara — shared interaction layer
+   Abou Camara: shared interaction layer
    Every block is guarded, so the same file runs on all three pages.
    ══════════════════════════════════════════════════════════════════════ */
 (() => {
@@ -12,6 +12,15 @@
   /* ── year ──────────────────────────────────────────────────────────── */
   const yr = $('#yr');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ── optional images: if the file is missing, drop the <img> so the
+     placeholder behind it shows. Done here rather than with an inline
+     onerror="" so the Content-Security-Policy can forbid inline script. */
+  $$('img[data-optional]').forEach(img => {
+    const drop = () => img.remove();
+    if (img.complete && img.naturalWidth === 0) drop();
+    else img.addEventListener('error', drop, { once: true });
+  });
 
   /* ── sticky nav ────────────────────────────────────────────────────── */
   const hdr = $('#hdr');
@@ -36,7 +45,7 @@
   }
 
   /* ── active section: dot under the matching nav link ───────────────────
-     Only in-page links ("#services"…). Other pages set .here statically. */
+     Only in-page links ("#services", etc.). Other pages set .here statically. */
   const spyLinks = menu ? $$('a[href^="#"]:not(.cta)', menu) : [];
   if (spyLinks.length) {
     const spyIO = new IntersectionObserver(entries => {
@@ -160,18 +169,21 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const d = new FormData(form);
+      // one line, trimmed: nothing typed in the form can add lines to the mail subject
+      const clean = (v, max) => String(v || '').replace(/[\r\n\t]+/g, ' ').trim().slice(0, max);
+      const name = clean(d.get('name'), 100);
       const body = [
-        'Name: '    + d.get('name'),
-        'Email: '   + d.get('email'),
+        'Name: '    + name,
+        'Email: '   + clean(d.get('email'), 254),
         'Subject: ' + d.get('subject'),
         'Budget: '  + d.get('budget'),
         '',
-        d.get('message')
+        String(d.get('message') || '').slice(0, 1500)
       ].join('\n');
       const ok = $('#ok');
       if (ok) ok.style.display = 'block';
       location.href = 'mailto:aboucamara1107@gmail.com'
-        + '?subject=' + encodeURIComponent('New project — ' + d.get('name'))
+        + '?subject=' + encodeURIComponent('New project: ' + name)
         + '&body='    + encodeURIComponent(body);
     });
   }
