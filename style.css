@@ -826,6 +826,14 @@ textarea{resize:vertical;min-height:128px;line-height:1.6}
 footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,64px) 0 44px;margin-top:clamp(32px,5vw,56px)}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
 .foot small{display:block;font-size:.82rem;color:var(--grey-2);margin-top:12px}
+.foot-legal{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:14px}
+.foot-legal a{font-size:.8rem;color:var(--grey-2);transition:color .3s var(--ease)}
+.foot-legal a:hover{color:var(--ink)}
+.f-note a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+.legal-date{font-size:.82rem;color:var(--grey-2);margin-top:18px}
+.prose.legal h3:first-child{margin-top:0}
+.prose a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold-2);text-underline-offset:3px}
+.prose a:hover{text-decoration-color:var(--ink)}
 .socials{display:flex;gap:9px}
 .soc{
   position:relative;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;

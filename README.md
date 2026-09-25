@@ -9,6 +9,9 @@ Personal site: growth, sales systems, development and design.
 ```
 index.html               Home: services, work, about, credentials, pricing, contact
 certificates.html        All certificates, filterable by category
+legal.html               Legal notice (publisher, host, intellectual property)
+privacy.html             Privacy policy (Law 09-08 and GDPR)
+terms.html               Terms of use of the site
 case-lead-scoring.html   Case study: lead scoring engine
 style.css                Shared stylesheet for all three pages
 images/                  Hero photo, portrait, project screenshots
