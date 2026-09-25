@@ -11,7 +11,7 @@ index.html               Home — services, work, about, credentials, pricing, c
 certificates.html        All certificates, filterable by category
 case-lead-scoring.html   Case study — lead scoring engine
 style.css                Shared stylesheet for all three pages
-images/                  Project screenshots + portrait
+images/                  Hero photo, portrait, project screenshots
 images/certs/            Certificate thumbnails
 certs/                   Original certificate files (PDF / JPG)
 ```
@@ -30,8 +30,13 @@ add the thumbnail to `images/certs/` and the original to `certs/`.
 
 **Replace the portrait** — overwrite `images/abou.jpg`, keep the filename.
 
+**Replace the hero photo** — overwrite `images/hero.webp`. Keep it 16:9 with the
+person in the right third: the headline sits on the left, and the floating cards are
+positioned in % of the photo, so they stay on the same spot at every screen width.
+
 ## Notes
 
 - File names are lowercase on purpose: GitHub Pages is case-sensitive, Windows is not.
   A capital letter that works locally will 404 once deployed.
-- Fonts are loaded from Google Fonts: Fraunces (display) and DM Sans (body).
+- Fonts are loaded from Google Fonts: Fraunces (display) and DM Sans (body), plus
+  Caveat — subset to a single line — for the handwritten note on the portrait.

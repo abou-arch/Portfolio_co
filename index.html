@@ -21,13 +21,16 @@
 <meta name="twitter:title" content="Abou Camara — Growth, Sales & Automation">
 <meta name="twitter:description" content="I build the systems that bring you customers — and the products you sell them.">
 <meta name="twitter:image" content="https://aboucamara.org/og-image.png">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#FBF9F5">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<!-- Handwritten note on the portrait — subset to the characters it uses -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&text=%E2%80%9CDiscipline%20today.%20A%20better%20tomorrow.%E2%80%9D&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,14 +42,14 @@
 <!-- ═════════ NAV ═════════ -->
 <header id="hdr">
   <nav>
-    <a href="#top" class="brand"><svg class="mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.8 26.4 L16 6 L26.2 26.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 17.6 H21.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><circle class="mark-dot" cx="16" cy="6" r="3.2"/></svg><span>Abou Camara</span></a>
+    <a href="#top" class="brand"><svg class="mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.8 26.4 L16 6 L26.2 26.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 17.6 H21.4" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><circle class="mark-dot" cx="16" cy="6" r="3.2"/></svg><span class="brand-txt"><span>Abou Camara</span><small>Student · Consultant · Impact maker</small></span></a>
     <div class="menu" id="menu">
       <a href="#services"><span>Services</span></a>
       <a href="#work"><span>Work</span></a>
       <a href="#about"><span>About</span></a>
       <a href="certificates.html"><span>Certificates</span></a>
       <a href="#pricing"><span>Working together</span></a>
-      <a href="#contact" class="cta"><span>Book a call</span></a>
+      <a href="#contact" class="cta"><span>Book a call</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -56,25 +59,90 @@
 
 <!-- ═════════ HERO ═════════ -->
 <section class="hero" id="top">
-  <div class="wrap">
+  <div class="wrap hero-copy">
+    <p class="hero-kicker fade-up go-0"><span>Consulting <i>×</i> Strategy</span><i>×</i><span>Execution <i>×</i> Results</span></p>
     <h1 class="lines">
-      <span class="line"><span>I build the systems</span></span>
-      <span class="line"><span>that bring you <em>customers</em>.</span></span>
+      <span class="line"><span>Ideas made</span></span>
+      <span class="line"><span><em class="au">concrete</em>.</span></span>
+      <span class="line"><span>Results made</span></span>
+      <span class="line"><span><em class="vi">real</em>.</span></span>
     </h1>
-    <p class="sub fade-up go-1">Most freelancers either build the product or sell it. I do both — growth, sales systems, development and design under one roof. No handoffs between agencies, and no gap between them where deals quietly go cold.</p>
+    <p class="sub fade-up go-1">I help students, young professionals and founders move their projects forward — with strategic, pragmatic solutions built around their goals.</p>
     <div class="actions fade-up go-2">
       <a href="#contact" class="btn btn-ink">
-        <span>Start a project</span>
+        <span>Book a call</span>
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#work" class="btn btn-line"><span>See my work</span></a>
+      <a href="#services" class="btn btn-line"><span>Explore my services</span></a>
     </div>
     <div class="metrics fade-up go-3">
-      <div><div class="m-n" data-to="4">0</div><div class="m-l">Disciplines under one roof</div></div>
-      <div><div class="m-n" data-to="48" data-suffix="h">0</div><div class="m-l">Maximum reply time</div></div>
-      <div><div class="m-n" data-to="30" data-suffix="d">0</div><div class="m-l">Post-launch support</div></div>
-      <div><div class="m-n" data-to="100" data-suffix="%">0</div><div class="m-l">Documented, handed over</div></div>
+      <div><div class="m-n" data-to="4">0</div><div class="m-l">Disciplines<br>under one roof</div></div>
+      <div><div class="m-n" data-to="48" data-suffix="h">0</div><div class="m-l">Maximum<br>reply time</div></div>
+      <div><div class="m-n" data-to="30" data-suffix="d">0</div><div class="m-l">Post-launch<br>support</div></div>
+      <div><div class="m-n" data-to="100" data-suffix="%">0</div><div class="m-l">Documented,<br>handed over</div></div>
     </div>
+  </div>
+
+  <!-- Photo: images/hero.webp (16/9). The floating cards are placed in % of this box,
+       so they stay pinned to the same spot of the photo at every screen width. -->
+  <div class="hero-media">
+    <div class="hero-photo">
+      <img src="images/hero.webp" width="1600" height="900" alt="Abou Camara at his desk, an automation workflow open on screen" fetchpriority="high" decoding="async">
+    </div>
+
+    <div class="float f-score" aria-hidden="true">
+      <div class="fs-top">
+        <svg fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" viewBox="0 0 24 24"><path d="M5 20v-5M10 20v-9M15 20V8M20 20V4"/></svg>
+        <span>Lead scoring</span>
+        <b>Hot</b>
+      </div>
+      <div class="fs-n">85<small>/100</small></div>
+      <div class="fs-bar"><i></i><i></i></div>
+      <div class="fs-cap">Scored &amp; filed in seconds</div>
+    </div>
+
+    <div class="float f-svc" aria-hidden="true">
+      <div><span><svg fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" viewBox="0 0 24 24"><path d="M5 20v-5M10 20v-9M15 20V8M20 20V4"/></svg></span>Marketing &amp; Growth</div>
+      <div><span><svg fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span>Sales Systems</div>
+      <div><span><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 6L2 12l6 6M16 6l6 6-6 6"/></svg></span>Development &amp; Automation</div>
+      <div><span><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c-1 10-6 15-15 15z"/><path d="M5 19l8-8"/></svg></span>Product Design</div>
+    </div>
+
+    <div class="float f-loc" aria-hidden="true">
+      <span><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <p><b>Fès, Morocco</b>Remote · Europe &amp; West Africa</p>
+    </div>
+  </div>
+
+  <div class="hero-svc">
+    <a class="hs" href="#process">
+      <svg class="hs-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.8 6.8 0 00-4 12.3V18h8v-3.2a6.8 6.8 0 00-4-12.3z"/></svg>
+      <span class="hs-txt"><b>Consulting &amp; Strategy</b><small>Clarify, structure, move forward.</small></span>
+      <span class="hs-go" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="hs-n" aria-hidden="true">01<em>Strategy</em></span>
+      <svg class="hs-art art-note" viewBox="0 0 200 120" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><g transform="rotate(-9 110 70)"><rect x="34" y="26" width="170" height="112" rx="6" fill="#FFFFFF" stroke="#E6DFD4"/><path d="M34 26h170" stroke="#EDE7DE" stroke-width="6"/><path d="M52 56h118M52 72h132M52 88h96M52 104h120" stroke="#ECE6DC" stroke-width="2.2" stroke-linecap="round"/></g><g transform="rotate(-27 128 84)"><rect x="70" y="80" width="118" height="10" rx="5" fill="#1C1916"/><rect x="164" y="80" width="24" height="10" rx="5" fill="#B07A43"/><path d="M70 80l-13 5 13 5z" fill="#1C1916"/></g></svg>
+    </a>
+    <a class="hs" href="#services">
+      <svg class="hs-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" viewBox="0 0 24 24"><path d="M5 20v-5M10 20v-9M15 20V8M20 20V4"/></svg>
+      <span class="hs-txt"><b>Sales Systems</b><small>Attract, convert, retain.</small></span>
+      <span class="hs-go" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="hs-n" aria-hidden="true">02<em>Sales</em></span>
+      <svg class="hs-art art-chart" viewBox="0 0 200 120" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><defs><linearGradient id="hsFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8F63E0" stop-opacity=".28"/><stop offset="1" stop-color="#8F63E0" stop-opacity="0"/></linearGradient></defs><rect x="22" y="14" width="190" height="120" rx="12" fill="#F4EFFC" stroke="#E7DEF8"/><rect x="36" y="28" width="20" height="20" rx="7" fill="#9D74E4"/><rect x="64" y="32" width="46" height="5" rx="2.5" fill="#D9CCF4"/><rect x="64" y="41" width="28" height="4" rx="2" fill="#E6DDF8"/><path d="M36 112C58 108 66 96 84 97s30-18 48-22 30-22 44-26 24-15 36-20V134H36z" fill="url(#hsFill)"/><path d="M36 112C58 108 66 96 84 97s30-18 48-22 30-22 44-26 24-15 36-20" fill="none" stroke="#8F63E0" stroke-width="2.6" stroke-linecap="round"/><circle cx="176" cy="49" r="4" fill="#FFFFFF" stroke="#8F63E0" stroke-width="2.2"/></svg>
+    </a>
+    <a class="hs" href="#services">
+      <svg class="hs-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2 19.5h20"/></svg>
+      <span class="hs-txt"><b>Development &amp; Automation</b><small>Tools that give you your time back.</small></span>
+      <span class="hs-go" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="hs-n" aria-hidden="true">03<em>Development</em></span>
+      <span class="hs-art art-code" aria-hidden="true"><i>// automate</i><i><b>const</b> lead = <b>await</b> createLead();</i><i><b>await</b> sendEmail(lead);</i><i><b>return</b> success;</i></span>
+    </a>
+    <a class="hs" href="#services">
+      <svg class="hs-ico" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2a1.7 1.7 0 011.3-2.9H17a4 4 0 004-4c0-4.5-4-8.2-9-8.2z"/><circle cx="7.5" cy="11.5" r="1.1"/><circle cx="10.5" cy="7.5" r="1.1"/><circle cx="15.5" cy="7.8" r="1.1"/></svg>
+      <span class="hs-txt"><b>Product Design</b><small>Experiences that convert.</small></span>
+      <span class="hs-go" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="hs-n" aria-hidden="true">04<em>Design</em></span>
+      <svg class="hs-art art-ui" viewBox="0 0 200 120" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><rect x="22" y="12" width="190" height="124" rx="12" fill="#F5F1FC" stroke="#E7DEF8"/><rect x="36" y="26" width="22" height="22" rx="7" fill="#9D74E4"/><rect x="66" y="30" width="62" height="5" rx="2.5" fill="#D9CCF4"/><rect x="66" y="40" width="40" height="4" rx="2" fill="#E6DDF8"/><rect x="36" y="60" width="164" height="18" rx="9" fill="#FFFFFF"/><circle cx="47" cy="69" r="4.5" fill="#B9A1EE"/><rect x="58" y="67" width="84" height="4" rx="2" fill="#E3D9F7"/><rect x="36" y="86" width="164" height="18" rx="9" fill="#FFFFFF"/><circle cx="47" cy="95" r="4.5" fill="#D5C6F4"/><rect x="58" y="93" width="66" height="4" rx="2" fill="#E3D9F7"/><rect x="36" y="112" width="164" height="18" rx="9" fill="#FFFFFF"/><circle cx="47" cy="121" r="4.5" fill="#D5C6F4"/><rect x="58" y="119" width="92" height="4" rx="2" fill="#E3D9F7"/></svg>
+    </a>
   </div>
 </section>
 
@@ -239,7 +307,8 @@
     <div class="about-grid">
       <!-- Photo: images/abou.jpg — replace the file, keep the name -->
       <div class="portrait rv">
-        <img src="images/abou.jpg" alt="Portrait of Abou Camara" loading="lazy" onerror="this.remove()">
+        <img src="images/abou.jpg" alt="Portrait of Abou Camara" width="820" height="1024" loading="lazy" onerror="this.remove()">
+        <p class="note" aria-hidden="true">“Discipline today.<br>A better tomorrow.”</p>
       </div>
 
       <div class="about-txt rv">

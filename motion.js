@@ -35,6 +35,19 @@
     }));
   }
 
+  /* ── active section: dot under the matching nav link ───────────────────
+     Only in-page links ("#services"…). Other pages set .here statically. */
+  const spyLinks = menu ? $$('a[href^="#"]:not(.cta)', menu) : [];
+  if (spyLinks.length) {
+    const spyIO = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        spyLinks.forEach(a => a.classList.toggle('here', a.hash === '#' + en.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('section[id]').forEach(s => spyIO.observe(s));
+  }
+
   /* ── scroll progress ───────────────────────────────────────────────────
      Modern browsers drive this from CSS (animation-timeline: scroll()).
      Only fall back to JS where that isn't supported.                      */
@@ -74,11 +87,10 @@
     }
   }
 
-  /* ── metrics: rule sweep + count-up ────────────────────────────────── */
+  /* ── metrics: count-up ─────────────────────────────────────────────── */
   const metrics = $('.metrics');
   if (metrics) {
     const run = () => {
-      metrics.classList.add('seen');
       $$('[data-to]', metrics).forEach(el => {
         const to     = parseFloat(el.dataset.to);
         const suffix = el.dataset.suffix || '';
