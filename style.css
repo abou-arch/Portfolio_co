@@ -209,14 +209,14 @@ footer .brand{font-size:1.06rem;gap:9px}
 .btn-full{width:100%}
 
 /* ══ sections ══════════════════════════════════════════════════════════ */
-section{padding:clamp(80px,11vw,150px) 0;position:relative}
+section{padding:clamp(68px,8vw,116px) 0;position:relative}
 .eyebrow{
   display:inline-flex;align-items:center;gap:11px;
   font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
   color:var(--grey-2);margin-bottom:22px;
 }
-h2.title{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:20px;max-width:19ch}
-.lead{color:var(--grey-1);font-size:clamp(1rem,1.7vw,1.1rem);max-width:58ch;margin-bottom:clamp(48px,6.5vw,72px)}
+h2.title{font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:18px;max-width:19ch}
+.lead{color:var(--grey-1);font-size:clamp(1rem,1.6vw,1.08rem);max-width:58ch;margin-bottom:clamp(34px,4.4vw,52px)}
 
 /* ══ hero ══════════════════════════════════════════════════════════════
    Texte a gauche sur l'ivoire, photo a droite qui se fond dans le fond.
@@ -457,18 +457,18 @@ h2.title{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:20px;max-width:19ch}
 
 /* ══ services ══════════════════════════════════════════════════════════ */
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.8vw,20px)}
-.svc{padding:clamp(30px,3.6vw,44px);display:flex;flex-direction:column}
+.svc{padding:clamp(26px,3vw,38px);display:flex;flex-direction:column}
 .svc-ico{
   position:relative;z-index:2;width:36px;height:36px;
-  display:grid;place-items:center;margin-bottom:24px;flex-shrink:0;
+  display:grid;place-items:center;margin-bottom:18px;flex-shrink:0;
   color:var(--gold);
   transition:transform .55s var(--spring),color .5s var(--ease);
 }
 .svc:hover .svc-ico{transform:translateY(-3px) rotate(-6deg);color:var(--mauve)}
 .svc-ico svg{width:34px;height:34px}
 .svc h3{position:relative;z-index:2;font-size:clamp(1.24rem,2.1vw,1.48rem);margin-bottom:13px}
-.svc p{position:relative;z-index:2;color:var(--grey-1);font-size:.94rem;margin-bottom:28px}
-.svc ul{position:relative;z-index:2;list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:auto}
+.svc p{position:relative;z-index:2;color:var(--grey-1);font-size:.94rem;margin-bottom:22px}
+.svc ul{position:relative;z-index:2;list-style:none;display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid var(--line)}
 .svc li{font-size:.88rem;color:var(--grey-1);display:flex;gap:13px;align-items:flex-start}
 .svc li i{
   width:15px;height:15px;flex-shrink:0;margin-top:.22em;background:var(--gold);
@@ -737,9 +737,9 @@ h2.title{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:20px;max-width:19ch}
 .case-meta dd{font-size:.89rem;color:var(--ink)}
 
 .prose{max-width:730px}
-.prose h3{font-size:clamp(1.4rem,2.8vw,1.8rem);margin:clamp(52px,6.5vw,76px) 0 20px;padding-top:clamp(32px,4vw,44px);border-top:1px solid var(--line)}
+.prose h3{font-size:clamp(1.35rem,2.4vw,1.7rem);margin:clamp(38px,4.6vw,54px) 0 16px;padding-top:clamp(26px,3vw,34px);border-top:1px solid var(--line);scroll-margin-top:96px}
 .prose h3:first-child{margin-top:0;padding-top:0;border-top:none}
-.prose h4{font-size:1.08rem;margin:36px 0 13px}
+.prose h4{font-size:1.08rem;margin:28px 0 10px}
 .prose p{color:var(--grey-1);font-size:1.01rem;margin-bottom:21px}
 .prose p strong{font-weight:500;color:var(--ink)}
 .prose ul,.prose ol{margin:0 0 24px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px}
@@ -780,6 +780,14 @@ h2.title{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:20px;max-width:19ch}
 .datatable tr.spot:hover td{background:var(--gold-3)}
 .table-wrap{overflow-x:auto;margin-bottom:28px}
 .table-wrap .datatable{margin-bottom:0;min-width:430px}
+.doc{display:grid;grid-template-columns:minmax(0,730px) 220px;justify-content:space-between;gap:clamp(40px,6vw,96px);align-items:start}
+.toc{position:sticky;top:104px;padding-left:22px;border-left:1px solid var(--line)}
+.toc p{font-size:.68rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--grey-2);margin-bottom:14px}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc a{display:block;position:relative;font-size:.85rem;line-height:1.4;color:var(--grey-2);padding:6px 0;transition:color .3s var(--ease)}
+.toc a::before{content:'';position:absolute;left:-23px;top:6px;bottom:6px;width:1px;background:var(--ink);transform:scaleY(0);transition:transform .4s var(--ease)}
+.toc a:hover,.toc a.on{color:var(--ink)}
+.toc a.on::before{transform:scaleY(1)}
 .case-nav{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:clamp(54px,7vw,78px);padding-top:clamp(32px,4vw,44px);border-top:1px solid var(--line)}
 
 /* ══ contact ═══════════════════════════════════════════════════════════ */
@@ -887,6 +895,8 @@ footer{border-top:1px solid var(--line);padding:clamp(48px,6vw,64px) 0 44px;marg
   .hero-svc{grid-column:1 / -1;grid-row:2;padding:clamp(34px,5vw,48px) 0 0}
 }
 @media(max-width:960px){
+  .doc{grid-template-columns:1fr}
+  .toc{display:none}
   .contact-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:34px}
   .about-grid .portrait{order:0;position:relative;top:auto}

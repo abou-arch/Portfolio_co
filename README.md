@@ -43,8 +43,8 @@ positioned in % of the photo, so they stay on the same spot at every screen widt
 
 - File names are lowercase on purpose: GitHub Pages is case-sensitive, Windows is not.
   A capital letter that works locally will 404 once deployed.
-- Fonts are loaded from Google Fonts: Fraunces (display) and DM Sans (body), plus
-  Caveat (subset to a single line) for the handwritten note on the portrait.
+- Fonts are self-hosted in `fonts/` (no request to Google): Fraunces (display),
+  DM Sans (body) and Caveat, cut down to the handwritten note on the portrait.
 - Security: see `SECURITY.md`. The pages load no inline script, so never add an
   `onclick=""` or `<script>...</script>` in the HTML: put it in `motion.js`, or the
   Content-Security-Policy will block it.

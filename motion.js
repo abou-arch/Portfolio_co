@@ -57,6 +57,31 @@
     $$('section[id]').forEach(s => spyIO.observe(s));
   }
 
+  /* ── "On this page": built from the h3 headings of long text pages ───
+     Plain DOM calls (no innerHTML), so heading text can never inject markup. */
+  const toc = $('.toc');
+  if (toc) {
+    const heads = $$('.prose > h3');
+    const list = document.createElement('ol');
+    heads.forEach(h => {
+      if (!h.id) h.id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      const li = document.createElement('li');
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    toc.appendChild(list);
+    const links = $$('a', list);
+    const tocIO = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + en.target.id));
+      });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+    heads.forEach(h => tocIO.observe(h));
+  }
+
   /* ── scroll progress ───────────────────────────────────────────────────
      Modern browsers drive this from CSS (animation-timeline: scroll()).
      Only fall back to JS where that isn't supported.                      */

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy policy | Abou Camara</title>
@@ -26,9 +26,9 @@
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -62,7 +62,7 @@
       <div class="eyebrow rv">Legal</div>
       <h1 class="rv">Privacy policy</h1>
       <p class="standfirst rv">What happens to your data when you visit this site or contact me. Written to be read, not skimmed past.</p>
-      <p class="legal-date rv">Last updated: 25 September 2026</p>
+      <p class="legal-date rv">Last updated: 27 September 2026</p>
     </div>
   </div>
 </section>
@@ -70,6 +70,7 @@
 <!-- ═════════ CONTENT ═════════ -->
 <section style="padding-top:clamp(48px,7vw,72px)">
   <div class="wrap">
+    <div class="doc">
     <div class="prose legal">
 
       <div class="callout">
@@ -84,7 +85,7 @@
       <h3>What is collected, and why</h3>
       <h4>1. When you browse the site</h4>
       <p>The site sets no cookies and runs no analytics. Like any web host, Cloudflare processes technical data needed to deliver the pages and protect the site against attacks: your IP address, browser type, the page requested and the time of the request. This is based on a legitimate interest in keeping the site available and secure.</p>
-      <p>The fonts are loaded from Google Fonts. To send them, Google's servers receive your IP address. No cookie is set. This is based on a legitimate interest in displaying the site correctly.</p>
+      <p>Everything the page needs, including the fonts, is served from this site. No request is sent to Google, Facebook or any other third party while you browse.</p>
 
       <h4>2. When you use the contact form</h4>
       <p>The form doesn't send anything to a server. When you click the button, it simply opens your own email app with a pre-filled message. Nothing leaves your device until you press "send" yourself.</p>
@@ -110,7 +111,7 @@
       <p>Your data is never sold, rented or shared for marketing. The only services involved are the ones needed to run the site and answer you:</p>
       <ul>
         <li>Cloudflare (hosting and security)</li>
-        <li>Google (Gmail for email, Google Fonts for the fonts)</li>
+        <li>Google (Gmail, for the emails you send me)</li>
         <li>Cal.com (call booking)</li>
       </ul>
       <p>Some of these companies are based in the United States, so your data may be processed outside Morocco and the European Union. They rely on recognised safeguards for these transfers, such as the European Commission's standard contractual clauses.</p>
@@ -128,6 +129,8 @@
       <h3>Changes</h3>
       <p>If this policy changes, the new version will be published on this page with a new date at the top.</p>
 
+    </div>
+    <aside class="toc" aria-label="On this page"><p>On this page</p></aside>
     </div>
   </div>
 </section>
