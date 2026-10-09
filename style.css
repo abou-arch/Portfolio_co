@@ -234,7 +234,6 @@ p{text-wrap:pretty}
 .mnav-list a[aria-current="page"]{color:var(--gold)}
 .mnav-sub{padding:0 0 16px}
 .mnav-sub a{display:flex;align-items:center;min-height:46px;gap:12px;font-size:1rem;color:var(--ink-2)}
-.mnav-sub a::before{content:"";width:14px;height:1px;background:var(--gold);opacity:.7}
 .mnav-foot{padding-block:18px 24px;border-top:1px solid var(--line)}
 .mnav-foot small{display:block;text-align:center;margin-top:14px;color:var(--muted);font-size:.85rem}
 .mnav .mnav-list > li{opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
@@ -594,9 +593,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 .chapter p{color:var(--ink-2);margin-bottom:16px;max-width:66ch}
 .chapter p:last-child{margin-bottom:0}
 .chapter strong{color:var(--ink);font-weight:500}
-.chapter ul.bullets{display:grid;gap:10px;margin:6px 0 18px}
-.chapter ul.bullets li{position:relative;padding-left:22px;color:var(--ink-2);max-width:64ch}
-.chapter ul.bullets li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--gold)}
+.chapter ul.bullets{display:grid;gap:14px;margin:6px 0 18px}
+.chapter ul.bullets li{position:relative;color:var(--ink-2);max-width:64ch}
 .tech-table{display:grid;gap:0;border-top:1px solid var(--line);margin-top:4px}
 .tech-table div{display:grid;grid-template-columns:minmax(110px,.4fr) 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.94rem}
 .tech-table dt{color:var(--muted)}
@@ -618,9 +616,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 .prose > :first-child{margin-top:0}
 .prose p{color:var(--ink-2);margin-bottom:18px}
 .prose strong{color:var(--ink);font-weight:500}
-.prose ul,.prose ol{display:grid;gap:10px;margin:4px 0 22px}
-.prose ul li{position:relative;padding-left:22px;color:var(--ink-2)}
-.prose ul li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--gold)}
+.prose ul,.prose ol{display:grid;gap:12px;margin:4px 0 22px}
+.prose ul li{position:relative;color:var(--ink-2)}
 .prose ol{counter-reset:o}
 .prose ol li{counter-increment:o;position:relative;padding-left:34px;color:var(--ink-2)}
 .prose ol li::before{content:counter(o,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:var(--serif);font-style:italic;color:var(--gold)}
