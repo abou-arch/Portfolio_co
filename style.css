@@ -87,13 +87,11 @@ p{text-wrap:pretty}
 .h2 + .lead,.h2 + p{margin-top:24px}
 
 .eyebrow{
-  display:inline-flex;align-items:center;gap:14px;
+  display:inline-flex;align-items:center;
   font-family:var(--sans);font-size:.75rem;font-weight:500;
   letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
   margin-bottom:22px;
 }
-.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
-.eyebrow.plain::before{display:none}
 
 .sec-head{display:grid;gap:22px;margin-bottom:clamp(44px,6vw,72px)}
 .sec-head.split{grid-template-columns:1fr;align-items:end}
