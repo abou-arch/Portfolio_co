@@ -125,7 +125,7 @@
       const ok = $('#ok');
       if (ok) ok.style.display = 'block';
       location.href = 'mailto:aboucamara1107@gmail.com'
-        + '?subject=' + encodeURIComponent('New project — ' + d.get('name'))
+        + '?subject=' + encodeURIComponent('New project: ' + d.get('name'))
         + '&body='    + encodeURIComponent(body);
     });
   }

@@ -1,4 +1,4 @@
-# Portfolio — Abou Camara
+# Portfolio | Abou Camara
 
 Personal site: consulting, sales systems, development, automation and product design.
 
