@@ -55,9 +55,6 @@ Screenshots: WebP at 1200 and 640 px wide in `images/work/`, plus a 240×150 `-t
 set `data-cats` to `dev`, `data` or `leadership`, add the thumbnail to `images/certs/` and the
 original to `certs/`, then update the counts on the filter buttons and the list on the home page.
 
-**Replace the portrait**: regenerate `images/abou-800.webp` and `images/abou-480.webp`
-(4:5 ratio) from the new photo.
-
 ## Content rule
 
 Nothing on this site is invented: no client logos, testimonials, metrics or results that

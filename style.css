@@ -430,18 +430,14 @@ body.locked{overflow:hidden}
 .light .lead,.light p{color:var(--muted-dark)}
 .light ::selection{background:var(--ink-dark);color:var(--ivory)}
 .light :focus-visible{outline-color:var(--gold-deep)}
-.about-grid{display:grid;gap:clamp(40px,6vw,88px);align-items:start}
-@media (min-width:920px){.about-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}}
-.portrait{position:relative;max-width:460px}
-.portrait figure{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--ivory-2)}
-.portrait img{width:100%;height:100%;object-fit:cover}
-.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:.82rem;letter-spacing:.06em;color:var(--muted-dark)}
-.portrait figcaption b{color:var(--ink-dark);font-weight:500;letter-spacing:0;font-family:var(--serif);font-size:1.1rem}
-@media (min-width:920px){.portrait{position:sticky;top:calc(var(--nav-h) + 32px)}}
-.about-txt .h2{margin-bottom:34px;color:var(--ink-dark)}
+.about-grid{display:grid;gap:clamp(28px,5vw,88px);align-items:start}
+@media (min-width:920px){.about-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+@media (min-width:920px){.about-head{position:sticky;top:calc(var(--nav-h) + 40px)}}
+.about-head .h2{color:var(--ink-dark)}
+.about-head .pull{font-family:var(--serif);font-size:clamp(1.35rem,2.1vw,1.7rem);line-height:1.3;color:var(--ink-dark);margin-top:36px;padding-left:22px;border-left:2px solid var(--gold-deep);max-width:26ch}
+.about-txt{padding-top:6px}
 .about-txt p{font-size:1.06rem;margin-bottom:20px;max-width:58ch}
 .about-txt p strong{color:var(--ink-dark);font-weight:500}
-.about-txt .pull{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.75rem);line-height:1.3;color:var(--ink-dark);margin:34px 0;padding-left:22px;border-left:2px solid var(--gold-deep);max-width:32ch}
 .facts{display:grid;gap:0;margin-top:38px;border-top:1px solid var(--line-dark)}
 @media (min-width:640px){.facts{grid-template-columns:repeat(2,1fr)}}
 .facts li{padding:18px 0;border-bottom:1px solid var(--line-dark);display:grid;gap:3px}
