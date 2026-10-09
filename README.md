@@ -8,6 +8,7 @@ Personal site: consulting, sales systems, development, automation and product de
 
 ```
 index.html               Home: hero, services, selected work, about, process, certifications, contact
+service-*.html           One page per service: strategy, sales systems, development, product design
 work.html                All projects, filterable by category
 project-eidia.html       Project page: Eidia Orientation
 project-yems.html        Project page: YEM'S
