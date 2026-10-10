@@ -9,6 +9,7 @@ Personal site: consulting, sales systems, development, automation and product de
 ```
 index.html               Home: hero, services, selected work, about, process, certifications, contact
 service-*.html           One page per service: strategy, sales systems, development, product design
+fr/                      French versions: home and the four service pages
 work.html                All projects, filterable by category
 project-eidia.html       Project page: Eidia Orientation
 project-yems.html        Project page: YEM'S
@@ -26,8 +27,20 @@ images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG 
 certs/                   Original certificate files (PDF / JPG)
 ```
 
-No build step, no dependencies. Plain HTML, CSS and JavaScript: open `index.html` in a
-browser and what you see is what ships.
+The pages are plain HTML, CSS and JavaScript, with no dependencies. The header, menus,
+footer and `<head>` are shared, so they are generated:
+
+```
+src/pages/*.html         Page bodies, English (written to the repo root)
+src/pages/fr/*.html      Page bodies, French (written to fr/)
+tools/build.py           Wraps each body with the shared parts and writes the .html files
+```
+
+Edit a page in `src/pages/`, then run `python3 tools/build.py` (Python 3.9+, no packages).
+Commit both the source and the generated file: the host serves the generated `.html`
+as it is. Nav labels, the menu lists and the footer live at the top of `tools/build.py`,
+in English and French. A page with a translation sets `alt:` in its META block; that
+drives the EN/FR switch and the `hreflang` tags.
 
 ## Design system
 
@@ -43,9 +56,6 @@ Defined as custom properties at the top of `style.css`.
   `prefers-reduced-motion`.
 
 ## Editing
-
-The header, mobile menu and footer are repeated in every page. When you change a nav link,
-change it in all of them.
 
 **Add a project**: add a card to `work.html` (set `data-cats` to one or more of
 `web automation data ecommerce`), a row on the home page, an entry in the Projects

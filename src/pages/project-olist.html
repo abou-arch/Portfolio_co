@@ -1,0 +1,127 @@
+<!--META
+path: project-olist.html
+current: work
+title: Olist E-commerce Dashboard · Project notes | Abou Camara
+desc: Work in progress: an analysis of the public Olist e-commerce dataset covering sales, delivery times and customer satisfaction. Python, Pandas, Streamlit.
+-->
+
+<section class="proj-hero">
+  <div class="wrap proj-hero-grid">
+    <div>
+      <a href="work.html" class="back rv">{{back}} All projects</a>
+      <div><span class="tag rv">Data analysis · In progress</span></div>
+      <h1 class="rv">Olist E-commerce Dashboard</h1>
+      <p class="standfirst rv">Sales, delivery and satisfaction data, analysed <em>to find where margin leaks.</em></p>
+      <p class="lead rv">An analysis of the public Olist dataset: orders from a Brazilian e-commerce marketplace between 2016 and 2018. A first dashboard exists; the written case study follows once the analysis holds up.</p>
+      <div class="actions rv">
+        <a href="#visuals" class="btn btn-gold">See the dashboard {{arrow}}</a>
+      </div>
+    </div>
+    <figure class="shot rv">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Dashboard · work in progress</span></div>
+      <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Olist e-commerce dashboard: headline indicators, monthly revenue, top five categories, review score distribution, delivery time by state and payment methods" width="1200" height="685" fetchpriority="high">
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="features">
+      <div class="feat rv"><span class="drop-ico">{{chart}}</span><div><b>Sales</b><p>Revenue, orders and average basket over time.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{layers}}</span><div><b>Categories</b><p>Which product categories carry the revenue.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{truck}}</span><div><b>Delivery</b><p>Delivery times by Brazilian state.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{user}}</span><div><b>Satisfaction</b><p>Review score distribution and payment methods.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-body">
+  <div class="wrap proj-layout">
+    <div>
+      <div class="chapter rv">
+        <p class="ch-label"><span>01</span>Problem</p>
+        <div>
+          <h2>Which part of the operation costs the most?</h2>
+          <p>An e-commerce business can grow its sales and still lose margin to late deliveries, unhappy customers and the wrong product mix. I wanted to find out where that money goes, using real transaction data instead of guesses.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>02</span>Approach</p>
+        <div>
+          <h2>Start from the questions, then build the views.</h2>
+          <ul class="bullets">
+            <li>How do revenue and order volume evolve month by month?</li>
+            <li>Which categories carry the revenue?</li>
+            <li>Where are deliveries slowest, and does that show up in review scores?</li>
+            <li>How do customers pay?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>03</span>Build</p>
+        <div>
+          <h2>Clean, join, aggregate, visualise.</h2>
+          <p>The Olist dataset is split across several tables (orders, items, payments, reviews, customers, products). The work is to clean and join them in Python, compute the indicators, and present them in an interactive dashboard.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>04</span>Technologies</p>
+        <div>
+          <h2>The stack.</h2>
+          <dl class="tech-table">
+            <div><dt>Analysis</dt><dd>Python, Pandas, SQL</dd></div>
+            <div><dt>Dashboard</dt><dd>Streamlit</dd></div>
+            <div><dt>Data</dt><dd>Brazilian E-Commerce Public Dataset by Olist</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>05</span>Real outcome</p>
+        <div>
+          <h2>Not finished yet.</h2>
+          <p>A first version of the dashboard covers sales, top categories, review scores, delivery time by state and payment methods.</p>
+          <p class="honest"><b>Not finished.</b> The figures in the screenshot come from the public dataset, not from a client. I'll share conclusions with the write-up, once I've checked them.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv" id="visuals">
+        <p class="ch-label"><span>06</span>Visuals</p>
+        <div>
+          <h2>Current dashboard.</h2>
+          <div class="gallery">
+            <figure class="wide">
+              <div class="shot"><img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Olist dashboard, full view" width="1200" height="685" loading="lazy" decoding="async"></div>
+              <figcaption>Overview · first version</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="aside rv" aria-label="Project details">
+      <span class="label">Project details</span>
+      <dl>
+        <div><dt>Category</dt><dd>Data analysis · Visualisation</dd></div>
+        <div><dt>Role</dt><dd>Data cleaning, analysis, visualisation</dd></div>
+        <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">SQL</span><span class="chip">Streamlit</span></div></dd></div>
+        <div><dt>Dataset</dt><dd>Olist, Brazilian e-commerce, 2016–2018 (public)</dd></div>
+        <div><dt>Status</dt><dd>In progress</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="eyebrow">Sitting on data?</p>
+        <h2>Let&rsquo;s see what it <em>tells you.</em></h2>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+      <p>If you have sales or customer data and aren't sure what to do with it, a dashboard is often a good place to start.</p>
+      <a href="index.html#contact" class="btn btn-gold">Work together {{arrow}}</a>
+    </div>
+  </div>
+</section>

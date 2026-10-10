@@ -1,0 +1,135 @@
+<!--META
+path: project-eidia.html
+current: work
+title: Eidia Orientation · Case study | Abou Camara
+desc: A web app that helps students choose between five engineering tracks, using a six-step questionnaire and a weighted scoring engine. React, TypeScript, Vite.
+-->
+
+<section class="proj-hero">
+  <div class="wrap proj-hero-grid">
+    <div>
+      <a href="work.html" class="back rv">{{back}} All projects</a>
+      <div><span class="tag rv">Web application</span></div>
+      <h1 class="rv">Eidia Orientation</h1>
+      <p class="standfirst rv">A questionnaire that helps students find <em>the engineering track that fits them.</em></p>
+      <p class="lead rv">Choosing between Full-stack, Cybersecurity, Big Data, AI and Robotics is hard when you've seen none of them up close. Eidia Orientation turns a student's skills, interests and personality into a ranked recommendation they can understand.</p>
+      <div class="actions rv">
+        <a href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener" class="btn btn-gold">Live demo {{out}}</a>
+        <a href="https://github.com/abou-arch/Systeme_d-orientation_d-eidia" target="_blank" rel="noopener" class="btn btn-ghost">Source code {{github}}</a>
+      </div>
+    </div>
+    <figure class="shot rv">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Home page</span></div>
+      <img src="images/work/eidia-1200.webp" srcset="images/work/eidia-640.webp 640w, images/work/eidia-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Eidia Orientation home page: “Découvre ta filière idéale en Eidia”, with a preview of compatibility scores per track" width="1200" height="668" fetchpriority="high">
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="features">
+      <div class="feat rv"><span class="drop-ico">{{cap}}</span><div><b>Six-step questionnaire</b><p>Identity, programming, maths, technical skills, personality, preferences.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{chart}}</span><div><b>Weighted scoring</b><p>Every answer adds points to one or more of the five tracks.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{user}}</span><div><b>Readable results</b><p>A top three with a compatibility score and what each track leads to.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{db}}</span><div><b>Admin view</b><p>Submissions, overall statistics and deletion of entries.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-body">
+  <div class="wrap proj-layout">
+    <div>
+      <div class="chapter rv">
+        <p class="ch-label"><span>01</span>Problem</p>
+        <div>
+          <h2>Five tracks, one decision, very little information.</h2>
+          <p>Students have to commit to a specialisation (Full-stack, Cybersecurity, Big Data, Artificial Intelligence or Robotics) early, often based on what friends chose or what sounds promising. The goal was a tool that starts from the student, not from the tracks.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>02</span>Approach</p>
+        <div>
+          <h2>Score the profile, then explain the result.</h2>
+          <ul class="bullets">
+            <li><strong>Six short steps</strong> instead of one long form: identity, programming, mathematics, technical skills, personality and preferences.</li>
+            <li><strong>Explicit weights.</strong> Each answer contributes points to the tracks it relates to. A strong interest in networks counts for Cybersecurity, probability and statistics count for Big Data and AI, electronics for Robotics. The weights are documented in a separate reference file.</li>
+            <li><strong>Personality as an option.</strong> Students can add their MBTI type, either precisely (16 types) or by family (NT, NF, SJ, SP), without it being required.</li>
+            <li><strong>Results people can read.</strong> A top three with compatibility percentages, a description of each track and the jobs it leads to.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>03</span>Build</p>
+        <div>
+          <h2>A single-page app with a separate scoring engine.</h2>
+          <p>The questions and the scoring rules live in their own modules, apart from the interface, so the weights can be adjusted without touching a screen. Pages: home, questionnaire, results and a protected admin area with submissions and statistics.</p>
+          <p>Submissions are stored in the browser (<code>localStorage</code>) with a unique student ID, which keeps the demo free to host on GitHub Pages.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>04</span>Technologies</p>
+        <div>
+          <h2>The stack.</h2>
+          <dl class="tech-table">
+            <div><dt>Framework</dt><dd>React 19 + TypeScript</dd></div>
+            <div><dt>Build</dt><dd>Vite</dd></div>
+            <div><dt>Styling</dt><dd>Tailwind CSS, shadcn/ui</dd></div>
+            <div><dt>Motion &amp; routing</dt><dd>Framer Motion, React Router</dd></div>
+            <div><dt>Hosting</dt><dd>GitHub Pages</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>05</span>Real outcome</p>
+        <div>
+          <h2>A working demo, online.</h2>
+          <p>The questionnaire, the scoring engine, the results and the admin area all work in the live demo. Anyone can take the questionnaire and get a recommendation.</p>
+          <p class="honest"><b>What it isn't, yet.</b> This is a demo, not a production system: data stays in the visitor's browser, there is no shared database, and no usage figures are claimed here. A real deployment would need a server-side store and proper authentication for the admin.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv" id="visuals">
+        <p class="ch-label"><span>06</span>Visuals</p>
+        <div>
+          <h2>Screens from the live demo.</h2>
+          <div class="gallery">
+            <figure class="wide">
+              <div class="shot"><img src="images/work/eidia-results-1200.webp" srcset="images/work/eidia-results-640.webp 640w, images/work/eidia-results-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Eidia Orientation results page: a radar profile, the top three tracks as bars, and ranked cards for Big Data, Full-stack and AI with compatibility percentages" width="1200" height="658" loading="lazy" decoding="async"></div>
+              <figcaption>Results page · radar profile, top three and ranked tracks (example answers)</figcaption>
+            </figure>
+            <figure class="wide">
+              <div class="shot"><img src="images/work/eidia-1200.webp" srcset="images/work/eidia-640.webp 640w, images/work/eidia-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Eidia Orientation home page, full width" width="1200" height="668" loading="lazy" decoding="async"></div>
+              <figcaption>Home page</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="aside rv" aria-label="Project details">
+      <span class="label">Project details</span>
+      <dl>
+        <div><dt>Category</dt><dd>Web application · EdTech</dd></div>
+        <div><dt>Role</dt><dd>Design and development</dd></div>
+        <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span></div></dd></div>
+        <div><dt>Status</dt><dd>Live demo</dd></div>
+        <div><dt>Links</dt><dd><a href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener">Live demo</a> · <a href="https://github.com/abou-arch/Systeme_d-orientation_d-eidia" target="_blank" rel="noopener">Source code</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="eyebrow">An idea for an app?</p>
+        <h2>Let&rsquo;s look at it <em>together.</em></h2>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+      <p>If you have an idea for a web application, I'd like to hear it, even if it's still rough.</p>
+      <a href="index.html#contact" class="btn btn-gold">Work together {{arrow}}</a>
+    </div>
+  </div>
+</section>

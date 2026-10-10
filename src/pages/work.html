@@ -1,0 +1,127 @@
+<!--META
+path: work.html
+current: work
+title: Projects | Abou Camara
+desc: Real projects only: a student guidance web app, an e-commerce site for a shoe house in Cotonou, a lead scoring automation and an e-commerce data analysis.
+-->
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="eyebrow rv">Projects</p>
+        <h1 class="display rv">Four projects, <em>in detail.</em></h1>
+      </div>
+      <div>
+        <p class="lead rv">A web app, an online shop, an automation and a data analysis. Each one has its own page: what the problem was, how I went about it, and where it stands today.</p>
+      </div>
+    </div>
+    <div class="filter-bar rv" data-filter-bar="projects" role="group" aria-label="Filter projects" style="margin-top:44px">
+      <button type="button" data-filter="all" aria-pressed="true">All <small>4</small></button>
+      <button type="button" data-filter="web" aria-pressed="false">Web &amp; Product</button>
+      <button type="button" data-filter="automation" aria-pressed="false">Automation</button>
+      <button type="button" data-filter="data" aria-pressed="false">Data &amp; Analysis</button>
+      <button type="button" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="work-grid" id="projects" style="margin-top:0">
+
+      <article class="wcard rv" data-cats="web">
+        <a class="work-media" href="project-eidia.html" tabindex="-1" aria-hidden="true">
+          <img src="images/work/eidia-1200.webp" srcset="images/work/eidia-640.webp 640w, images/work/eidia-1200.webp 1200w" sizes="(min-width: 820px) 600px, 100vw" alt="" width="1200" height="668" loading="lazy" decoding="async">
+        </a>
+        <div class="wcard-body">
+          <p class="label" style="margin-bottom:12px">Web application · EdTech</p>
+          <h2><a href="project-eidia.html">Eidia Orientation {{out}}</a></h2>
+          <p class="sub">Student guidance platform · live demo</p>
+          <p>A six-step questionnaire and a weighted scoring engine that recommend the best-fitting of five engineering tracks, with an admin view of submissions.</p>
+          <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span></div>
+          <div class="work-links">
+            <a class="link" href="project-eidia.html">Case study {{arrow}}</a>
+            <a class="link" href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener">Live demo {{out}}</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wcard rv" data-cats="web ecommerce">
+        <a class="work-media" href="project-yems.html" tabindex="-1" aria-hidden="true">
+          <img src="images/work/yems-home-1200.webp" srcset="images/work/yems-home-640.webp 640w, images/work/yems-home-1200.webp 1200w" sizes="(min-width: 820px) 600px, 100vw" alt="" width="1200" height="750" loading="lazy" decoding="async">
+        </a>
+        <div class="wcard-body">
+          <p class="label" style="margin-bottom:12px">E-commerce · Brand · Full-stack</p>
+          <h2><a href="project-yems.html">YEM&rsquo;S {{out}}</a></h2>
+          <p class="sub">Shoe and leather-goods house, Cotonou · launching soon</p>
+          <p>An online shop built from scratch, with a made-to-measure configurator, a pay-on-delivery checkout and an admin screen for the workshop.</p>
+          <div class="chips"><span class="chip">HTML / CSS / JS</span><span class="chip">Python</span><span class="chip">Cloudflare Workers</span><span class="chip">PostgreSQL</span></div>
+          <div class="work-links">
+            <a class="link" href="project-yems.html">Case study {{arrow}}</a>
+            <a class="link" href="https://github.com/abou-arch/Site_ecommerce_Yem-s" target="_blank" rel="noopener">Source code {{out}}</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wcard rv" data-cats="automation">
+        <a class="work-media" href="case-lead-scoring.html" tabindex="-1" aria-hidden="true">
+          <div class="schema">
+            <div style="width:100%;max-width:640px">
+              <div class="flow">
+                <div class="node"><b>Form</b><small>new enquiry</small></div><span class="arr"></span>
+                <div class="node"><b>Webhook</b><small>Make</small></div><span class="arr"></span>
+                <div class="node key"><b>Score</b><small>3 signals</small></div><span class="arr"></span>
+                <div class="node"><b>Sheet</b><small>score + tier</small></div>
+              </div>
+              <div class="tiers"><span>hot ≥ 80</span><span>warm 40–79</span><span>low &lt; 40</span></div>
+            </div>
+            <span class="schema-cap">System diagram</span>
+          </div>
+        </a>
+        <div class="wcard-body">
+          <p class="label" style="margin-bottom:12px">Automation · Sales</p>
+          <h2><a href="case-lead-scoring.html">Lead Automation {{out}}</a></h2>
+          <p class="sub">Lead scoring engine · validated prototype</p>
+          <p>Inbound leads are scored on budget, intent and email domain, sorted into hot, warm and low, and written to a Google Sheet, with every possible outcome tested.</p>
+          <div class="chips"><span class="chip">Make</span><span class="chip">Google Sheets</span><span class="chip">Webhooks</span><span class="chip">Lead scoring</span></div>
+          <div class="work-links">
+            <a class="link" href="case-lead-scoring.html">Read the case study {{arrow}}</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="wcard rv" data-cats="data ecommerce">
+        <a class="work-media" href="project-olist.html" tabindex="-1" aria-hidden="true">
+          <span class="badge"><i></i>In progress</span>
+          <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 820px) 600px, 100vw" alt="" width="1200" height="685" loading="lazy" decoding="async">
+        </a>
+        <div class="wcard-body">
+          <p class="label" style="margin-bottom:12px">Data · Analysis</p>
+          <h2><a href="project-olist.html">Olist E-commerce Dashboard {{out}}</a></h2>
+          <p class="sub">Public Brazilian e-commerce dataset · in progress</p>
+          <p>Looking at sales, delivery times and reviews to see where an online store loses money. I'll publish the write-up once the analysis is solid.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">SQL</span><span class="chip">Streamlit</span></div>
+          <div class="work-links">
+            <a class="link" href="project-olist.html">Project notes {{arrow}}</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="empty-note">No project in this category yet.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="eyebrow">A project in mind?</p>
+        <h2>Tell me <em>about it.</em></h2>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+      <p>A website, an automation, a dashboard: send me a few lines about what you're working on and I'll get back to you within two working days.</p>
+      <a href="index.html#contact" class="btn btn-gold">Work together {{arrow}}</a>
+    </div>
+  </div>
+</section>

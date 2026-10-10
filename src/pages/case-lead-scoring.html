@@ -1,0 +1,176 @@
+<!--META
+path: case-lead-scoring.html
+current: work
+title: Lead Automation · Case study | Abou Camara
+desc: How I built an automated lead qualification system in Make and Google Sheets, then found a flaw in my own scoring logic that buried the best leads, and how I fixed and tested it.
+-->
+
+<section class="proj-hero">
+  <div class="wrap proj-hero-grid">
+    <div>
+      <a href="work.html" class="back rv">{{back}} All projects</a>
+      <div><span class="tag rv">Automation project · Case study</span></div>
+      <h1 class="rv">Lead Automation</h1>
+      <p class="standfirst rv">The lead you never called, <em>and the flaw that would have buried it.</em></p>
+      <p class="lead rv">I built an automated qualification system to find out whether there was a business in it. Then I found a flaw in my own scoring logic that would have quietly buried the best leads, the exact ones I was building it to catch.</p>
+      <div class="actions rv">
+        <a href="#case" class="btn btn-gold">Read the case study {{arrow}}</a>
+      </div>
+    </div>
+    <figure class="shot ratio rv" aria-label="System diagram">
+      <div class="schema">
+        <div style="width:100%;max-width:640px">
+          <div class="flow">
+            <div class="node"><b>Form</b><small>new enquiry</small></div><span class="arr"></span>
+            <div class="node"><b>Webhook</b><small>Make</small></div><span class="arr"></span>
+            <div class="node key"><b>Score</b><small>budget 50 · intent 35 · domain 15</small></div><span class="arr"></span>
+            <div class="node"><b>Google Sheet</b><small>score + tier</small></div>
+          </div>
+          <div class="tiers"><span>hot ≥ 80</span><span>warm 40–79</span><span>low &lt; 40</span></div>
+        </div>
+        <span class="schema-cap">System diagram · no live data</span>
+      </div>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="features">
+      <div class="feat rv"><span class="drop-ico">{{db}}</span><div><b>Capture</b><p>A form submission arrives by webhook, the moment it's sent.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{filter}}</span><div><b>Qualify</b><p>Three signals: budget, stated intent and email domain.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{gear}}</span><div><b>Automate</b><p>Built in Make so a non-technical owner can adjust it.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{chart}}</span><div><b>Track</b><p>Score and tier written to the Google Sheet the owner already uses.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-body" id="case">
+  <div class="wrap proj-layout">
+    <article class="prose">
+
+<h2 class="rv">Why I built it</h2>
+<p class="rv">This started as market research, not as a technical exercise. I was looking for automation problems small businesses would actually pay to solve, and lead qualification kept surfacing: founders collecting form submissions they had no time to sort through.</p>
+<p class="rv">So rather than write another proposal about it, I built the thing. Two reasons: to find out whether the problem was as real as it looked, and to have something concrete to show instead of a promise.</p>
+
+<h2 class="rv">The problem</h2>
+<p class="rv">An inbound form produces a flat list. In an inbox, a founder with a €5,000 budget and an urgent deadline looks exactly like someone who clicked out of curiosity. Same subject line, same weight.</p>
+<p class="rv">That leaves a business owner two bad options: call everyone, which does not scale, or call nobody, which loses deals. <strong>The real cost isn't the sorting time. It's the serious buyer sitting at position 40 who goes cold while you work through the list in the order it arrived.</strong></p>
+<p class="rv">The system had to answer one question, automatically, the moment a form was submitted: <em>is this person worth calling today?</em></p>
+
+<h2 class="rv">Constraints</h2>
+<ul class="rv">
+  <li>A non-technical owner had to be able to maintain it after handover</li>
+  <li>No infrastructure budget, and nothing to host or monitor</li>
+  <li>It had to plug into tools a small business already uses</li>
+  <li>Build time measured in days, not weeks, because this was validation, not a product launch</li>
+</ul>
+
+<h2 class="rv">Approach</h2>
+
+<h3 class="rv">Why no-code, deliberately</h3>
+<p class="rv">I built it in Make rather than writing it from scratch, and that was a decision rather than a limitation. Given the constraints, code would have been the worse answer: something to host, something to monitor, and a client who has to call me every time a threshold needs adjusting. In Make, the owner opens a visual scenario and changes a number.</p>
+<p class="rv">Speed mattered too. The point was to test whether the problem was worth solving. Spending two weeks on infrastructure before knowing that would have been the wrong order of operations.</p>
+
+<h3 class="rv">Three signals</h3>
+<p class="rv">A form submission arrives via webhook. Three things get evaluated:</p>
+<div class="table-wrap rv">
+  <table class="datatable">
+    <thead><tr><th>Signal</th><th>Weight</th><th>What it actually measures</th></tr></thead>
+    <tbody>
+      <tr><td>Budget above threshold</td><td class="num">50</td><td>Ability to pay</td></tr>
+      <tr><td>Keyword match in message</td><td class="num">35</td><td>Stated intent</td></tr>
+      <tr><td>Professional email domain</td><td class="num">15</td><td>Weak proxy for seriousness</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="rv">Budget carries the most weight because it is the hardest constraint to change. Enthusiasm can be created in a sales call; a budget that doesn't exist cannot. Intent comes second: someone who describes the problem in their own words has already done part of the qualifying.</p>
+<p class="rv">The email domain is intentionally the weakest of the three, and getting that weighting wrong is what caused the flaw described below.</p>
+
+<h3 class="rv">Where the output goes</h3>
+<p class="rv">Straight into a Google Sheet, not a CRM. A small business owner already has the Sheet open; a CRM is one more login and one more subscription for a problem that doesn't need one yet.</p>
+<p class="rv">Two columns get written: <code>score</code> and <code>tier</code>. The tier tells you what to do, the score tells you why. Without the raw number you cannot debug a classification you disagree with, and you will disagree with some of them.</p>
+
+<h2 class="rv">The flaw</h2>
+<p class="rv">The first version used weights of 40, 30 and 20, with anything at or above 80 marked <code>hot</code>. That looked reasonable. It wasn't.</p>
+<p class="rv">With three independent signals there are only eight possible outcomes, so I enumerated every score the model could actually produce:</p>
+<p class="rv"><code>0 · 20 · 30 · 40 · 50 · 60 · 70 · 90</code></p>
+<p class="rv">There is nothing between 71 and 89. So a threshold of "80 or above" did not mean what it appeared to mean. It meant <strong>exactly 90</strong>, which required all three signals at once.</p>
+
+<div class="callout rv">
+  <span class="k">The consequence</span>
+  <p>The weakest signal had silently become mandatory. A founder with the budget <em>and</em> a clearly stated need scored 70 and was filed as <code>warm</code> for no reason other than writing from a Gmail address.</p>
+</div>
+
+<p class="rv">That is not a rounding error, it is an inverted priority. The criterion I had weighted lowest ended up with more blocking power than budget itself.</p>
+<p class="rv">And it targets precisely the wrong people. Independent founders, freelancers and small teams overwhelmingly use Gmail as their working address, especially in Morocco and West Africa, where I work. The model was systematically demoting my actual target market for not owning a domain name.</p>
+
+<h2 class="rv">The fix</h2>
+<p class="rv">Rebalanced onto a clean 100-point scale, with the email signal cut to a genuine bonus:</p>
+<pre class="rv"><code>budget ≥ threshold     50
+keyword match          35
+professional domain    15
+                ───
+                100
+
+hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
+<p class="rv">Budget plus intent now reaches 85 on its own. The email domain can lift a lead to 100, but it can no longer keep one out.</p>
+<div class="table-wrap rv">
+  <table class="datatable">
+    <thead><tr><th>Budget</th><th>Intent</th><th>Pro email</th><th>Score</th><th>Tier</th></tr></thead>
+    <tbody>
+      <tr><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="num">100</td><td class="hot">hot</td></tr>
+      <tr class="spot"><td class="yes">yes</td><td class="yes">yes</td><td class="no">no</td><td class="num">85</td><td class="hot">hot</td></tr>
+      <tr><td class="yes">yes</td><td class="no">no</td><td class="yes">yes</td><td class="num">65</td><td>warm</td></tr>
+      <tr><td class="no">no</td><td class="yes">yes</td><td class="yes">yes</td><td class="num">50</td><td>warm</td></tr>
+      <tr><td class="yes">yes</td><td class="no">no</td><td class="no">no</td><td class="num">50</td><td>warm</td></tr>
+      <tr><td class="no">no</td><td class="yes">yes</td><td class="no">no</td><td class="num">35</td><td>low</td></tr>
+      <tr><td class="no">no</td><td class="no">no</td><td class="yes">yes</td><td class="num">15</td><td>low</td></tr>
+      <tr><td class="no">no</td><td class="no">no</td><td class="no">no</td><td class="num">0</td><td>low</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="rv">The highlighted row is the one that was broken.</p>
+<p class="rv">Rows four and five both land on 50, which is a deliberate collision rather than an oversight. "Money but no stated need" and "clear need but no money" are different profiles that warrant the same action: worth a call, not worth calling first. Separating them would require a fourth signal, and three signals were doing enough work.</p>
+
+<h2 class="rv">Testing</h2>
+<p class="rv">Three binary signals produce eight states, which is few enough to test exhaustively rather than sample. I wrote ten payloads: eight covering every reachable state, plus two for the input formats that break this kind of formula in practice: a budget landing exactly on the threshold, and a budget arriving as the string <code>"3 000"</code> instead of a number.</p>
+<p class="rv">Then I wrote a small script that recalculates all ten expected scores independently of the scenario.</p>
+
+<div class="callout quiet rv">
+  <span class="k">Worth admitting</span>
+  <p>That verification script immediately caught an error. It was in my own expected values, not in the system. I had written 75 for a case that should have scored 85, having forgotten the email bonus while typing the file by hand. The same class of mistake as the original flaw: reasoning about a model in my head instead of enumerating it.</p>
+</div>
+
+<h2 class="rv">Result</h2>
+<p class="rv">A working system that scores and files an inbound lead in seconds, with all eight classification states verified against expected output.</p>
+<p class="rv">To be precise about what this does and does not prove: <strong>it is a validated prototype, not a deployed product.</strong> It has not yet run on live traffic, so there is no "40% more conversions" to report here, and I am not going to invent one. What it demonstrates is the reasoning: how the signals were chosen and weighted, how the failure was found, and how the correction was verified.</p>
+<p class="rv">For a client, that is the transferable part. The scoring model of any business will differ. The method for building and stress-testing one will not.</p>
+
+<h2 class="rv">What I'd do differently</h2>
+<ol class="rv">
+  <li><strong>Enumerate the outputs before setting the thresholds.</strong> The flaw existed from the first version and was invisible until I listed all eight results. On any scoring model, that enumeration now comes first.</li>
+  <li><strong>Widen the keyword list.</strong> It ran on a single term during testing. Someone writing "I keep losing hours on repetitive tasks" is describing the service exactly and would have scored zero on intent. A signal worth 35 points cannot hinge on one word.</li>
+  <li><strong>Add an urgency signal.</strong> A "when do you need this?" field predicts closing far better than an email domain does. I left it out of this version to keep the model to three signals, but it is the first thing I would add.</li>
+  <li><strong>Version the scoring.</strong> Rows scored under the old weights are not comparable with new ones. A <code>scoring_version</code> column costs nothing and prevents a silent analysis error months later.</li>
+</ol>
+
+<h2 class="rv">When Make stops being the right answer</h2>
+<p class="rv">No-code was correct for this build. It will not stay correct forever, and knowing where the line sits matters more than preferring one side of it.</p>
+<p class="rv">It breaks down on per-operation cost at volume, on branching logic that becomes unreadable on a canvas, on the absence of version control and automated tests, and on data passing through a third party. Any one of those turning up in a client's requirements is the signal to port it to a webhook endpoint, an isolated scoring module, a Sheets write. That version is the next step for this project, and the tests written here transfer to it directly.</p>
+
+      <div class="actions rv" style="margin-top:48px">
+        <a href="work.html" class="btn btn-ghost">{{back}} All projects</a>
+        <a href="index.html#contact" class="btn btn-gold">Discuss a similar system {{arrow}}</a>
+      </div>
+    </article>
+
+    <aside class="aside rv" aria-label="Project details">
+      <span class="label">Project details</span>
+      <dl>
+        <div><dt>Category</dt><dd>Automation · Sales</dd></div>
+        <div><dt>Role</dt><dd>Design, build, testing</dd></div>
+        <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">Make</span><span class="chip">Google Sheets</span><span class="chip">Webhooks</span></div></dd></div>
+        <div><dt>Timeline</dt><dd>A few days</dd></div>
+        <div><dt>Status</dt><dd>Validated prototype, not yet run on live traffic</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>

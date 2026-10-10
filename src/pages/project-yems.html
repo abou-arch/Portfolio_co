@@ -1,0 +1,147 @@
+<!--META
+path: project-yems.html
+current: work
+title: YEM’S · E-commerce case study | Abou Camara
+desc: An online shop for a shoe and leather-goods house in Cotonou: brand, copy, bespoke configurator, order-now pay-on-delivery checkout and an atelier admin, built without a framework.
+-->
+
+<section class="proj-hero">
+  <div class="wrap proj-hero-grid">
+    <div>
+      <a href="work.html" class="back rv">{{back}} All projects</a>
+      <div><span class="tag rv">E-commerce project</span></div>
+      <h1 class="rv">YEM&rsquo;S</h1>
+      <p class="standfirst rv">A shoe house in Cotonou, and an online shop <em>made for how people buy there.</em></p>
+      <p class="lead rv">Yem's sells shoes and leather goods in Benin and Côte d'Ivoire. I designed and built the whole site: identity, copy, catalogue, a bespoke configurator, an ordering flow that takes no payment upfront, and an admin screen for the workshop.</p>
+      <div class="actions rv">
+        <a href="https://github.com/abou-arch/Site_ecommerce_Yem-s" target="_blank" rel="noopener" class="btn btn-gold">Source code {{github}}</a>
+        <a href="#visuals" class="btn btn-ghost">See the screens</a>
+      </div>
+    </div>
+    <figure class="shot rv">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Home page</span></div>
+      <img src="images/work/yems-home-1200.webp" srcset="images/work/yems-home-640.webp 640w, images/work/yems-home-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="YEM'S home page: headline “Personne ne verra la couture. Tout le monde verra la différence.” over a pair of brown leather shoes" width="1200" height="750" fetchpriority="high">
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="features">
+      <div class="feat rv"><span class="drop-ico">{{cart}}</span><div><b>Online shop</b><p>Catalogue, product pages with colour galleries, cart and checkout.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{design}}</span><div><b>Brand identity</b><p>Monogram, palette, type and a written voice charter.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{gear}}</span><div><b>Bespoke configurator</b><p>Six choices, a live price, recomputed on the server.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{db}}</span><div><b>Atelier admin</b><p>Order workflow and catalogue edits without a rebuild.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="proj-body">
+  <div class="wrap proj-layout">
+    <div>
+      <div class="chapter rv">
+        <p class="ch-label"><span>01</span>Problem</p>
+        <div>
+          <h2>A new brand, no reviews, and no card payments yet.</h2>
+          <p>Yem's is a young house with its own atelier in Cotonou and a curated line of shoes chosen elsewhere. The site had to sell to a man who cares how he looks at work, in a market where most people pay on delivery or by Mobile Money, and before the business had a merchant account.</p>
+          <p>And it had to earn people's trust without faking anything: no made-up reviews, no photos of shoes that hadn't been made yet.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>02</span>Approach</p>
+        <div>
+          <h2>Order now, pay later. Price on the server.</h2>
+          <ul class="bullets">
+            <li><strong>No payment at checkout.</strong> The order is saved, the atelier is notified on WhatsApp and calls the customer back. Payment happens on delivery or by Mobile Money. Bespoke pieces need a 50% deposit, because the leather is bought first.</li>
+            <li><strong>The cart says what, never how much.</strong> Every price is recalculated on the server from the catalogue, so a tampered cart can't change an amount.</li>
+            <li><strong>Being upfront.</strong> Pieces that can't be photographed yet sit behind an announcement page instead of empty cards. Early fake reviews were replaced by « Personne ne nous a encore recommandés » and three ways to check the atelier yourself.</li>
+            <li><strong>Online payment ready, but off.</strong> Card and Mobile Money payment through KkiaPay is implemented and verified server-side, and stays switched off until a merchant account exists.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>03</span>Build</p>
+        <div>
+          <h2>Built by hand, from one catalogue file.</h2>
+          <p>The catalogue lives in a single JSON file. A Python generator writes 23 static pages from it: product pages, categories, sitemap and structured data. A Cloudflare Worker handles orders, the admin API and live catalogue edits, which are applied to the pages at the edge without a rebuild.</p>
+          <ul class="bullets">
+            <li>Bespoke configurator: shape, leather, thread, sole, size and initials, with an itemised price that updates live</li>
+            <li>Admin for the atelier: order statuses, WhatsApp links, catalogue overrides and data anonymisation</li>
+            <li>Responsive images (WebP, <code>srcset</code>), non-blocking fonts and immutable caching</li>
+            <li>Accessibility: skip link, visible focus, reduced motion, and a contrast checker that runs through the CSS cascade</li>
+            <li>A security pass: content security policy, CSRF and brute-force protection, data minimisation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>04</span>Technologies</p>
+        <div>
+          <h2>The stack.</h2>
+          <dl class="tech-table">
+            <div><dt>Front end</dt><dd>Hand-written HTML, CSS and vanilla JavaScript</dd></div>
+            <div><dt>Generator</dt><dd>Python, standard library only</dd></div>
+            <div><dt>Server</dt><dd>Cloudflare Workers with static assets</dd></div>
+            <div><dt>Database</dt><dd>PostgreSQL through Cloudflare Hyperdrive</dd></div>
+            <div><dt>Integrations</dt><dd>WhatsApp Cloud API, KkiaPay (implemented, switched off)</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="chapter rv">
+        <p class="ch-label"><span>05</span>Real outcome</p>
+        <div>
+          <h2>Where it stands.</h2>
+          <p>The site is built and documented, and the shop hasn't launched yet. It has 23 generated pages, a working configurator, an ordering flow, an admin, legal pages, and a step-by-step deployment guide written for the owner.</p>
+          <p class="honest"><b>What I can't show you.</b> I don't have visit or sales figures to share: the site runs no analytics, on purpose, and online payment isn't switched on yet. The product photos on the shop are AI-generated, and the site says so.</p>
+        </div>
+      </div>
+
+      <div class="chapter rv" id="visuals">
+        <p class="ch-label"><span>06</span>Visuals</p>
+        <div>
+          <h2>Screens from the actual site.</h2>
+          <div class="gallery duo">
+            <figure class="wide">
+              <div class="shot"><img src="images/work/yems-selection-1200.webp" srcset="images/work/yems-selection-640.webp 640w, images/work/yems-selection-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="YEM'S collection page" width="1200" height="750" loading="lazy" decoding="async"></div>
+              <figcaption>Collection page · « La sélection »</figcaption>
+            </figure>
+            <figure>
+              <div class="shot"><img src="images/work/yems-product-1200.webp" srcset="images/work/yems-product-640.webp 640w, images/work/yems-product-1200.webp 1200w" sizes="(min-width: 760px) 360px, 100vw" alt="YEM'S product page for the Derby Cacao" width="1200" height="750" loading="lazy" decoding="async"></div>
+              <figcaption>Product page · availability badge and origin</figcaption>
+            </figure>
+            <figure class="phone">
+              <div class="shot"><img src="images/work/yems-mobile-480.webp" alt="YEM'S home page on a phone" width="480" height="1039" loading="lazy" decoding="async"></div>
+              <figcaption>Home page on mobile</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="aside rv" aria-label="Project details">
+      <span class="label">Project details</span>
+      <dl>
+        <div><dt>Category</dt><dd>E-commerce · Brand · Full-stack</dd></div>
+        <div><dt>Role</dt><dd>Brand, copywriting, design, front-end and back-end development</dd></div>
+        <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">Cloudflare Workers</span><span class="chip">PostgreSQL</span></div></dd></div>
+        <div><dt>Market</dt><dd>Benin and Côte d'Ivoire</dd></div>
+        <div><dt>Status</dt><dd>Built · launching soon</dd></div>
+        <div><dt>Source</dt><dd><a href="https://github.com/abou-arch/Site_ecommerce_Yem-s" target="_blank" rel="noopener">Source code on GitHub</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <div>
+        <p class="eyebrow">Thinking about an online shop?</p>
+        <h2>Let&rsquo;s <em>talk.</em></h2>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+      <p>Whether you're starting from nothing or redoing a site you already have, I'm happy to look at it with you.</p>
+      <a href="index.html#contact" class="btn btn-gold">Work together {{arrow}}</a>
+    </div>
+  </div>
+</section>
