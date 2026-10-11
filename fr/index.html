@@ -343,18 +343,23 @@
       </div>
     </div>
 
-    <form id="cf" class="cf rv" novalidate>
+    <form id="cf" class="cf rv" action="https://hook.eu1.make.com/vfn7hr7cp0bsqblbfxwaq5qmzly9iasa" method="post" data-sending="Envoi…" novalidate>
       <h3>Parlez-moi de votre projet</h3>
-      <p>Quelques lignes suffisent. Le formulaire ouvre un e-mail pré-rempli dans votre messagerie.</p>
-      <div class="f-ok" id="ok" role="status">Merci. Votre message est prêt à être envoyé depuis votre messagerie.</div>
+      <p>Quelques lignes suffisent. Je réponds sous 48 heures ouvrées.</p>
+      <div class="f-ok" id="ok" role="status" tabindex="-1">Merci, votre message est bien parti. Je réponds sous 48 heures ouvrées.</div>
+      <div class="f-err" id="err" role="alert">L’envoi a échoué. <a href="mailto:aboucamara1107@gmail.com">Envoyez-le plutôt par e-mail</a>, votre texte est déjà rempli.</div>
+      <div class="hp" aria-hidden="true">
+        <label for="w">Laissez ce champ vide</label>
+        <input id="w" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="field-row">
         <div class="field">
           <label for="n">Nom</label>
-          <input id="n" name="name" type="text" autocomplete="name" placeholder="Votre nom" required>
+          <input id="n" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Votre nom" required>
         </div>
         <div class="field">
           <label for="e">E-mail</label>
-          <input id="e" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required>
+          <input id="e" name="email" type="email" autocomplete="email" maxlength="160" placeholder="vous@exemple.com" required>
         </div>
       </div>
       <div class="field-row">
@@ -383,7 +388,7 @@
       </div>
       <div class="field">
         <label for="m">Votre projet</label>
-        <textarea id="m" name="message" placeholder="Que voulez-vous obtenir, et pour quand ?" required></textarea>
+        <textarea id="m" name="message" maxlength="5000" placeholder="Que voulez-vous obtenir, et pour quand ?" required></textarea>
       </div>
       <button type="submit" class="btn btn-gold btn-full">Envoyer ma demande <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <p class="f-note">Vos informations restent confidentielles.</p>

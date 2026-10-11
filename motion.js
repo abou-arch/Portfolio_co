@@ -107,26 +107,59 @@
     }));
   });
 
-  /* ── contact form → pre-filled email, no server needed ─────────────── */
+  /* ── contact form → Make webhook (Google Sheet), email as fallback ── */
   const form = $('#cf');
   if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      const d = new FormData(form);
-      const body = [
+    const ok  = $('#ok');
+    const err = $('#err');
+    const btn = form.querySelector('button[type="submit"]');
+    const label = btn ? btn.innerHTML : '';
+
+    const mailto = d => 'mailto:aboucamara1107@gmail.com'
+      + '?subject=' + encodeURIComponent('New project: ' + d.get('name'))
+      + '&body='    + encodeURIComponent([
         'Name: '    + d.get('name'),
         'Email: '   + d.get('email'),
         'Subject: ' + d.get('subject'),
         'Budget: '  + d.get('budget'),
         '',
         d.get('message')
-      ].join('\n');
-      const ok = $('#ok');
-      if (ok) ok.style.display = 'block';
-      location.href = 'mailto:aboucamara1107@gmail.com'
-        + '?subject=' + encodeURIComponent('New project: ' + d.get('name'))
-        + '&body='    + encodeURIComponent(body);
+      ].join('\n'));
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const d = new FormData(form);
+      d.append('lang', document.documentElement.lang || 'en');
+      d.append('page', location.href);
+      if (ok)  ok.style.display  = 'none';
+      if (err) err.style.display = 'none';
+      if (btn) { btn.disabled = true; btn.textContent = form.dataset.sending || 'Sending…'; }
+
+      // URL-encoded body keeps this a "simple" CORS request: no preflight.
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 15000);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new URLSearchParams(d),
+          signal: ctrl.signal
+        });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        if (ok) { ok.style.display = 'block'; ok.focus(); }
+      } catch (_) {
+        if (err) {
+          const a = err.querySelector('a');
+          if (a) a.href = mailto(d);
+          err.style.display = 'block';
+        } else {
+          location.href = mailto(d);
+        }
+      } finally {
+        clearTimeout(timer);
+        if (btn) { btn.disabled = false; btn.innerHTML = label; }
+      }
     });
   }
 })();

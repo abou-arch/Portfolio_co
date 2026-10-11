@@ -269,18 +269,23 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="images/hero
       </div>
     </div>
 
-    <form id="cf" class="cf rv" novalidate>
+    <form id="cf" class="cf rv" action="https://hook.eu1.make.com/vfn7hr7cp0bsqblbfxwaq5qmzly9iasa" method="post" data-sending="Sending…" novalidate>
       <h3>Tell me about it</h3>
-      <p>A few lines are enough. This opens a pre-filled email in your mail app.</p>
-      <div class="f-ok" id="ok" role="status">Thanks. Your message is ready to send from your mail app.</div>
+      <p>A few lines are enough. I reply within 48 working hours.</p>
+      <div class="f-ok" id="ok" role="status" tabindex="-1">Thanks, your message is on its way. I reply within 48 working hours.</div>
+      <div class="f-err" id="err" role="alert">Sending failed. <a href="mailto:aboucamara1107@gmail.com">Send it by email instead</a>, your text is already filled in.</div>
+      <div class="hp" aria-hidden="true">
+        <label for="w">Leave this field empty</label>
+        <input id="w" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="field-row">
         <div class="field">
           <label for="n">Name</label>
-          <input id="n" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          <input id="n" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Your name" required>
         </div>
         <div class="field">
           <label for="e">Email</label>
-          <input id="e" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <input id="e" name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com" required>
         </div>
       </div>
       <div class="field-row">
@@ -309,7 +314,7 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="images/hero
       </div>
       <div class="field">
         <label for="m">Your project</label>
-        <textarea id="m" name="message" placeholder="What are you trying to achieve, and by when?" required></textarea>
+        <textarea id="m" name="message" maxlength="5000" placeholder="What are you trying to achieve, and by when?" required></textarea>
       </div>
       <button type="submit" class="btn btn-gold btn-full">Send my enquiry {{arrow}}</button>
       <p class="f-note">Your details stay confidential.</p>
