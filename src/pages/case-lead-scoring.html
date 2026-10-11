@@ -2,7 +2,7 @@
 path: case-lead-scoring.html
 current: work
 title: Lead Automation · Case study | Abou Camara
-desc: How I built an automated lead qualification system in Make and Google Sheets, then found a flaw in my own scoring logic that buried the best leads, and how I fixed and tested it.
+desc: How I built an automated lead qualification system in Make and Google Sheets, then found a flaw in my own scoring logic that buried the best leads, and how I fixed it, audited the live scenario and tested it again.
 -->
 
 <section class="proj-hero">
@@ -86,7 +86,7 @@ desc: How I built an automated lead qualification system in Make and Google Shee
 
 <h3 class="rv">Where the output goes</h3>
 <p class="rv">Straight into a Google Sheet, not a CRM. A small business owner already has the Sheet open; a CRM is one more login and one more subscription for a problem that doesn't need one yet.</p>
-<p class="rv">Two columns get written: <code>score</code> and <code>tier</code>. The tier tells you what to do, the score tells you why. Without the raw number you cannot debug a classification you disagree with, and you will disagree with some of them.</p>
+<p class="rv">Each lead gets a <code>score</code> column and lands in a <code>hot</code>, <code>warm</code> or <code>low</code> tab. The tier tells you what to do, the score tells you why. Without the raw number you cannot debug a classification you disagree with, and you will disagree with some of them.</p>
 
 <h2 class="rv">The flaw</h2>
 <p class="rv">The first version used weights of 40, 30 and 20, with anything at or above 80 marked <code>hot</code>. That looked reasonable. It wasn't.</p>
@@ -139,17 +139,33 @@ hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
   <p>That verification script immediately caught an error. It was in my own expected values, not in the system. I had written 75 for a case that should have scored 85, having forgotten the email bonus while typing the file by hand. The same class of mistake as the original flaw: reasoning about a model in my head instead of enumerating it.</p>
 </div>
 
+<h2 class="rv">Version 2: auditing the scenario itself</h2>
+<p class="rv">Months later I went back and read the live scenario module by module, against this write-up. It didn't match it:</p>
+<ul class="rv">
+  <li><strong>The fix wasn't in it.</strong> The deployed scenario still used the old 40/30/20 weights.</li>
+  <li><strong>The email check never matched.</strong> The formula compared the wrong string, so every lead got the professional-domain bonus, Gmail included.</li>
+  <li><strong>The intent keyword misfired.</strong> <code>ai</code> was matched as a substring, so "email", "maintain" and "paid" all counted as stated intent.</li>
+  <li><strong>One update wrote to the wrong row.</strong> When a <code>warm</code> lead came back, the row number used for the update was a count of results, which pointed at the header row.</li>
+</ul>
+<p class="rv">Version 2 fixes all four. The weights are 50/35/15 in the scenario, not just on this page. A professional domain now means "not on a list of free providers" (Gmail, Yahoo, Outlook, iCloud, Orange and others). Keywords are read from each client's config row and only count as whole words. Budgets written as <code>"3 000"</code> or <code>"€2,500"</code> are cleaned before the comparison. And every row now carries a <code>scoring_version</code>, because leads scored under the old weights can't be compared with new ones.</p>
+<p class="rv">I tested it inside Make this time: thirteen cases, the eight states plus the threshold edge, the two budget formats, the "email" false positive and a free domain that isn't Gmail. A test scenario computes each score with the real formulas and fails on the first mismatch. It passed.</p>
+
+<div class="callout quiet rv">
+  <span class="k">Worth admitting, again</span>
+  <p>The first round of testing recalculated the expected scores independently of the scenario, and that is exactly why it missed all of this: it checked my arithmetic, not the thing that was running. Test the deployed artefact, not a model of it.</p>
+</div>
+
 <h2 class="rv">Result</h2>
-<p class="rv">A working system that scores and files an inbound lead in seconds, with all eight classification states verified against expected output.</p>
+<p class="rv">A working system that scores and files an inbound lead in seconds, with its scoring logic verified inside Make across every classification state and the input formats that usually break it.</p>
 <p class="rv">To be precise about what this does and does not prove: <strong>it is a validated prototype, not a deployed product.</strong> It has not yet run on live traffic, so there is no "40% more conversions" to report here, and I am not going to invent one. What it demonstrates is the reasoning: how the signals were chosen and weighted, how the failure was found, and how the correction was verified.</p>
 <p class="rv">For a client, that is the transferable part. The scoring model of any business will differ. The method for building and stress-testing one will not.</p>
 
 <h2 class="rv">What I'd do differently</h2>
 <ol class="rv">
   <li><strong>Enumerate the outputs before setting the thresholds.</strong> The flaw existed from the first version and was invisible until I listed all eight results. On any scoring model, that enumeration now comes first.</li>
-  <li><strong>Widen the keyword list.</strong> It ran on a single term during testing. Someone writing "I keep losing hours on repetitive tasks" is describing the service exactly and would have scored zero on intent. A signal worth 35 points cannot hinge on one word.</li>
+  <li><strong>Test what is actually running.</strong> A script that recalculates expected values proves the model on paper. Only running the real scenario proves the scenario.</li>
+  <li><strong>Write longer keyword lists.</strong> Version 2 reads them from each client's config, but the lists are still short. Someone writing "I keep losing hours on repetitive tasks" is describing the service exactly and would still score zero on intent. A signal worth 35 points cannot hinge on a handful of words.</li>
   <li><strong>Add an urgency signal.</strong> A "when do you need this?" field predicts closing far better than an email domain does. I left it out of this version to keep the model to three signals, but it is the first thing I would add.</li>
-  <li><strong>Version the scoring.</strong> Rows scored under the old weights are not comparable with new ones. A <code>scoring_version</code> column costs nothing and prevents a silent analysis error months later.</li>
 </ol>
 
 <h2 class="rv">When Make stops being the right answer</h2>
@@ -169,6 +185,7 @@ hot ≥ 80 · warm 40–79 · low &lt; 40</code></pre>
         <div><dt>Role</dt><dd>Design, build, testing</dd></div>
         <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">Make</span><span class="chip">Google Sheets</span><span class="chip">Webhooks</span></div></dd></div>
         <div><dt>Timeline</dt><dd>A few days</dd></div>
+        <div><dt>Version</dt><dd>V2, after an audit of the live scenario</dd></div>
         <div><dt>Status</dt><dd>Validated prototype, not yet run on live traffic</dd></div>
       </dl>
     </aside>
