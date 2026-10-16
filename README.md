@@ -73,6 +73,9 @@ haven't happened. Prototypes and work in progress are labelled as such.
 
 ## Notes
 
+- `_headers` sets the security headers (CSP, HSTS, framing, referrer, permissions) that
+  Cloudflare adds to every response. A new external service (a font host, an embed, a form
+  endpoint) must be added to the Content-Security-Policy there, or the browser will block it.
 - The contact form (home page, EN and FR) posts to a Make webhook, set in the form's
   `action`. The Make scenario "Portfolio – Formulaire de contact" scores the enquiry, adds it
   to the "Demandes" Google Sheet and sends an email alert. If the request fails, the form
