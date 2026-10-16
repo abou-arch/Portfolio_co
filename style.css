@@ -511,6 +511,11 @@ form.cf{background:var(--surface);border:1px solid var(--line);border-radius:var
 .field input::placeholder,.field textarea::placeholder{color:var(--faint)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,124,.16)}
 .f-ok{display:none;margin-bottom:18px;padding:12px 15px;border-radius:10px;background:var(--gold-soft);border:1px solid rgba(212,175,124,.4);color:var(--gold-2);font-size:.9rem}
+.f-ok:focus,.f-err:focus{outline:none}
+.f-err{display:none;margin-bottom:18px;padding:12px 15px;border-radius:10px;background:rgba(220,110,90,.08);border:1px solid rgba(220,110,90,.4);color:var(--ink);font-size:.9rem}
+.f-err a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf button:disabled{opacity:.65;cursor:progress}
 .f-note{margin-top:14px;font-size:.82rem;color:var(--muted);text-align:center}
 
 /* ─── CTA band (shared) ─────────────────────────────────────────────── */

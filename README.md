@@ -73,5 +73,10 @@ haven't happened. Prototypes and work in progress are labelled as such.
 
 ## Notes
 
+- The contact form (home page, EN and FR) posts to a Make webhook, set in the form's
+  `action`. The Make scenario "Portfolio – Formulaire de contact" scores the enquiry, adds it
+  to the "Demandes" Google Sheet and sends an email alert. If the request fails, the form
+  offers a pre-filled email instead. The hidden `website` field is a spam trap.
+
 - File names are lowercase on purpose: the host is case-sensitive, Windows is not.
   A capital letter that works locally will 404 once deployed.
