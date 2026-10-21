@@ -114,6 +114,7 @@
     const err = $('#err');
     const btn = form.querySelector('button[type="submit"]');
     const label = btn ? btn.innerHTML : '';
+    const openedAt = Date.now();
 
     const mailto = d => 'mailto:aboucamara1107@gmail.com'
       + '?subject=' + encodeURIComponent('New project: ' + d.get('name'))
@@ -132,6 +133,10 @@
       const d = new FormData(form);
       // Only bots fill the honeypot; leave it out otherwise so the scenario's "does not exist" filter passes.
       if (!d.get('website')) d.delete('website');
+      // Bot checks, verified by the Make scenario: a key only this script adds,
+      // and the time since the page opened (bots submit almost instantly).
+      d.append('k', 'site-v1');
+      d.append('t', String(Date.now() - openedAt));
       d.append('lang', document.documentElement.lang || 'en');
       d.append('page', location.href);
       if (ok)  ok.style.display  = 'none';
