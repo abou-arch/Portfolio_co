@@ -4,37 +4,39 @@ current: home
 alt: index.html
 title: Abou Camara | Des systèmes qui vous amènent des clients
 desc: Consultant et développeur pour les petites entreprises et les boutiques en ligne : une offre claire, un site qui vend, et des systèmes de vente et des automatisations qui transforment les visiteurs en clients.
-extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/hero/desk-mobile.webp" media="(max-width: 859px)" fetchpriority="high">\n<link rel="preload" as="image" type="image/webp" imagesrcset="../images/hero/desk-960.webp 960w, ../images/hero/desk-1600.webp 1600w" imagesizes="100vw" media="(min-width: 860px)" fetchpriority="high">
+extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../images/hero/still-life-640.webp 640w, ../images/hero/still-life-960.webp 960w, ../images/hero/still-life-1536.webp 1536w" imagesizes="(min-width: 900px) 42vw, 100vw" fetchpriority="high">
 -->
 
 <!-- ═════════ HERO ═════════ -->
 <section class="hero" id="top">
-  <div class="hero-media">
-    <picture>
-      <source media="(max-width: 859px)" srcset="../images/hero/desk-mobile.webp" type="image/webp">
-      <source srcset="../images/hero/desk-960.webp 960w, ../images/hero/desk-1600.webp 1600w" sizes="100vw" type="image/webp">
-      <img src="../images/hero/desk-1600.jpg" alt="Abou Camara à son bureau, du code sur un écran et un scénario d’automatisation sur l’autre" width="1600" height="900" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
-  <div class="wrap hero-inner">
+  <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow fade-up">Pour les petites entreprises et les boutiques en ligne</p>
       <h1 class="display lines">
-        <span class="ln"><span>Je construis des systèmes</span></span>
-        <span class="ln"><span>qui vous amènent des <em>clients.</em></span></span>
+        <span class="ln"><span>Je construis</span></span>
+        <span class="ln"><span>des systèmes</span></span>
+        <span class="ln"><span>qui vous amènent</span></span>
+        <span class="ln"><span>des clients<span class="dot">.</span></span></span>
       </h1>
       <p class="lead fade-up d1">Je suis Abou, consultant et développeur. J’aide les petites entreprises et les boutiques en ligne à transformer plus de visiteurs en clients&nbsp;: une offre claire, un site qu’on comprend tout de suite, et des automatisations qui relancent chaque prospect à votre place.</p>
-      <div class="actions fade-up d2">
+      <ul class="pills fade-up d2" aria-label="Disciplines"><li>Stratégie</li><li>Systèmes de vente</li><li>Développement &amp; automatisation</li><li>Product design</li></ul>
+      <div class="actions fade-up d3">
         <a href="#contact" class="btn btn-gold">Travailler ensemble {{arrow}}</a>
-        <a href="../work.html" class="btn btn-ghost">Voir les projets</a>
+        <a href="../work.html" class="link">Voir les projets {{arrow}}</a>
       </div>
-      <p class="hero-disc fade-up d3" aria-label="Disciplines"><span>Stratégie</span><span>Systèmes de vente</span><span>Développement &amp; automatisation</span><span>Product design</span></p>
     </div>
+    <figure class="hero-fig fade-up d2">
+      <span class="frame"><picture>
+        <source type="image/webp" srcset="../images/hero/still-life-640.webp 640w, ../images/hero/still-life-960.webp 960w, ../images/hero/still-life-1536.webp 1536w" sizes="(min-width: 900px) 42vw, 100vw">
+        <img src="../images/hero/still-life-1536.jpg" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
+      </picture></span>
+      <figcaption><span>Fès, Maroc · Travail à distance</span><span>Français &amp; anglais</span></figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ═════════ SERVICES ═════════ -->
-<section id="services">
+<section id="services" class="ruled">
   <div class="wrap">
     <div class="sec-head split">
       <div>
@@ -101,7 +103,7 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/h
 </section>
 
 <!-- ═════════ WORK ═════════ -->
-<section id="work" style="padding-top:0">
+<section id="work" class="ruled">
   <div class="wrap">
     <div class="sec-head split">
       <div>
@@ -111,43 +113,39 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/h
       <p class="lead rv">Une application d’orientation, une boutique en ligne et une automatisation de scoring de prospects. Chaque page explique le problème de départ et où en est le projet aujourd’hui. Les études de cas sont en anglais.</p>
     </div>
 
-    <div class="work-rows">
-      <article class="work-row">
-        <a class="work-media rv" href="../project-eidia.html" tabindex="-1" aria-hidden="true">
-          <img src="../images/work/eidia-1200.webp" srcset="../images/work/eidia-640.webp 640w, ../images/work/eidia-1200.webp 1200w" sizes="(min-width: 960px) 720px, 100vw" alt="" width="1200" height="668" loading="lazy" decoding="async">
+    <div class="pgrid">
+      <article class="pcard rv">
+        <a class="work-media" href="../project-eidia.html" tabindex="-1" aria-hidden="true">
+          <img src="../images/work/eidia-1200.webp" srcset="../images/work/eidia-640.webp 640w, ../images/work/eidia-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="668" loading="lazy" decoding="async">
+          <span class="corner">{{out}}</span>
         </a>
-        <div class="work-text rv">
-          <div class="meta"><span class="idx">01</span><span class="label">Application web · EdTech</span></div>
-          <h3><a href="../project-eidia.html">Eidia Orientation</a></h3>
-          <p class="sub">Plateforme d’orientation pour étudiants</p>
-          <p>Aide les étudiants à choisir entre cinq filières d’ingénieur (Full-stack, Cybersécurité, Big Data, IA et Robotique) grâce à un questionnaire en six étapes et un moteur de scoring pondéré.</p>
-          <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Moteur de scoring</span></div>
-          <div class="work-links">
+        <span class="label">Application web · EdTech</span>
+        <h3><a href="../project-eidia.html">Eidia Orientation</a></h3>
+        <p class="sub">Plateforme d’orientation pour étudiants</p>
+        <p>Aide les étudiants à choisir entre cinq filières d’ingénieur (Full-stack, Cybersécurité, Big Data, IA et Robotique) grâce à un questionnaire en six étapes et un moteur de scoring pondéré.</p>
+        <div class="work-links">
             <a class="link" href="../project-eidia.html">Étude de cas (EN) {{arrow}}</a>
             <a class="link" href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener">Démo en ligne {{out}}</a>
           </div>
-        </div>
       </article>
 
-      <article class="work-row">
-        <a class="work-media rv" href="../project-yems.html" tabindex="-1" aria-hidden="true">
-          <img src="../images/work/yems-home-1200.webp" srcset="../images/work/yems-home-640.webp 640w, ../images/work/yems-home-1200.webp 1200w" sizes="(min-width: 960px) 720px, 100vw" alt="" width="1200" height="750" loading="lazy" decoding="async">
+      <article class="pcard rv">
+        <a class="work-media" href="../project-yems.html" tabindex="-1" aria-hidden="true">
+          <img src="../images/work/yems-home-1200.webp" srcset="../images/work/yems-home-640.webp 640w, ../images/work/yems-home-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="750" loading="lazy" decoding="async">
+          <span class="corner">{{out}}</span>
         </a>
-        <div class="work-text rv">
-          <div class="meta"><span class="idx">02</span><span class="label">E-commerce · Marque · Full-stack</span></div>
-          <h3><a href="../project-yems.html">YEM&rsquo;S</a></h3>
-          <p class="sub">Boutique en ligne d’une maison de chaussures et de maroquinerie à Cotonou</p>
-          <p>J’ai tout réalisé&nbsp;: la marque, les textes, un configurateur de chaussures sur mesure, une commande où le client paie à la livraison, et un écran d’administration pour l’atelier.</p>
-          <div class="chips"><span class="chip">HTML / CSS / JS</span><span class="chip">Python</span><span class="chip">Cloudflare Workers</span><span class="chip">PostgreSQL</span></div>
-          <div class="work-links">
+        <span class="label">E-commerce · Marque · Full-stack</span>
+        <h3><a href="../project-yems.html">YEM&rsquo;S</a></h3>
+        <p class="sub">Boutique en ligne d’une maison de chaussures et de maroquinerie à Cotonou</p>
+        <p>J’ai tout réalisé&nbsp;: la marque, les textes, un configurateur de chaussures sur mesure, une commande où le client paie à la livraison, et un écran d’administration pour l’atelier.</p>
+        <div class="work-links">
             <a class="link" href="../project-yems.html">Étude de cas (EN) {{arrow}}</a>
             <a class="link" href="https://github.com/abou-arch/Site_ecommerce_Yem-s" target="_blank" rel="noopener">Code source {{out}}</a>
           </div>
-        </div>
       </article>
 
-      <article class="work-row">
-        <a class="work-media rv" href="../case-lead-scoring.html" tabindex="-1" aria-hidden="true">
+      <article class="pcard rv">
+        <a class="work-media" href="../case-lead-scoring.html" tabindex="-1" aria-hidden="true">
           <div class="schema">
             <div style="width:100%;max-width:640px">
               <div class="flow">
@@ -160,18 +158,21 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/h
             </div>
             <span class="schema-cap">Schéma du système</span>
           </div>
+          <span class="corner">{{out}}</span>
         </a>
-        <div class="work-text rv">
-          <div class="meta"><span class="idx">03</span><span class="label">Automatisation · Vente</span></div>
-          <h3><a href="../case-lead-scoring.html">Lead Automation</a></h3>
-          <p class="sub">Moteur de scoring de prospects · prototype validé</p>
-          <p>Les réponses d’un formulaire sont notées et classées automatiquement en chaud, tiède et froid, puis inscrites dans une Google Sheet. Dans l’étude de cas, j’explique l’erreur que j’ai faite dans mon propre scoring, et comment je l’ai repérée.</p>
-          <div class="chips"><span class="chip">Make</span><span class="chip">Google Sheets</span><span class="chip">Webhooks</span><span class="chip">Scoring de prospects</span></div>
-          <div class="work-links">
+        <span class="label">Automatisation · Vente</span>
+        <h3><a href="../case-lead-scoring.html">Lead Automation</a></h3>
+        <p class="sub">Moteur de scoring de prospects · prototype validé</p>
+        <p>Les réponses d’un formulaire sont notées et classées automatiquement en chaud, tiède et froid, puis inscrites dans une Google Sheet. Dans l’étude de cas, j’explique l’erreur que j’ai faite dans mon propre scoring, et comment je l’ai repérée.</p>
+        <div class="work-links">
             <a class="link" href="../case-lead-scoring.html">Lire l’étude de cas (EN) {{arrow}}</a>
           </div>
-        </div>
       </article>
+
+      <aside class="note-card rv">
+        <p>Un bon projet commence par la bonne question.</p>
+        <a class="link" href="#contact">Un projet en tête&nbsp;? {{arrow}}</a>
+      </aside>
     </div>
 
     <div style="margin-top:clamp(56px,7vw,88px);display:flex;justify-content:center" class="rv">
@@ -205,7 +206,7 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/h
 </section>
 
 <!-- ═════════ PROCESS ═════════ -->
-<section id="process">
+<section id="process" class="ruled">
   <div class="wrap">
     <div class="sec-head split">
       <div>
@@ -235,7 +236,7 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" href="../images/h
 </section>
 
 <!-- ═════════ CONTACT ═════════ -->
-<section id="contact" style="border-top:1px solid var(--line)">
+<section id="contact" class="ruled">
   <div class="wrap contact-grid">
     <div>
       <p class="eyebrow rv">Travailler ensemble</p>

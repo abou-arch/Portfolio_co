@@ -21,7 +21,7 @@ resources.html           Resources (case studies now, articles later)
 style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
-images/hero/             Hero photo (desktop WebP + JPEG fallback, mobile crop)
+images/hero/             Hero still life (WebP at 640/960/1536 + JPEG fallback)
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
 images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
 certs/                   Original certificate files (PDF / JPG)
@@ -46,11 +46,16 @@ drives the EN/FR switch and the `hreflang` tags.
 
 Defined as custom properties at the top of `style.css`.
 
-- **Palette:** deep black `#0B0B0D`, surfaces `#141417` / `#1A1A1D`, ivory `#F8F6F1`,
-  warm greys, one bronze accent `#D4AF7C` (used sparingly). The About section uses the
-  light ivory variant (`.light`).
-- **Type:** Newsreader (editorial serif, headings) + DM Sans (interface and text), from Google Fonts.
-- **Logo:** serif "A" monogram with a small bronze star. The SVG is inlined in each page header
+- **Palette:** warm off-white `#F5F4F0` with panels `#EEEDE8` / `#E8E7E1`, near-black ink
+  `#171715`, warm greys (`#5F5E58` for secondary text), and a taupe accent `#A18B70` used only
+  for decoration (the dot after a headline, the logo star). Accent text uses the darker
+  `#715E49`. The footer is the only dark area (`#1C1C19`). Every text colour passes WCAG AA
+  on every surface.
+- **Type:** DM Sans throughout, from Google Fonts. Headlines are weight 500 with tight
+  letter-spacing; the second half of a heading can sit in a lighter grey (`<em>`).
+- **Images:** a still-life series (stone, smoked glass, brass, window light). Generated images
+  only illustrate ideas; projects always use real screenshots.
+- **Logo:** "A" monogram with a small taupe star. The SVG is inlined in each page header
   and footer; `favicon.svg` is the tile version.
 - **Motion:** short reveals on scroll, subtle hovers. Everything is disabled under
   `prefers-reduced-motion`.

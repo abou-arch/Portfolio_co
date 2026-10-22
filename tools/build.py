@@ -51,8 +51,7 @@ MARK = ('<svg class="mark" viewBox="0 0 64 64" aria-hidden="true">'
         '<path fill="currentColor" d="M30.2 5L33 10.6L16.8 55H13.2ZM30.2 5H35.8L52.8 55H43.6ZM22.9 37.2H39V40H21.9ZM9 53.6H21.2V56H9ZM38.6 53.6H57.4V56H38.6Z"/>'
         '<path class="star" d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg>')
 
-FONTS = ('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500'
-         '&family=DM+Sans:opsz,wght@9..40,400..600&display=swap')
+FONTS = 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..600&display=swap'
 
 
 T = {
@@ -61,6 +60,7 @@ T = {
    about='About', resources='Resources', contact='Contact', cta='Work together', overview='Overview',
    svc_foot='Four disciplines, one system.', prj_foot='Four projects so far.', all_projects='All projects',
    reply='I reply within 48 working hours', tagline='Systems that bring you customers',
+   foot_eyebrow='Have a project in mind?', foot_title='Let&rsquo;s make it real<span class="dot">.</span>', foot_btn='Start a project',
    rights='All rights reserved.', place='Fès, Morocco · Working remotely', open='Open menu', close='Close menu',
    menu='Menu', main='Main', footer='Footer', home_label='Abou Camara, home', switch='FR', switch_label='Version française',
    locale='en_GB',
@@ -77,6 +77,7 @@ T = {
    about='À propos', resources='Ressources', contact='Contact', cta='Travailler ensemble', overview='Vue d&rsquo;ensemble',
    svc_foot='Quatre disciplines, un seul système.', prj_foot='Études de cas en anglais.', all_projects='Tous les projets',
    reply='Je réponds sous 48 heures ouvrées', tagline='Des systèmes qui vous amènent des clients',
+   foot_eyebrow='Un projet en tête ?', foot_title='Passons au concret<span class="dot">.</span>', foot_btn='Démarrer un projet',
    rights='Tous droits réservés.', place='Fès, Maroc · Travail à distance', open='Ouvrir le menu', close='Fermer le menu',
    menu='Menu', main='Navigation principale', footer='Pied de page', home_label='Abou Camara, accueil', switch='EN', switch_label='English version',
    locale='fr_FR',
@@ -180,10 +181,19 @@ def header(cur, c):
 
 def footer(c):
     t, b, h = c.t, c.b, c.h
+    # the home page ends on the contact form, so the closing call to action would repeat it
+    cta = '' if c.home else f'''
+    <div class="foot-cta">
+      <div>
+        <p class="eyebrow">{t['foot_eyebrow']}</p>
+        <h2>{t['foot_title']}</h2>
+      </div>
+      <a href="{h}#contact" class="btn btn-light">{t['foot_btn']} {I['arrow']}</a>
+    </div>'''
     return f'''
 <!-- ═════════ FOOTER ═════════ -->
 <footer>
-  <div class="wrap">
+  <div class="wrap">{cta}
     <div class="foot">
       <div>
         <a href="{c.home_href}" class="brand" aria-label="{t['home_label']}">{MARK}<span class="rule" aria-hidden="true"></span><span class="name">Abou Camara</span></a>
@@ -251,8 +261,8 @@ def head(meta, c):
 <meta name="twitter:title" content="{meta['title']}">
 <meta name="twitter:description" content="{meta['desc']}">
 <meta name="twitter:image" content="https://aboucamara.org/og-image.png">
-<meta name="theme-color" content="#0B0B0D">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#F5F4F0">
+<meta name="color-scheme" content="light">
 
 <link rel="icon" href="{b}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{b}apple-touch-icon.png">
