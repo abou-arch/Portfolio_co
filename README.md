@@ -21,7 +21,9 @@ resources.html           Resources (case studies now, articles later)
 style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
-images/hero/             Hero portrait (transparent WebP 560/900, shown on the panel colour)
+images/hero/             Hero portrait (transparent WebP 560/900, shown on the panel colour); the
+                         earlier still life (still-life-*) is kept but no page uses it now
+images/about/            Portrait with its wall background, WebP 560/900 (kept, not used now)
 images/services/         One illustration per service (home cards + service page heroes), WebP 560/900
 images/editorial/        Still lifes for About, Process, Resources, the 404 page and the dark
                          closing block of the footer (WebP, two widths each)
@@ -90,5 +92,7 @@ haven't happened. Prototypes and work in progress are labelled as such.
   to the "Demandes" Google Sheet and sends an email alert. If the request fails, the form
   offers a pre-filled email instead. The hidden `website` field is a spam trap.
 
+- `images/abou.jpg`, `images/dashboard.png`, `images/eidia.png` and `images/leads.png` come from
+  the first version of the site. They are kept on purpose, even though no page uses them now.
 - File names are lowercase on purpose: the host is case-sensitive, Windows is not.
   A capital letter that works locally will 404 once deployed.
