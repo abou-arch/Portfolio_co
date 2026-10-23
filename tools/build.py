@@ -39,6 +39,7 @@ I = {
  'filter': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 9v6l-4 2v-8z"/></svg>',
  'gear': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>',
  'chart': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-9"/></svg>',
+ 'pin': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
  'truck': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg>',
  'phone': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>',
  'github': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>',
@@ -68,10 +69,10 @@ T = {
         ('sales', 'Sales Systems', 'Finding and following up leads', 'service-sales-systems.html'),
         ('code', 'Development &amp; Automation', 'Websites, tools and automations', 'service-development.html'),
         ('design', 'Product Design', 'Interfaces that are easy to use', 'service-product-design.html')],
-   prj=[('project-eidia.html', 'eidia', 'Eidia Orientation', 'Student guidance web app'),
-        ('project-yems.html', 'yems-home', 'YEM&rsquo;S', 'E-commerce · Brand · Full-stack'),
+   prj=[('project-yems.html', 'yems-home', 'YEM&rsquo;S', 'E-commerce · Brand · Full-stack'),
         ('case-lead-scoring.html', None, 'Lead Automation', 'Make · Google Sheets · Webhooks'),
-        ('project-olist.html', 'olist', 'Olist E-commerce Dashboard', 'Data analysis · In progress')]),
+        ('project-olist.html', 'olist', 'Olist E-commerce Dashboard', 'Data analysis · Dashboard'),
+        ('project-eidia.html', 'eidia', 'Eidia Orientation', 'Student guidance web app')]),
  'fr': dict(
    skip='Aller au contenu', home='Accueil', services='Services', projects='Projets', certs='Certifications',
    about='À propos', resources='Ressources', contact='Contact', cta='Travailler ensemble', overview='Vue d&rsquo;ensemble',
@@ -85,10 +86,10 @@ T = {
         ('sales', 'Systèmes de vente', 'Trouver et relancer les prospects', 'service-sales-systems.html'),
         ('code', 'Développement &amp; Automatisation', 'Sites, outils et automatisations', 'service-development.html'),
         ('design', 'Product Design', 'Des interfaces faciles à utiliser', 'service-product-design.html')],
-   prj=[('project-eidia.html', 'eidia', 'Eidia Orientation', 'Application d&rsquo;orientation'),
-        ('project-yems.html', 'yems-home', 'YEM&rsquo;S', 'E-commerce · Marque · Full-stack'),
+   prj=[('project-yems.html', 'yems-home', 'YEM&rsquo;S', 'E-commerce · Marque · Full-stack'),
         ('case-lead-scoring.html', None, 'Lead Automation', 'Make · Google Sheets · Webhooks'),
-        ('project-olist.html', 'olist', 'Olist E-commerce Dashboard', 'Analyse de données · En cours')]),
+        ('project-olist.html', 'olist', 'Olist E-commerce Dashboard', 'Analyse de données · Tableau de bord'),
+        ('project-eidia.html', 'eidia', 'Eidia Orientation', 'Application d&rsquo;orientation')]),
 }
 
 

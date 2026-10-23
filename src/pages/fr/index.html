@@ -4,7 +4,7 @@ current: home
 alt: index.html
 title: Abou Camara | Des systèmes qui vous amènent des clients
 desc: Consultant et développeur pour les petites entreprises et les boutiques en ligne : une offre claire, un site qui vend, et des systèmes de vente et des automatisations qui transforment les visiteurs en clients.
-extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../images/hero/still-life-640.webp 640w, ../images/hero/still-life-960.webp 960w, ../images/hero/still-life-1536.webp 1536w" imagesizes="(min-width: 900px) 42vw, 100vw" fetchpriority="high">
+extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../images/hero/portrait-560.webp 560w, ../images/hero/portrait-900.webp 900w" imagesizes="(min-width: 900px) 38vw, 92vw" fetchpriority="high">
 -->
 
 <!-- ═════════ HERO ═════════ -->
@@ -25,11 +25,8 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../i
         <a href="../work.html" class="link">Voir les projets {{arrow}}</a>
       </div>
     </div>
-    <figure class="hero-fig fade-up d2">
-      <span class="frame"><picture>
-        <source type="image/webp" srcset="../images/hero/still-life-640.webp 640w, ../images/hero/still-life-960.webp 960w, ../images/hero/still-life-1536.webp 1536w" sizes="(min-width: 900px) 42vw, 100vw">
-        <img src="../images/hero/still-life-1536.jpg" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
-      </picture></span>
+    <figure class="hero-fig hero-portrait fade-up d2">
+      <span class="frame"><img src="../images/hero/portrait-900.webp" srcset="../images/hero/portrait-560.webp 560w, ../images/hero/portrait-900.webp 900w" sizes="(min-width: 900px) 38vw, 92vw" alt="Portrait d&rsquo;Abou Camara" width="900" height="1125" fetchpriority="high" decoding="async"></span>
       <figcaption><span>Fès, Maroc · Travail à distance</span><span>Français &amp; anglais</span></figcaption>
     </figure>
   </div>
@@ -114,25 +111,10 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../i
         <p class="eyebrow rv">Projets</p>
         <h2 class="h2 rv">Ce que j’ai <em>construit jusqu’ici.</em></h2>
       </div>
-      <p class="lead rv">Une application d’orientation, une boutique en ligne et une automatisation de scoring de prospects. Chaque page explique le problème de départ et où en est le projet aujourd’hui. Les études de cas sont en anglais.</p>
+      <p class="lead rv">Une boutique en ligne, une automatisation de scoring de prospects, un tableau de bord e-commerce et une application d’orientation. Chaque page explique le problème de départ et où en est le projet aujourd’hui. Les études de cas sont en anglais.</p>
     </div>
 
     <div class="pgrid">
-      <article class="pcard rv">
-        <a class="work-media" href="../project-eidia.html" tabindex="-1" aria-hidden="true">
-          <img src="../images/work/eidia-1200.webp" srcset="../images/work/eidia-640.webp 640w, ../images/work/eidia-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="668" loading="lazy" decoding="async">
-          <span class="corner">{{out}}</span>
-        </a>
-        <span class="label">Application web · EdTech</span>
-        <h3><a href="../project-eidia.html">Eidia Orientation</a></h3>
-        <p class="sub">Plateforme d’orientation pour étudiants</p>
-        <p>Aide les étudiants à choisir entre cinq filières d’ingénieur (Full-stack, Cybersécurité, Big Data, IA et Robotique) grâce à un questionnaire en six étapes et un moteur de scoring pondéré.</p>
-        <div class="work-links">
-            <a class="link" href="../project-eidia.html">Étude de cas (EN) {{arrow}}</a>
-            <a class="link" href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener">Démo en ligne {{out}}</a>
-          </div>
-      </article>
-
       <article class="pcard rv">
         <a class="work-media" href="../project-yems.html" tabindex="-1" aria-hidden="true">
           <img src="../images/work/yems-home-1200.webp" srcset="../images/work/yems-home-640.webp 640w, ../images/work/yems-home-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="750" loading="lazy" decoding="async">
@@ -173,7 +155,36 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../i
           </div>
       </article>
 
-      <aside class="note-card rv">
+      <article class="pcard rv">
+        <a class="work-media" href="../project-olist.html" tabindex="-1" aria-hidden="true">
+          <img src="../images/work/olist-1200.webp" srcset="../images/work/olist-640.webp 640w, ../images/work/olist-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="929" loading="lazy" decoding="async">
+          <span class="corner">{{out}}</span>
+        </a>
+        <span class="label">Données · Analyse</span>
+        <h3><a href="../project-olist.html">Olist E-commerce Dashboard</a></h3>
+        <p class="sub">Données publiques d&rsquo;e-commerce brésilien · tableau de bord interactif</p>
+        <p>Ventes, régions, catégories, délais de livraison et avis clients réunis dans un tableau de bord, pour voir où une boutique en ligne perd de l&rsquo;argent.</p>
+        <div class="work-links">
+            <a class="link" href="../project-olist.html">Notes du projet (EN) {{arrow}}</a>
+          </div>
+      </article>
+
+      <article class="pcard rv">
+        <a class="work-media" href="../project-eidia.html" tabindex="-1" aria-hidden="true">
+          <img src="../images/work/eidia-1200.webp" srcset="../images/work/eidia-640.webp 640w, ../images/work/eidia-1200.webp 1200w" sizes="(min-width: 820px) 46vw, 100vw" alt="" width="1200" height="668" loading="lazy" decoding="async">
+          <span class="corner">{{out}}</span>
+        </a>
+        <span class="label">Application web · EdTech</span>
+        <h3><a href="../project-eidia.html">Eidia Orientation</a></h3>
+        <p class="sub">Plateforme d’orientation pour étudiants</p>
+        <p>Aide les étudiants à choisir entre cinq filières d’ingénieur (Full-stack, Cybersécurité, Big Data, IA et Robotique) grâce à un questionnaire en six étapes et un moteur de scoring pondéré.</p>
+        <div class="work-links">
+            <a class="link" href="../project-eidia.html">Étude de cas (EN) {{arrow}}</a>
+            <a class="link" href="https://abou-arch.github.io/Systeme_d-orientation_d-eidia/#/" target="_blank" rel="noopener">Démo en ligne {{out}}</a>
+          </div>
+      </article>
+
+      <aside class="note-card wide rv">
         <p>Un bon projet commence par la bonne question.</p>
         <a class="link" href="#contact">Un projet en tête&nbsp;? {{arrow}}</a>
       </aside>
@@ -192,7 +203,7 @@ extra_head: \n<link rel="preload" as="image" type="image/webp" imagesrcset="../i
       <p class="eyebrow rv">À propos</p>
       <h2 class="h2 rv">La personne derrière <em>le travail.</em></h2>
       <p class="pull rv">J’aime travailler des deux côtés&nbsp;: comprendre le client, et construire l’outil.</p>
-      <figure class="about-fig rv"><img src="../images/about/portrait-560.webp" srcset="../images/about/portrait-560.webp 560w, ../images/about/portrait-900.webp 900w" sizes="(min-width: 920px) 440px, 100vw" alt="Portrait d&rsquo;Abou Camara" width="560" height="700" loading="lazy" decoding="async"></figure>
+      <figure class="about-fig wide rv"><picture><source type="image/webp" srcset="../images/hero/still-life-640.webp 640w, ../images/hero/still-life-960.webp 960w, ../images/hero/still-life-1536.webp 1536w" sizes="(min-width: 920px) 46vw, 100vw"><img src="../images/hero/still-life-1536.jpg" alt="" width="1536" height="1024" loading="lazy" decoding="async"></picture></figure>
     </div>
 
     <div class="about-txt">

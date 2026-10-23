@@ -71,7 +71,10 @@
       const io = new IntersectionObserver((entries, obs) => {
         entries.forEach((en, i) => {
           if (!en.isIntersecting) return;
+          // stagger elements that appear together, then drop the delay so later
+          // transitions (hover, filters) are not held back by it
           en.target.style.transitionDelay = Math.min(i * 80, 240) + 'ms';
+          en.target.addEventListener('transitionend', () => { en.target.style.transitionDelay = ''; }, { once: true });
           en.target.classList.add('on');
           obs.unobserve(en.target);
         });

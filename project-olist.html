@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Olist E-commerce Dashboard · Project notes | Abou Camara</title>
-<meta name="description" content="Work in progress: an analysis of the public Olist e-commerce dataset covering sales, delivery times and customer satisfaction. Python, Pandas, Streamlit.">
+<meta name="description" content="An analysis of the public Olist e-commerce dataset, in an interactive dashboard: sales, regions, categories, delivery times and customer satisfaction.">
 <link rel="canonical" href="https://aboucamara.org/project-olist.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aboucamara.org/project-olist.html">
 <meta property="og:title" content="Olist E-commerce Dashboard · Project notes | Abou Camara">
-<meta property="og:description" content="Work in progress: an analysis of the public Olist e-commerce dataset covering sales, delivery times and customer satisfaction. Python, Pandas, Streamlit.">
+<meta property="og:description" content="An analysis of the public Olist e-commerce dataset, in an interactive dashboard: sales, regions, categories, delivery times and customer satisfaction.">
 <meta property="og:image" content="https://aboucamara.org/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Abou Camara">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Olist E-commerce Dashboard · Project notes | Abou Camara">
-<meta name="twitter:description" content="Work in progress: an analysis of the public Olist e-commerce dataset covering sales, delivery times and customer satisfaction. Python, Pandas, Streamlit.">
+<meta name="twitter:description" content="An analysis of the public Olist e-commerce dataset, in an interactive dashboard: sales, regions, categories, delivery times and customer satisfaction.">
 <meta name="twitter:image" content="https://aboucamara.org/og-image.png">
 <meta name="theme-color" content="#F5F4F0">
 <meta name="color-scheme" content="light">
@@ -41,7 +41,7 @@
       <li><a href="index.html#services">Services <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="drop"><a class="drop-item" href="service-strategy.html"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 4 3 5-7"/></svg></span><span><b>Consulting &amp; Strategy</b><small>Working out what to do first</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="service-sales-systems.html"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span><span><b>Sales Systems</b><small>Finding and following up leads</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="service-development.html"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L2 12l6 6M16 6l6 6-6 6"/></svg></span><span><b>Development &amp; Automation</b><small>Websites, tools and automations</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="service-product-design.html"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span><span><b>Product Design</b><small>Interfaces that are easy to use</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><div class="drop-foot"><span>Four disciplines, one system.</span><a href="index.html#services">Overview <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></li>
       <li><a href="work.html" aria-current="page">Projects <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="drop"><a class="drop-item" href="project-eidia.html"><span class="drop-thumb"><img src="images/work/eidia-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>Eidia Orientation</b><small>Student guidance web app</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="project-yems.html"><span class="drop-thumb"><img src="images/work/yems-home-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>YEM&rsquo;S</b><small>E-commerce · Brand · Full-stack</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="case-lead-scoring.html"><span class="drop-thumb" style="display:grid;place-items:center;color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h4a2 2 0 012 2v7"/></svg></span><span><b>Lead Automation</b><small>Make · Google Sheets · Webhooks</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="project-olist.html"><span class="drop-thumb"><img src="images/work/olist-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>Olist E-commerce Dashboard</b><small>Data analysis · In progress</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><div class="drop-foot"><span>Four projects so far.</span><a href="work.html">All projects <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></li>
+        <div class="drop"><a class="drop-item" href="project-yems.html"><span class="drop-thumb"><img src="images/work/yems-home-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>YEM&rsquo;S</b><small>E-commerce · Brand · Full-stack</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="case-lead-scoring.html"><span class="drop-thumb" style="display:grid;place-items:center;color:var(--gold)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h4a2 2 0 012 2v7"/></svg></span><span><b>Lead Automation</b><small>Make · Google Sheets · Webhooks</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="project-olist.html"><span class="drop-thumb"><img src="images/work/olist-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>Olist E-commerce Dashboard</b><small>Data analysis · Dashboard</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="drop-item" href="project-eidia.html"><span class="drop-thumb"><img src="images/work/eidia-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span><span><b>Eidia Orientation</b><small>Student guidance web app</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><div class="drop-foot"><span>Four projects so far.</span><a href="work.html">All projects <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></li>
       <li><a href="certificates.html">Certifications</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="resources.html">Resources</a></li>
@@ -63,7 +63,7 @@
     <ul class="mnav-list">
       <li><a href="index.html">Home</a></li>
       <li><details><summary>Services <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mnav-sub"><a href="service-strategy.html">Consulting &amp; Strategy</a><a href="service-sales-systems.html">Sales Systems</a><a href="service-development.html">Development &amp; Automation</a><a href="service-product-design.html">Product Design</a><a href="index.html#services">Overview</a></div></details></li>
-      <li><details><summary>Projects <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mnav-sub"><a href="project-eidia.html">Eidia Orientation</a><a href="project-yems.html">YEM&rsquo;S</a><a href="case-lead-scoring.html">Lead Automation</a><a href="project-olist.html">Olist E-commerce Dashboard</a><a href="work.html">All projects</a></div></details></li>
+      <li><details><summary>Projects <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mnav-sub"><a href="project-yems.html">YEM&rsquo;S</a><a href="case-lead-scoring.html">Lead Automation</a><a href="project-olist.html">Olist E-commerce Dashboard</a><a href="project-eidia.html">Eidia Orientation</a><a href="work.html">All projects</a></div></details></li>
       <li><a href="certificates.html">Certifications</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="resources.html">Resources</a></li>
@@ -80,25 +80,25 @@
   <div class="wrap proj-hero-grid">
     <div>
       <a href="work.html" class="back rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All projects</a>
-      <div><span class="tag rv">Data analysis · In progress</span></div>
+      <div><span class="tag rv">Data analysis · Dashboard</span></div>
       <h1 class="rv">Olist E-commerce Dashboard</h1>
       <p class="standfirst rv">Sales, delivery and satisfaction data, analysed <em>to find where margin leaks.</em></p>
-      <p class="lead rv">An analysis of the public Olist dataset: orders from a Brazilian e-commerce marketplace between 2016 and 2018. A first dashboard exists; the written case study follows once the analysis holds up.</p>
+      <p class="lead rv">An analysis of the public Olist dataset: orders from a Brazilian e-commerce marketplace between 2016 and 2018. The dashboard is ready; I&rsquo;ll add my written conclusions to this page once I&rsquo;ve checked them.</p>
       <div class="actions rv">
         <a href="#visuals" class="btn btn-gold">See the dashboard <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
     <figure class="shot rv">
-      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Dashboard · work in progress</span></div>
-      <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Olist e-commerce dashboard: headline indicators, monthly revenue, top five categories, review score distribution, delivery time by state and payment methods" width="1200" height="685" fetchpriority="high">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Dashboard · overview</span></div>
+      <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Olist e-commerce dashboard: revenue, orders, unique customers and average review score, monthly sales, revenue by Brazilian state, best-selling categories, order status and delivery times" width="1200" height="929" fetchpriority="high">
     </figure>
   </div>
   <div class="wrap">
     <div class="features">
-      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-9"/></svg></span><div><b>Sales</b><p>Revenue, orders and average basket over time.</p></div></div>
-      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><div><b>Categories</b><p>Which product categories carry the revenue.</p></div></div>
-      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg></span><div><b>Delivery</b><p>Delivery times by Brazilian state.</p></div></div>
-      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><div><b>Satisfaction</b><p>Review score distribution and payment methods.</p></div></div>
+      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-9"/></svg></span><div><b>Sales</b><p>Revenue, orders and average basket, month by month.</p></div></div>
+      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Regions</b><p>Revenue share by Brazilian state, on a map.</p></div></div>
+      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><div><b>Categories</b><p>The best-selling categories and their share of revenue.</p></div></div>
+      <div class="feat rv"><span class="drop-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg></span><div><b>Delivery &amp; reviews</b><p>Order status, delivery times and the average review score.</p></div></div>
     </div>
   </div>
 </section>
@@ -131,7 +131,7 @@
         <p class="ch-label"><span>03</span>Build</p>
         <div>
           <h2>Clean, join, aggregate, visualise.</h2>
-          <p>The Olist dataset is split across several tables (orders, items, payments, reviews, customers, products). The work is to clean and join them in Python, compute the indicators, and present them in an interactive dashboard.</p>
+          <p>The Olist dataset is split across several tables (orders, items, payments, reviews, customers, products). I cleaned and joined them in Python, computed the indicators, and built an interactive dashboard on top that can be filtered by date range and by state.</p>
         </div>
       </div>
 
@@ -150,20 +150,20 @@
       <div class="chapter rv">
         <p class="ch-label"><span>05</span>Real outcome</p>
         <div>
-          <h2>Not finished yet.</h2>
-          <p>A first version of the dashboard covers sales, top categories, review scores, delivery time by state and payment methods.</p>
-          <p class="honest"><b>Not finished.</b> The figures in the screenshot come from the public dataset, not from a client. I'll share conclusions with the write-up, once I've checked them.</p>
+          <h2>A working dashboard.</h2>
+          <p>The dashboard brings together the headline figures (revenue, orders, unique customers, average review score), monthly sales, revenue by Brazilian state, the best-selling categories, order statuses and delivery times.</p>
+          <p class="honest"><b>Public data.</b> The figures in the screenshot come from the public Olist dataset, not from a client. I&rsquo;ll add my conclusions to this page once I&rsquo;ve checked them.</p>
         </div>
       </div>
 
       <div class="chapter rv" id="visuals">
         <p class="ch-label"><span>06</span>Visuals</p>
         <div>
-          <h2>Current dashboard.</h2>
+          <h2>The dashboard.</h2>
           <div class="gallery">
             <figure class="wide">
-              <div class="shot"><img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Olist dashboard, full view" width="1200" height="685" loading="lazy" decoding="async"></div>
-              <figcaption>Overview · first version</figcaption>
+              <div class="shot"><img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Olist dashboard, full view" width="1200" height="929" loading="lazy" decoding="async"></div>
+              <figcaption>Overview · January 2017 to August 2018, all states</figcaption>
             </figure>
           </div>
         </div>
@@ -177,7 +177,7 @@
         <div><dt>Role</dt><dd>Data cleaning, analysis, visualisation</dd></div>
         <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">SQL</span><span class="chip">Streamlit</span></div></dd></div>
         <div><dt>Dataset</dt><dd>Olist, Brazilian e-commerce, 2016–2018 (public)</dd></div>
-        <div><dt>Status</dt><dd>In progress</dd></div>
+        <div><dt>Status</dt><dd>Dashboard ready · write-up to come</dd></div>
       </dl>
     </aside>
   </div>

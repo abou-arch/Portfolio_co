@@ -2,32 +2,32 @@
 path: project-olist.html
 current: work
 title: Olist E-commerce Dashboard · Project notes | Abou Camara
-desc: Work in progress: an analysis of the public Olist e-commerce dataset covering sales, delivery times and customer satisfaction. Python, Pandas, Streamlit.
+desc: An analysis of the public Olist e-commerce dataset, in an interactive dashboard: sales, regions, categories, delivery times and customer satisfaction.
 -->
 
 <section class="proj-hero">
   <div class="wrap proj-hero-grid">
     <div>
       <a href="work.html" class="back rv">{{back}} All projects</a>
-      <div><span class="tag rv">Data analysis · In progress</span></div>
+      <div><span class="tag rv">Data analysis · Dashboard</span></div>
       <h1 class="rv">Olist E-commerce Dashboard</h1>
       <p class="standfirst rv">Sales, delivery and satisfaction data, analysed <em>to find where margin leaks.</em></p>
-      <p class="lead rv">An analysis of the public Olist dataset: orders from a Brazilian e-commerce marketplace between 2016 and 2018. A first dashboard exists; the written case study follows once the analysis holds up.</p>
+      <p class="lead rv">An analysis of the public Olist dataset: orders from a Brazilian e-commerce marketplace between 2016 and 2018. The dashboard is ready; I&rsquo;ll add my written conclusions to this page once I&rsquo;ve checked them.</p>
       <div class="actions rv">
         <a href="#visuals" class="btn btn-gold">See the dashboard {{arrow}}</a>
       </div>
     </div>
     <figure class="shot rv">
-      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Dashboard · work in progress</span></div>
-      <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Olist e-commerce dashboard: headline indicators, monthly revenue, top five categories, review score distribution, delivery time by state and payment methods" width="1200" height="685" fetchpriority="high">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>Dashboard · overview</span></div>
+      <img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 660px, 100vw" alt="Olist e-commerce dashboard: revenue, orders, unique customers and average review score, monthly sales, revenue by Brazilian state, best-selling categories, order status and delivery times" width="1200" height="929" fetchpriority="high">
     </figure>
   </div>
   <div class="wrap">
     <div class="features">
-      <div class="feat rv"><span class="drop-ico">{{chart}}</span><div><b>Sales</b><p>Revenue, orders and average basket over time.</p></div></div>
-      <div class="feat rv"><span class="drop-ico">{{layers}}</span><div><b>Categories</b><p>Which product categories carry the revenue.</p></div></div>
-      <div class="feat rv"><span class="drop-ico">{{truck}}</span><div><b>Delivery</b><p>Delivery times by Brazilian state.</p></div></div>
-      <div class="feat rv"><span class="drop-ico">{{user}}</span><div><b>Satisfaction</b><p>Review score distribution and payment methods.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{chart}}</span><div><b>Sales</b><p>Revenue, orders and average basket, month by month.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{pin}}</span><div><b>Regions</b><p>Revenue share by Brazilian state, on a map.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{layers}}</span><div><b>Categories</b><p>The best-selling categories and their share of revenue.</p></div></div>
+      <div class="feat rv"><span class="drop-ico">{{truck}}</span><div><b>Delivery &amp; reviews</b><p>Order status, delivery times and the average review score.</p></div></div>
     </div>
   </div>
 </section>
@@ -60,7 +60,7 @@ desc: Work in progress: an analysis of the public Olist e-commerce dataset cover
         <p class="ch-label"><span>03</span>Build</p>
         <div>
           <h2>Clean, join, aggregate, visualise.</h2>
-          <p>The Olist dataset is split across several tables (orders, items, payments, reviews, customers, products). The work is to clean and join them in Python, compute the indicators, and present them in an interactive dashboard.</p>
+          <p>The Olist dataset is split across several tables (orders, items, payments, reviews, customers, products). I cleaned and joined them in Python, computed the indicators, and built an interactive dashboard on top that can be filtered by date range and by state.</p>
         </div>
       </div>
 
@@ -79,20 +79,20 @@ desc: Work in progress: an analysis of the public Olist e-commerce dataset cover
       <div class="chapter rv">
         <p class="ch-label"><span>05</span>Real outcome</p>
         <div>
-          <h2>Not finished yet.</h2>
-          <p>A first version of the dashboard covers sales, top categories, review scores, delivery time by state and payment methods.</p>
-          <p class="honest"><b>Not finished.</b> The figures in the screenshot come from the public dataset, not from a client. I'll share conclusions with the write-up, once I've checked them.</p>
+          <h2>A working dashboard.</h2>
+          <p>The dashboard brings together the headline figures (revenue, orders, unique customers, average review score), monthly sales, revenue by Brazilian state, the best-selling categories, order statuses and delivery times.</p>
+          <p class="honest"><b>Public data.</b> The figures in the screenshot come from the public Olist dataset, not from a client. I&rsquo;ll add my conclusions to this page once I&rsquo;ve checked them.</p>
         </div>
       </div>
 
       <div class="chapter rv" id="visuals">
         <p class="ch-label"><span>06</span>Visuals</p>
         <div>
-          <h2>Current dashboard.</h2>
+          <h2>The dashboard.</h2>
           <div class="gallery">
             <figure class="wide">
-              <div class="shot"><img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Olist dashboard, full view" width="1200" height="685" loading="lazy" decoding="async"></div>
-              <figcaption>Overview · first version</figcaption>
+              <div class="shot"><img src="images/work/olist-1200.webp" srcset="images/work/olist-640.webp 640w, images/work/olist-1200.webp 1200w" sizes="(min-width: 1000px) 720px, 100vw" alt="Olist dashboard, full view" width="1200" height="929" loading="lazy" decoding="async"></div>
+              <figcaption>Overview · January 2017 to August 2018, all states</figcaption>
             </figure>
           </div>
         </div>
@@ -106,7 +106,7 @@ desc: Work in progress: an analysis of the public Olist e-commerce dataset cover
         <div><dt>Role</dt><dd>Data cleaning, analysis, visualisation</dd></div>
         <div><dt>Technologies</dt><dd><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">SQL</span><span class="chip">Streamlit</span></div></dd></div>
         <div><dt>Dataset</dt><dd>Olist, Brazilian e-commerce, 2016–2018 (public)</dd></div>
-        <div><dt>Status</dt><dd>In progress</dd></div>
+        <div><dt>Status</dt><dd>Dashboard ready · write-up to come</dd></div>
       </dl>
     </aside>
   </div>
