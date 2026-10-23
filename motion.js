@@ -22,6 +22,21 @@
     addEventListener('scroll', stick, { passive: true });
   }
 
+  /* ── reading progress: the thin line at the top follows the scroll ─── */
+  const bar = $('.progress');
+  if (bar && !calm) {
+    let queued = false;
+    const paint = () => {
+      queued = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrollY / max, 1) : 0) + ')';
+    };
+    const ask = () => { if (!queued) { queued = true; requestAnimationFrame(paint); } };
+    paint();
+    addEventListener('scroll', ask, { passive: true });
+    addEventListener('resize', ask, { passive: true });
+  }
+
   /* ── desktop dropdowns: Escape closes the open panel ───────────────── */
   $$('.menu > li').forEach(li => {
     if (!$('.drop', li)) return;

@@ -134,6 +134,7 @@ def header(cur, c):
     other = 'fr' if c.lang == 'en' else 'en'
     lang_link = f'<a href="{c.switch_href}" class="lang" hreflang="{other}" lang="{other}" aria-label="{t["switch_label"]}">{t["switch"]}</a>'
     return f'''<a class="skip" href="#main">{t['skip']}</a>
+<div class="progress" aria-hidden="true"></div>
 
 <!-- ═════════ NAV ═════════ -->
 <header id="hdr"{' class="solid"' if cur != 'home' else ''}>
@@ -185,10 +186,9 @@ def footer(c):
     # the home page ends on the contact form, so the closing call to action would repeat it
     cta = '' if c.home else f'''
     <div class="foot-cta">
-      <div>
-        <p class="eyebrow">{t['foot_eyebrow']}</p>
-        <h2>{t['foot_title']}</h2>
-      </div>
+      <img class="foot-cta-bg" src="{b}images/editorial/contact-dark-1600.webp" srcset="{b}images/editorial/contact-dark-900.webp 900w, {b}images/editorial/contact-dark-1600.webp 1600w" sizes="(min-width: 1240px) 1160px, 100vw" alt="" width="1600" height="900" loading="lazy" decoding="async">
+      <p class="eyebrow">{t['foot_eyebrow']}</p>
+      <h2>{t['foot_title']}</h2>
       <a href="{h}#contact" class="btn btn-light">{t['foot_btn']} {I['arrow']}</a>
     </div>'''
     return f'''

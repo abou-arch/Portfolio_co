@@ -21,10 +21,10 @@ resources.html           Resources (case studies now, articles later)
 style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
-images/hero/             Hero portrait (transparent WebP 560/900, on the panel colour) and the still
-                         life used in About (WebP 640/960/1536 + JPEG fallback)
+images/hero/             Hero portrait (transparent WebP 560/900, shown on the panel colour)
 images/services/         One illustration per service (home cards + service page heroes), WebP 560/900
-images/about/            Portrait with its wall background, WebP 560/900 (not used at the moment)
+images/editorial/        Still lifes for About, Process, Resources, the 404 page and the dark
+                         closing block of the footer (WebP, two widths each)
 src/assets/              Source files that are not served (e.g. the original cutout portrait)
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
 images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
