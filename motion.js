@@ -73,9 +73,30 @@
     });
   }
 
-  /* ── hero line reveal ──────────────────────────────────────────────── */
-  const lines = $('.lines');
-  if (lines) requestAnimationFrame(() => lines.classList.add('go'));
+  /* ── hero: local time in Fès, and the name marquee ─────────────────── */
+  $$('[data-clock]').forEach(el => {
+    const fmt = new Intl.DateTimeFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-US',
+      { hour: 'numeric', minute: '2-digit', timeZone: el.dataset.tz });
+    const tick = () => { el.textContent = fmt.format(new Date()); };
+    tick();
+    el.hidden = false;
+    setInterval(tick, 20000);
+  });
+
+  const hero = $('.hero');
+  const toggle = $('.marquee-toggle');
+  if (hero && toggle) {
+    // WCAG 2.2.2: anything that moves for more than five seconds can be paused
+    toggle.addEventListener('click', () => {
+      const paused = toggle.getAttribute('aria-pressed') !== 'true';
+      toggle.setAttribute('aria-pressed', String(paused));
+      hero.classList.toggle('paused', paused);
+    });
+    // no need to animate what nobody can see
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([en]) => hero.classList.toggle('offscreen', !en.isIntersecting)).observe(hero);
+    }
+  }
 
   /* ── reveal on scroll ──────────────────────────────────────────────── */
   const targets = $$('.rv');

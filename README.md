@@ -63,8 +63,9 @@ Defined as custom properties at the top of `style.css`.
   only illustrate ideas; projects always use real screenshots.
 - **Logo:** "A" monogram with a small taupe star. The SVG is inlined in each page header
   and footer; `favicon.svg` is the tile version.
-- **Motion:** short reveals on scroll, subtle hovers. Everything is disabled under
-  `prefers-reduced-motion`.
+- **Motion:** short reveals, subtle hovers, a reading progress line at the top. On the home
+  page the name scrolls behind the portrait; a button pauses it, it stops when the hero is
+  off screen, and everything is disabled under `prefers-reduced-motion`.
 
 ## Editing
 
