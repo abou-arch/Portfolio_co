@@ -274,15 +274,17 @@ body.locked{overflow:hidden}
 .no-js .marquee-toggle{display:none}
 
 .hero-stage{display:grid;place-items:center;margin-block:clamp(22px,3vw,40px)}
+/* the bust stands on a thin line, like the objects in the still lifes */
+.hero-stage::after{content:"";grid-area:1/1;align-self:end;z-index:2;width:calc(min(100%,var(--max)) - 2*var(--gutter));height:1px;background:var(--line-2)}
 .hero-stage > *{grid-area:1/1}
-.marquee{width:100%;overflow:hidden;pointer-events:none;user-select:none}
+.marquee{align-self:start;margin-top:clamp(6px,1.2vw,18px);width:100%;overflow:hidden;pointer-events:none;user-select:none}  /* name at head height, passing behind it */
 .marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite;will-change:transform}
 .marquee-track span{display:inline-flex;align-items:center;font-size:clamp(5rem,17vw,17rem);font-weight:500;line-height:.92;letter-spacing:-.06em;white-space:nowrap;color:var(--ink)}
 .marquee-track svg{width:.32em;height:.32em;margin:0 .3em 0 .34em;fill:var(--accent);flex:none}
 @keyframes marquee{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .hero.paused .marquee-track,.hero.offscreen .marquee-track{animation-play-state:paused}
-.hero-photo{position:relative;z-index:1;margin:0;width:clamp(200px,22vw,320px);aspect-ratio:4/5;overflow:hidden;background:var(--surface-2)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;animation:settle 1.6s var(--ease-out) both}
+.hero-photo{position:relative;z-index:1;margin:0;width:clamp(220px,24vw,360px);aspect-ratio:4/5;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform-origin:50% 100%;animation:settle 1.6s var(--ease-out) both}
 @keyframes settle{from{transform:scale(1.08)}to{transform:none}}
 
 .hero-foot{display:grid;gap:28px;align-items:end}
