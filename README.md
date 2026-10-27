@@ -21,13 +21,15 @@ resources.html           Resources (case studies now, articles later)
 style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
-images/hero/             Hero portrait (transparent WebP 560/900, shown on the panel colour); the
-                         earlier still life (still-life-*) is kept but no page uses it now
+images/hero/             Hero portraits, transparent WebP: portrait-wide-* (laptops and desktops,
+                         person on the right) and portrait-tall-* (phones and portrait tablets);
+                         the earlier crop (portrait-*) and the still life (still-life-*) are kept
+                         but no page uses them now
 images/about/            Portrait with its wall background, WebP 560/900 (kept, not used now)
 images/services/         One illustration per service (home cards + service page heroes), WebP 560/900
 images/editorial/        Still lifes for About, Process, Resources, the 404 page and the dark
                          closing block of the footer (WebP, two widths each)
-src/assets/              Source files that are not served (e.g. the original cutout portrait)
+src/assets/              Source files that are not served (the original cutout portraits)
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
 images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
 certs/                   Original certificate files (PDF / JPG)
@@ -63,6 +65,10 @@ Defined as custom properties at the top of `style.css`.
   only illustrate ideas; projects always use real screenshots.
 - **Logo:** "A" monogram with a small taupe star. The SVG is inlined in each page header
   and footer; `favicon.svg` is the tile version.
+- **Home hero:** the cutout portrait fills the first screen. A `<picture>` picks the wide photo
+  (person on the right, text bottom left) on landscape screens and the tall photo on phones
+  and portrait tablets; two `media` preloads in the page head match the same queries, so each
+  screen downloads one photo only.
 - **Motion:** short reveals, subtle hovers, a reading progress line at the top. On the home
   page the name scrolls behind the portrait; a button pauses it, it stops when the hero is
   off screen, and everything is disabled under `prefers-reduced-motion`.

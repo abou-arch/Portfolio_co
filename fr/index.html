@@ -31,7 +31,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
-<link rel="preload" as="image" type="image/webp" imagesrcset="../images/hero/portrait-560.webp 560w, ../images/hero/portrait-900.webp 900w" imagesizes="(min-width: 900px) 24vw, 58vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" media="(max-width: 699px), (orientation: portrait) and (max-width: 1100px)" imagesrcset="../images/hero/portrait-tall-640.webp 640w, ../images/hero/portrait-tall-941.webp 941w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" media="(min-width: 700px) and (orientation: landscape), (min-width: 1101px)" imagesrcset="../images/hero/portrait-wide-1100.webp 1100w, ../images/hero/portrait-wide-1672.webp 1672w" imagesizes="calc(178vh - 306px)" fetchpriority="high">
 </head>
 <body>
 <a class="skip" href="#main">Aller au contenu</a>
@@ -83,26 +84,31 @@
 <main id="main">
 <!-- ═════════ HERO ═════════ -->
 <section class="hero" id="top">
-  <div class="wrap hero-top fade-up">
-    <p class="eyebrow">Pour les petites entreprises et les boutiques en ligne</p>
-    <p class="hero-meta"><span>Fès, Maroc</span><span class="clock" data-clock data-tz="Africa/Casablanca" hidden></span><button class="marquee-toggle" type="button" aria-pressed="false" aria-label="Mettre en pause l&rsquo;animation du nom"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="3" width="4.5" height="18" rx="1"/><rect x="14.5" y="3" width="4.5" height="18" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 001.5.86l14-8.5a1 1 0 000-1.72l-14-8.5A1 1 0 006 3.5z"/></svg></button></p>
-  </div>
-  <div class="hero-stage">
-    <div class="marquee fade-up" aria-hidden="true"><div class="marquee-track"><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span></div></div>
-    <figure class="hero-photo fade-up d1"><img src="../images/hero/portrait-900.webp" srcset="../images/hero/portrait-560.webp 560w, ../images/hero/portrait-900.webp 900w" sizes="(min-width: 900px) 24vw, 58vw" alt="Portrait d&rsquo;Abou Camara" width="900" height="1125" fetchpriority="high" decoding="async"></figure>
-  </div>
-  <div class="wrap hero-foot">
-    <div class="hero-head">
-      <h1 class="hero-title fade-up d2">Je construis des systèmes qui vous amènent des clients<span class="dot">.</span></h1>
-      <ol class="hero-disc fade-up d3" aria-label="Disciplines"><li><span>01</span>Stratégie</li><li><span>02</span>Systèmes de vente</li><li><span>03</span>Développement &amp; automatisation</li><li><span>04</span>Product design</li></ol>
+  <div class="hero-screen">
+    <div class="wrap hero-top fade-up">
+      <p class="eyebrow">Pour les petites entreprises et les boutiques en ligne</p>
+      <p class="hero-meta"><span>Fès, Maroc</span><span class="clock" data-clock data-tz="Africa/Casablanca" hidden></span><button class="marquee-toggle" type="button" aria-pressed="false" aria-label="Mettre en pause l&rsquo;animation du nom"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="3" width="4.5" height="18" rx="1"/><rect x="14.5" y="3" width="4.5" height="18" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 001.5.86l14-8.5a1 1 0 000-1.72l-14-8.5A1 1 0 006 3.5z"/></svg></button></p>
     </div>
-    <div class="hero-intro">
-      <p class="lead fade-up d3">Je suis Abou, consultant et développeur. J’aide les petites entreprises et les boutiques en ligne à transformer plus de visiteurs en clients&nbsp;: une offre claire, un site qu’on comprend tout de suite, et des automatisations qui relancent chaque prospect à votre place.</p>
-      <div class="actions fade-up d4">
-        <a href="#contact" class="btn btn-gold">Travailler ensemble <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="../work.html" class="link">Voir les projets <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="hero-stage">
+      <div class="marquee fade-up" aria-hidden="true"><div class="marquee-track"><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span><span>Abou Camara<svg viewBox="20.7 42.4 10.6 10.6" aria-hidden="true"><path d="M26 42.4Q26.6 47.1 31.3 47.7Q26.6 48.3 26 53Q25.4 48.3 20.7 47.7Q25.4 47.1 26 42.4Z"/></svg></span></div></div>
+      <picture class="hero-photo fade-up d1">
+        <source media="(max-width: 699px), (orientation: portrait) and (max-width: 1100px)" srcset="../images/hero/portrait-tall-640.webp 640w, ../images/hero/portrait-tall-941.webp 941w" sizes="100vw" width="941" height="1672">
+        <img src="../images/hero/portrait-wide-1672.webp" srcset="../images/hero/portrait-wide-1100.webp 1100w, ../images/hero/portrait-wide-1672.webp 1672w" sizes="calc(178vh - 306px)" alt="Portrait d&rsquo;Abou Camara" width="1672" height="941" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="wrap hero-foot">
+      <div class="hero-copy">
+        <h1 class="hero-title fade-up d2">Je construis des systèmes qui vous amènent des clients<span class="dot">.</span></h1>
+        <ol class="hero-disc fade-up d3" aria-label="Disciplines"><li><span>01</span>Stratégie</li><li><span>02</span>Systèmes de vente</li><li><span>03</span>Développement &amp; automatisation</li><li><span>04</span>Product design</li></ol>
+        <div class="actions fade-up d4">
+          <a href="#contact" class="btn btn-gold">Travailler ensemble <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="../work.html" class="link">Voir les projets <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="wrap hero-intro">
+    <p class="lead rv">Je suis Abou, consultant et développeur. J’aide les petites entreprises et les boutiques en ligne à transformer plus de visiteurs en clients&nbsp;: une offre claire, un site qu’on comprend tout de suite, et des automatisations qui relancent chaque prospect à votre place.</p>
   </div>
 </section>
 
