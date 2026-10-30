@@ -126,7 +126,7 @@ def header(cur, c):
         for ic, n, d, a in t['svc'])
     def thumb(img):
         if img:
-            return f'<span class="drop-thumb"><img src="{b}images/work/{img}-thumb.webp" alt="" width="240" height="150" loading="lazy" decoding="async"></span>'
+            return f'<span class="drop-thumb"><img src="{b}images/work/{img}-thumb.webp" alt="" width="240" height="150" loading="lazy" fetchpriority="low" decoding="async"></span>'
         return f'<span class="drop-thumb" style="display:grid;place-items:center;color:var(--gold)">{I["flow"]}</span>'
     prj = ''.join(
         f'<a class="drop-item" href="{b}{u}">{thumb(img)}<span><b>{n}</b><small>{d}</small></span>{go}</a>'
@@ -157,6 +157,7 @@ def header(cur, c):
       {lang_link}
       <a href="{h}#contact" class="btn btn-outline-gold btn-sm nav-cta">{t['cta']} {I['arrow']}</a>
       <button class="burger" id="burger" type="button" aria-label="{t['open']}" aria-expanded="false" aria-controls="mnav">{I['menu']}</button>
+      <a class="nojs-menu" href="#site-links">{t['menu']}</a>
     </div>
   </nav>
 </header>
@@ -203,7 +204,7 @@ def footer(c):
         <a href="{c.home_href}" class="brand" aria-label="{t['home_label']}">{MARK}<span class="rule" aria-hidden="true"></span><span class="name">Abou Camara</span></a>
         <p class="tagline">{t['tagline']}</p>
       </div>
-      <nav class="foot-nav" aria-label="{t['footer']}">
+      <nav class="foot-nav" id="site-links" aria-label="{t['footer']}">
         <a href="{h}#services">{t['services']}</a>
         <a href="{b}work.html">{t['projects']}</a>
         <a href="{b}certificates.html">{t['certs']}</a>

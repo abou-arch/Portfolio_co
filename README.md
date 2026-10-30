@@ -21,13 +21,17 @@ resources.html           Resources (case studies now, articles later)
 style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
-images/hero/             Hero portrait (transparent WebP 560/900, shown on the panel colour); the
-                         earlier still life (still-life-*) is kept but no page uses it now
-images/about/            Portrait with its wall background, WebP 560/900 (kept, not used now)
-images/services/         One illustration per service (home cards + service page heroes), WebP 560/900
-images/editorial/        Still lifes for About, Process, Resources, the 404 page and the dark
-                         closing block of the footer (WebP, two widths each)
-src/assets/              Source files that are not served (e.g. the original cutout portrait)
+images/hero/             Hero still life: transparent cutout (basalt, smoked glass, brass, a tablet
+                         with an abstract diagram), WebP 640/900/1100 (still-life-hero-*); the
+                         earlier framed still life (still-life-*) is kept but no page uses it now
+images/about/            About portrait: transparent cutout, WebP 560/900 (portrait-cutout-*); the
+                         version with its wall background (portrait-*) is kept, not used now
+images/services/         One interface illustration per service (home cards + service page heroes),
+                         WebP 560/900
+images/editorial/        Still lifes for Process, Resources, the 404 page and the dark closing block
+                         of the footer (WebP, two widths each); about-approach-* is kept, not used
+                         now (the hero still life uses the same objects)
+src/assets/              Source files that are not served (the original cutouts: portrait, hero still life)
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
 images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
 certs/                   Original certificate files (PDF / JPG)
@@ -58,14 +62,25 @@ Defined as custom properties at the top of `style.css`.
   `#715E49`. The footer is the only dark area (`#1C1C19`). Every text colour passes WCAG AA
   on every surface.
 - **Type:** DM Sans throughout, from Google Fonts. Headlines are weight 500 with tight
-  letter-spacing; the second half of a heading can sit in a lighter grey (`<em>`).
-- **Images:** a still-life series (stone, smoked glass, brass, window light). Generated images
-  only illustrate ideas; projects always use real screenshots.
+  letter-spacing; the second half of a heading can sit in a lighter grey (`<em>`), only at 24px
+  and above (`--soft` is 3:1). Until the font arrives, `DM Sans Fallback` (local Arial scaled to
+  DM Sans' measured metrics, per weight) keeps the layout from jumping when it swaps in.
+- **Images:** a still-life series (stone, smoked glass, brass, window light). Cutouts (the hero
+  still life, the About portrait) are transparent WebP set straight on the page colour, never in
+  a frame or on a panel. The service illustrations are interface mock-ups; the editorial still
+  lifes stay in secondary sections. Generated images only illustrate ideas; projects always use
+  real screenshots.
 - **Logo:** "A" monogram with a small taupe star. The SVG is inlined in each page header
   and footer; `favicon.svg` is the tile version.
-- **Motion:** short reveals, subtle hovers, a reading progress line at the top. On the home
-  page the name scrolls behind the portrait; a button pauses it, it stops when the hero is
-  off screen, and everything is disabled under `prefers-reduced-motion`.
+- **Motion:** text fades up on load; sections and cards reveal on scroll while their images
+  settle into the frame; the About bust rises out of its line; images zoom slightly on hover;
+  link underlines draw in; the mobile menu opens with a short stagger (and closes faster) and
+  its sub-lists unfold; a reading progress line runs at the top. On the home page the name
+  scrolls behind the still life; a button pauses it, it stops when the hero is off screen, and
+  it stands still without JavaScript. Under `prefers-reduced-motion` each effect is handled on
+  its own: nothing slides, scales or scrolls by itself, state changes are instant.
+- **Without JavaScript:** content is visible (no reveal), and below 1080px a "Menu" link to the
+  footer navigation replaces the burger.
 
 ## Editing
 
@@ -93,6 +108,8 @@ haven't happened. Prototypes and work in progress are labelled as such.
   to the "Demandes" Google Sheet and sends an email alert. If the request fails, the form
   offers a pre-filled email instead. The hidden `website` field is a spam trap.
 
+- The home pages (EN and FR) carry JSON-LD (`WebSite` + `Person`) in the `extra_head` of their
+  META block. Keep it to facts the site already states. It is a data block, so the CSP allows it.
 - `images/abou.jpg`, `images/dashboard.png`, `images/eidia.png` and `images/leads.png` come from
   the first version of the site. They are kept on purpose, even though no page uses them now.
 - File names are lowercase on purpose: the host is case-sensitive, Windows is not.
