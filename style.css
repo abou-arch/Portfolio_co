@@ -8,6 +8,11 @@
 
 @view-transition { navigation: auto; }
 
+/* Arial (or its metric twin) scaled to DM Sans, measured per weight, so the swap
+   to the web font moves nothing (the full-screen hero is anchored to its bottom) */
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans');font-weight:400;size-adjust:92.58%;ascent-override:106.93%;descent-override:33.48%;line-gap-override:0%}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans');font-weight:500 600;size-adjust:94.81%;ascent-override:104.42%;descent-override:32.7%;line-gap-override:0%}
+
 :root{
   /* surfaces */
   --bg:#F5F4F0;
@@ -38,7 +43,7 @@
   --on-dark-muted:#A9A8A1;
 
   /* type */
-  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --sans:'DM Sans','DM Sans Fallback',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
 
   /* system */
   --max:1240px;
@@ -219,20 +224,27 @@ p{text-wrap:pretty}
 .drop-thumb img{width:100%;height:100%;object-fit:cover}
 .drop-thumb svg{width:22px;height:22px}
 .drop-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:6px;padding:12px 12px 6px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-.drop-foot a{color:var(--ink);display:inline-flex;gap:8px;align-items:center;font-weight:500}
+.drop-foot a{color:var(--ink);display:inline-flex;gap:8px;align-items:center;min-height:24px;font-weight:500}
 .drop-foot a svg{width:14px;height:14px}
 
 /* burger + mobile panel */
 .burger{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:var(--r-sm);border:1px solid var(--line-2);color:var(--ink)}
 .burger svg{width:20px;height:20px}
 @media (min-width:1080px){.burger{display:none}}
+/* without JavaScript the burger cannot open the panel: offer the footer links instead */
+.nojs-menu{display:none}
+@media (scripting:none) and (max-width:1079px){
+  .burger{display:none}
+  .nojs-menu{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line-2);border-radius:var(--r-sm);font-size:.86rem;font-weight:500}
+}
+/* opens slower than it closes: arrival is staged, departure is quick */
 .mnav{
   position:fixed;inset:0;z-index:150;background:var(--bg);
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;interpolate-size:allow-keywords;
   opacity:0;visibility:hidden;transform:translateY(-10px);
-  transition:opacity .28s var(--ease),transform .4s var(--ease-out),visibility 0s .28s;
+  transition:opacity .2s var(--ease),transform .2s var(--ease),visibility 0s .2s;
 }
-.mnav.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.mnav.open{opacity:1;visibility:visible;transform:none;transition:opacity .32s var(--ease),transform .45s var(--ease-out),visibility 0s}
 .mnav > .wrap{width:100%}
 .mnav-top{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .mnav-body{flex:1;overflow-y:auto;padding-block:16px 28px}
@@ -250,8 +262,12 @@ p{text-wrap:pretty}
 .mnav-foot{padding-block:18px 24px;border-top:1px solid var(--line)}
 .mnav-foot small{display:block;text-align:center;margin-top:14px;color:var(--muted);font-size:.85rem}
 .mnav-foot small a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.mnav .mnav-list > li{opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
-.mnav.open .mnav-list > li{opacity:1;transform:none}
+/* sub-lists unfold where ::details-content is supported; elsewhere they open at once */
+.mnav-list details::details-content{block-size:0;overflow-y:clip;transition:block-size .3s var(--ease-out),content-visibility .3s allow-discrete}
+.mnav-list details[open]::details-content{block-size:auto}
+.mnav .mnav-list > li,.mnav .mnav-foot{opacity:0;transform:translateY(10px);transition:opacity .15s var(--ease),transform .15s var(--ease)}
+.mnav.open .mnav-list > li,.mnav.open .mnav-foot{opacity:1;transform:none;transition:opacity .45s var(--ease-out),transform .55s var(--ease-out)}
+.mnav.open .mnav-foot{transition-delay:.24s}
 .mnav.open .mnav-list > li:nth-child(2){transition-delay:.04s}
 .mnav.open .mnav-list > li:nth-child(3){transition-delay:.08s}
 .mnav.open .mnav-list > li:nth-child(4){transition-delay:.12s}
@@ -259,8 +275,12 @@ p{text-wrap:pretty}
 .mnav.open .mnav-list > li:nth-child(6){transition-delay:.2s}
 body.locked{overflow:hidden}
 
-/* ─── hero (home): the name scrolls behind a centred portrait ──────── */
-.hero{padding:calc(var(--nav-h) + clamp(24px,3.5vw,44px)) 0 clamp(56px,7vw,96px);overflow:hidden}
+/* ─── hero (home): the name scrolls behind a still life on the right ─
+   Phones and tablets: name, then the still life standing on a thin line,
+   then the copy. Desktop: full screen, copy bottom left, the still life
+   bottom right on the rule that opens the next section, rising into the
+   band of the name so the name passes behind the stone.                 */
+.hero{position:relative;padding:calc(var(--nav-h) + clamp(20px,3vw,36px)) 0 clamp(48px,6vw,72px);overflow:hidden}
 .hero-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px}
 .hero-top .eyebrow{margin:0}
 .hero-meta{display:flex;align-items:center;gap:12px;font-size:.8rem;color:var(--muted)}
@@ -273,26 +293,51 @@ body.locked{overflow:hidden}
 .marquee-toggle[aria-pressed="true"] .i-play{display:block}
 .no-js .marquee-toggle{display:none}
 
-.hero-stage{display:grid;place-items:center;margin-block:clamp(22px,3vw,40px)}
-/* the bust stands on a thin line, like the objects in the still lifes */
-.hero-stage::after{content:"";grid-area:1/1;align-self:end;z-index:2;width:calc(min(100%,var(--max)) - 2*var(--gutter));height:1px;background:var(--line-2)}
+.hero-stage{display:grid;margin-block:clamp(18px,3vw,32px) clamp(30px,4.5vw,48px)}
 .hero-stage > *{grid-area:1/1}
-.marquee{align-self:start;margin-top:clamp(6px,1.2vw,18px);width:100%;overflow:hidden;pointer-events:none;user-select:none}  /* name at head height, passing behind it */
+/* the slab stands on a thin line across the content width, like the objects in the still lifes */
+.hero-stage::after{content:"";grid-area:1/1;align-self:end;justify-self:center;z-index:2;width:calc(min(100%,var(--max)) - 2*var(--gutter));height:1px;background:var(--line-2)}
+.marquee{align-self:start;width:100%;overflow:hidden;pointer-events:none;user-select:none}
 .marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite;will-change:transform}
-.marquee-track span{display:inline-flex;align-items:center;font-size:clamp(5rem,17vw,17rem);font-weight:500;line-height:.92;letter-spacing:-.06em;white-space:nowrap;color:var(--ink)}
+.marquee-track span{display:inline-flex;align-items:center;font-size:clamp(4.5rem,min(17vw,30svh),17rem);font-weight:500;line-height:.92;letter-spacing:-.06em;white-space:nowrap;color:var(--ink)}
 .marquee-track svg{width:.32em;height:.32em;margin:0 .3em 0 .34em;fill:var(--accent);flex:none}
 @keyframes marquee{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .hero.paused .marquee-track,.hero.offscreen .marquee-track{animation-play-state:paused}
-.hero-photo{position:relative;z-index:1;margin:0;width:clamp(220px,24vw,360px);aspect-ratio:4/5;overflow:hidden}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;transform-origin:50% 100%;animation:settle 1.6s var(--ease-out) both}
-@keyframes settle{from{transform:scale(1.08)}to{transform:none}}
+/* the pause button needs JavaScript; without it the name stands still (WCAG 2.2.2) */
+@media (scripting:none){.marquee-track{animation:none}}
+/* transparent cutout: no frame, no panel, it sits straight on the page colour */
+.hero-still{
+  position:relative;z-index:1;align-self:end;justify-self:end;
+  width:min(86vw,620px,100svh);margin:clamp(36px,8.5vw,70px) var(--gutter) 0 0;
+}
+.hero-still img{width:100%;transform-origin:60% 100%;animation:rise 1.4s var(--ease-out) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px) scale(1.03)}}
 
-.hero-foot{display:grid;gap:28px;align-items:end}
-@media (min-width:900px){.hero-foot{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,6vw,96px)}}
+.hero-foot{position:relative;z-index:2;display:grid;gap:28px;align-items:end}
+@media (min-width:900px) and (max-width:1199px){.hero-foot{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,64px)}}
 .hero-title{font-size:clamp(2rem,3.4vw,3rem);line-height:1.02;letter-spacing:-.045em;max-width:15ch}
 .hero-disc{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:22px;font-size:.84rem;color:var(--ink-2)}
 .hero-disc span{margin-right:6px;color:var(--muted);font-size:.76rem;font-variant-numeric:tabular-nums}
 .hero-intro .lead{margin-bottom:22px;max-width:50ch}
+
+@media (min-width:1200px){
+  .hero{display:flex;flex-direction:column;min-height:max(100svh,700px);padding-bottom:clamp(32px,4vh,48px)}
+  .hero > .wrap{width:100%}
+  .hero-stage{position:static;flex:1;align-items:end;margin-block:clamp(16px,2vw,28px) clamp(4px,1vh,12px)}
+  .hero-stage::after{display:none}
+  .marquee{align-self:center}
+  /* right column of the content grid, allowed to bleed into the margin on wide screens;
+     base on the rule that opens the next section */
+  .hero-still{
+    --edge:calc((100% - min(100%,var(--max))) / 2 + var(--gutter));
+    --bleed:max(0px,min(160px,var(--edge) - 40px));
+    position:absolute;margin:0;bottom:0;
+    right:calc(var(--edge) - var(--bleed));
+    width:min(calc((min(100%,var(--max)) - 2 * var(--gutter)) * .58 + var(--bleed)),calc((100svh - 160px) * 1.3));
+  }
+  .hero-foot{grid-template-columns:minmax(0,38%);gap:26px}
+  .hero-intro .lead{max-width:none}
+}
 
 .fade-up{opacity:0;transform:translateY(14px);animation:fadeUp .9s var(--ease-out) forwards}
 .fade-up.d1{animation-delay:.35s}.fade-up.d2{animation-delay:.48s}.fade-up.d3{animation-delay:.62s}.fade-up.d4{animation-delay:.76s}
@@ -453,10 +498,14 @@ body.locked{overflow:hidden}
 @media (min-width:920px){.about-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}}
 .about-head .h2{font-size:clamp(2.6rem,6vw,5.2rem);line-height:.98;letter-spacing:-.05em}
 .about-head .pull{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.4;letter-spacing:-.02em;color:var(--ink-2);margin-top:32px;padding-left:18px;border-left:1px solid var(--ink);max-width:30ch}
-.about-fig{margin:36px 0 0;max-width:440px;aspect-ratio:4/5;overflow:hidden;background:var(--surface-2)}
-.about-fig img{width:100%;height:100%;object-fit:cover}
-.about-fig.wide{max-width:none;aspect-ratio:16/9}
-.about-fig.wide img{object-position:50% 60%}
+/* transparent cutout, never cropped: the bust stands on a hairline and rises out of it on reveal */
+.about-portrait{margin:40px 0 0;display:flex;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line-2)}
+.about-portrait img{width:min(76%,360px)}
+@media (min-width:920px){
+  .about-grid{align-items:end}  /* the last rule of the facts lines up with the hairline under the bust */
+  .about-portrait{margin-top:48px}
+  .about-portrait img{width:min(100%,400px)}
+}
 
 /* process: one wide still life above the five steps */
 .process-fig{margin:0 0 clamp(36px,5vw,56px);overflow:hidden;background:var(--surface-2);aspect-ratio:1600/686}
@@ -512,7 +561,7 @@ body.locked{overflow:hidden}
 .way .ico{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--ink)}
 .way .ico svg{width:18px;height:18px}
 .way small{display:block;font-size:.8rem;color:var(--muted)}
-.way a{font-size:1rem;color:var(--ink);word-break:break-word;font-weight:500}
+.way a{display:inline-block;padding-block:2px;font-size:1rem;color:var(--ink);word-break:break-word;font-weight:500}
 .way a:hover{color:var(--gold)}
 
 form.cf{background:var(--surface);padding:clamp(24px,3.4vw,40px)}
@@ -598,7 +647,7 @@ footer .brand .rule{background:var(--dark-line)}
 .svc-fig img{width:100%;height:100%;object-fit:cover}
 @media (max-width:959px){.svc-fig{aspect-ratio:1/1;max-width:560px}}
 .svc-fig.landscape{aspect-ratio:3/2}
-.back{display:inline-flex;align-items:center;gap:10px;font-size:.86rem;color:var(--muted);margin-bottom:30px}
+.back{display:inline-flex;align-items:center;gap:10px;min-height:24px;font-size:.86rem;color:var(--muted);margin-bottom:30px}
 .back svg{width:16px;height:16px;transition:transform .25s}
 .back:hover{color:var(--ink)}
 .back:hover svg{transform:translateX(-3px)}
@@ -610,7 +659,7 @@ footer .brand .rule{background:var(--dark-line)}
 .proj-hero .tag{margin-bottom:22px}
 .proj-hero h1{font-size:clamp(3rem,6.2vw,5.4rem);line-height:.98;letter-spacing:-.05em;margin-bottom:18px}
 .proj-hero .standfirst{font-size:clamp(1.3rem,2.1vw,1.75rem);font-weight:500;letter-spacing:-.03em;line-height:1.2;margin-bottom:22px;max-width:26ch}
-.proj-hero .standfirst em{color:var(--soft);font-style:normal}
+.proj-hero .standfirst em{color:var(--faint);font-style:normal}  /* can drop below 24px, where --soft fails AA */
 .proj-hero .lead{margin-bottom:32px;font-size:1rem}
 .shot{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--white);border-radius:var(--r)}
 .shot img{width:100%;height:auto}
@@ -762,15 +811,37 @@ pre code{background:none;border:0;padding:0;color:var(--ink-2);font-size:.88rem;
 /* ─── reveal on scroll ──────────────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
 .rv.on{opacity:1;transform:none}
+/* images settle into their frame as their card appears; `scale` leaves `transform` free for the hover zoom */
+.rv .disc-media img,.rv .work-media img,.process-fig.rv img{scale:1.06;transition:scale 1.6s var(--ease-out),transform .9s var(--ease-out)}
+.rv.on .disc-media img,.rv.on .work-media img,.process-fig.rv.on img{scale:1}
+/* the About bust rises out of its hairline (the figure clips it) */
+.about-portrait.rv{transform:none}
+.about-portrait img{translate:0 14%;transition:translate 1.5s var(--ease-out) .1s}
+.about-portrait.rv.on img{translate:none}
 .no-js .rv{opacity:1;transform:none}
+.no-js .rv img{scale:1;translate:none}
 
+/* reduced motion, case by case: nothing slides, scales, rotates or scrolls on its own;
+   state changes are instant, short opacity fades are kept where they help */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
-  .rv,.fade-up{opacity:1;transform:none}
+  .skip{transition:none}
+  .rv,.fade-up{opacity:1;transform:none;animation:none;transition:none}
+  .rv img{scale:1;translate:none;transition:none}
+  .hero-still img{animation:none}
   .progress{display:none}
   .marquee-track{animation:none}
   .marquee-toggle{display:none}
+  .disc-media img,.work-media img,.cert-img img,.rel-media img{transition:none;transform:none!important}
+  .btn,.btn svg,.link svg,.drop-item .go,.back svg,.rel-body b svg,.wcard-body h2 svg,.work-media .corner,
+  .menu > li > a .chev,.menu > li > a::after,.mnav-list summary svg{transition:none}
+  .btn:active{transform:none}
+  .drop{transform:translate(-50%,0);transition:opacity .15s linear,visibility 0s .15s}
+  .menu > li:hover .drop,.menu > li:focus-within .drop{transition:opacity .15s linear}
+  .mnav,.mnav.open{transform:none;transition:opacity .15s linear,visibility 0s .15s}
+  .mnav.open{transition:opacity .15s linear}
+  .mnav .mnav-list > li,.mnav .mnav-foot{opacity:1;transform:none;transition:none}
+  .mnav-list details::details-content{transition:none}
 }
 
 @media print{
