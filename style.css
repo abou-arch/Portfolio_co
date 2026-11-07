@@ -500,11 +500,11 @@ body.locked{overflow:hidden}
 .about-head .pull{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.4;letter-spacing:-.02em;color:var(--ink-2);margin-top:32px;padding-left:18px;border-left:1px solid var(--ink);max-width:30ch}
 /* transparent cutout, never cropped: the bust stands on a hairline and rises out of it on reveal */
 .about-portrait{margin:40px 0 0;display:flex;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line-2)}
-.about-portrait img{width:min(76%,360px)}
+.about-portrait img{width:min(76%,340px)}
 @media (min-width:920px){
   .about-grid{align-items:end}  /* the last rule of the facts lines up with the hairline under the bust */
   .about-portrait{margin-top:48px}
-  .about-portrait img{width:min(100%,400px)}
+  .about-portrait img{width:min(100%,380px)}
 }
 
 /* process: one wide still life above the five steps */

@@ -24,14 +24,16 @@ favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same
 images/hero/             Hero still life: transparent cutout (basalt, smoked glass, brass, a tablet
                          with an abstract diagram), WebP 640/900/1100 (still-life-hero-*); the
                          earlier framed still life (still-life-*) is kept but no page uses it now
-images/about/            About portrait: transparent cutout, WebP 560/900 (portrait-cutout-*); the
-                         version with its wall background (portrait-*) is kept, not used now
+images/about/            About portrait: transparent cutout, WebP 480/677 (about-portrait-*); the
+                         earlier cutout (portrait-cutout-*) and the version with its wall
+                         background (portrait-*) are kept, not used now
 images/services/         One interface illustration per service (home cards + service page heroes),
                          WebP 560/900
 images/editorial/        Still lifes for Process, Resources, the 404 page and the dark closing block
                          of the footer (WebP, two widths each); about-approach-* is kept, not used
                          now (the hero still life uses the same objects)
-src/assets/              Source files that are not served (the original cutouts: portrait, hero still life)
+src/assets/              Source files that are not served (the original cutouts: About portrait,
+                         earlier portrait, hero still life)
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
 images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
 certs/                   Original certificate files (PDF / JPG)
