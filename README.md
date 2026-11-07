@@ -22,20 +22,16 @@ style.css                Shared design system for every page
 motion.js                Shared interactions: nav, mobile menu, reveals, filters, contact form
 favicon.svg              Monogram on dark tile; apple-touch-icon.png is the same at 180px
 images/hero/             Hero still life: transparent cutout (basalt, smoked glass, brass, a tablet
-                         with an abstract diagram), WebP 640/900/1100 (still-life-hero-*); the
-                         earlier framed still life (still-life-*) is kept but no page uses it now
-images/about/            About portrait: transparent cutout, WebP 480/677 (about-portrait-*); the
-                         earlier cutout (portrait-cutout-*) and the version with its wall
-                         background (portrait-*) are kept, not used now
+                         with an abstract diagram), WebP 640/900/1100
+images/about/            About portrait: transparent cutout, WebP 480/677
 images/services/         One interface illustration per service (home cards + service page heroes),
                          WebP 560/900
 images/editorial/        Still lifes for Process, Resources, the 404 page and the dark closing block
-                         of the footer (WebP, two widths each); about-approach-* is kept, not used
-                         now (the hero still life uses the same objects)
-src/assets/              Source files that are not served (the original cutouts: About portrait,
-                         earlier portrait, hero still life)
+                         of the footer (WebP, two widths each)
+src/assets/              Source files that are not served: the full-size cutouts of the About
+                         portrait and the hero still life, to export new sizes from
 images/work/             Project screenshots (WebP, 640/1200 wide + menu thumbnails)
-images/certs/            Certificate thumbnails (WebP used by the site, PNG/JPG sources)
+images/certs/            Certificate thumbnails (WebP); the originals are in certs/
 certs/                   Original certificate files (PDF / JPG)
 ```
 
@@ -112,7 +108,5 @@ haven't happened. Prototypes and work in progress are labelled as such.
 
 - The home pages (EN and FR) carry JSON-LD (`WebSite` + `Person`) in the `extra_head` of their
   META block. Keep it to facts the site already states. It is a data block, so the CSP allows it.
-- `images/abou.jpg`, `images/dashboard.png`, `images/eidia.png` and `images/leads.png` come from
-  the first version of the site. They are kept on purpose, even though no page uses them now.
 - File names are lowercase on purpose: the host is case-sensitive, Windows is not.
   A capital letter that works locally will 404 once deployed.
